@@ -1907,7 +1907,8 @@
       },
       "get": {
         "tags": [
-          "CustomerOrder"
+          "CustomerOrder",
+          "GET"
         ],
         "summary": "List Customer Orders",
         "description": "List of Customer Orders",
