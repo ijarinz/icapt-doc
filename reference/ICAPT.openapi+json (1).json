@@ -4872,6 +4872,21 @@
             "description": "Location Type"
           }
         }
+      },
+      "yss": {
+        "title": "yss",
+        "type": "object",
+        "x-tags": [
+          "Customer"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id"
+        ]
       }
     },
     "securitySchemes": {
