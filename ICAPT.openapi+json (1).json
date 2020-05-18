@@ -1595,7 +1595,7 @@
         }
       }
     },
-    "/lotlocs/{lotlocation_id}": {
+    "/lotlocs/{lotloc_id}": {
       "get": {
         "tags": [
           "LotLocation"
@@ -1605,7 +1605,7 @@
         "operationId": "read-lot-locations-by-id",
         "parameters": [
           {
-            "name": "lotlocation_id",
+            "name": "lotloc_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -2967,11 +2967,11 @@
           },
           "created_date": {
             "type": "string",
-            "format": "date"
+            "format": "datetime"
           },
           "modified_date": {
             "type": "string",
-            "format": "date"
+            "format": "datetime"
           },
           "field_1": {
             "type": "string"
