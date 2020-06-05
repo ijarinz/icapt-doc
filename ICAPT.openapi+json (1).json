@@ -10,6 +10,7 @@
       "url": "https://icapt-api.azure-api.net"
     }
   ],
+  
   "paths": {
     "/warehouses": {
       "get": {
@@ -1596,13 +1597,40 @@
       }
     },
     "/lotlocs/{lotloc_id}": {
-      "get": {
+      "delete": {
         "tags": [
           "LotLocation"
         ],
-        "summary": "Read Lot Locations by ID",
-        "description": "GET Lot Locations by ID",
-        "operationId": "read-lot-locations-by-id",
+        "summary": "Delete Lot Location",
+        "description": "This method gives a site the option to delete one Lot Location from the Lot Locations list.\n\nException:\n\n-  Qty On Hand is not 0\n\nThis Lot Location will be immediately removed. This action is not reversible.",
+        "operationId": "delete-lot-location",
+        "parameters": [
+          {
+            "name": "lotloc_id",
+            "in": "path",
+            "description": "The Lot Location ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LotLocation"
+        ],
+        "summary": "Update Lot Location",
+        "description": "Update Lot Location",
+        "operationId": "update-lot-location",
         "parameters": [
           {
             "name": "lotloc_id",
@@ -1615,14 +1643,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LotLocation"
-                }
-              }
-            }
+            "description": ""
           }
         }
       }
@@ -2470,58 +2491,6 @@
         }
       }
     },
-    "/lotlocs/{lotloc_id}": {
-      "delete": {
-        "tags": [
-          "LotLocation"
-        ],
-        "summary": "Delete Lot Location",
-        "description": "This method gives a site the option to delete one Lot Location from the Lot Locations list.\n\nException:\n\n-  Qty On Hand is not 0\n\nThis Lot Location will be immediately removed. This action is not reversible.",
-        "operationId": "delete-lot-location",
-        "parameters": [
-          {
-            "name": "lotloc_id",
-            "in": "path",
-            "description": "The Lot Location ID",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": ""
-          },
-          "404": {
-            "description": ""
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "LotLocation"
-        ],
-        "summary": "Update Lot Location",
-        "description": "Update Lot Location",
-        "operationId": "update-lot-location",
-        "parameters": [
-          {
-            "name": "lotloc_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": ""
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/matltrans": {
       "get": {
         "tags": [
@@ -2651,6 +2620,15 @@
     "schemas": {
       "UOM": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "uom_num": "string",
+          "uom_desc": "string",
+          "rounding": "string",
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
         "properties": {
           "id": {
             "type": "integer",
@@ -2687,15 +2665,9 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "uom_num": "string",
-          "uom_desc": "string",
-          "rounding": "string",
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
-        }
+        "required": [
+          "id"
+        ]
       },
       "Customer": {
         "type": "object",
@@ -4066,6 +4038,25 @@
       },
       "JobMaterial": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "job_num": "string",
+          "whse_num": "string",
+          "oper_num": "string",
+          "sequence": "string",
+          "matl_item": "string",
+          "uom": "string",
+          "matl_desc": "string",
+          "qty_per": "string",
+          "scrap_factor": "string",
+          "qty_required": 0.817075366431654,
+          "qty_issued": 0.384134391824688,
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "x-examples": {},
+        "description": "",
         "properties": {
           "id": {
             "type": "integer",
@@ -4140,23 +4131,6 @@
           "field_8": {},
           "field_9": {},
           "field_10": {}
-        },
-        "example": {
-          "id": 0,
-          "job_num": "string",
-          "whse_num": "string",
-          "oper_num": "string",
-          "sequence": "string",
-          "matl_item": "string",
-          "uom": "string",
-          "matl_desc": "string",
-          "qty_per": "string",
-          "scrap_factor": "string",
-          "qty_required": 0.817075366431654,
-          "qty_issued": 0.384134391824688,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
         }
       },
       "Machine": {
