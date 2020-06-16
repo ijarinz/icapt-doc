@@ -10,6 +10,7 @@
       "url": "https://icapt-api.azure-api.net"
     }
   ],
+  
   "paths": {
     "/warehouses": {
       "get": {
@@ -2629,6 +2630,15 @@
     "schemas": {
       "UOM": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "uom_num": "string",
+          "uom_desc": "string",
+          "rounding": "string",
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
         "properties": {
           "id": {
             "type": "integer",
@@ -2665,15 +2675,9 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "uom_num": "string",
-          "uom_desc": "string",
-          "rounding": "string",
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
-        }
+        "required": [
+          "id"
+        ]
       },
       "Customer": {
         "type": "object",
@@ -4044,6 +4048,25 @@
       },
       "JobMaterial": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "job_num": "string",
+          "whse_num": "string",
+          "oper_num": "string",
+          "sequence": "string",
+          "matl_item": "string",
+          "uom": "string",
+          "matl_desc": "string",
+          "qty_per": "string",
+          "scrap_factor": "string",
+          "qty_required": 0.817075366431654,
+          "qty_issued": 0.384134391824688,
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "x-examples": {},
+        "description": "",
         "properties": {
           "id": {
             "type": "integer",
@@ -4118,23 +4141,6 @@
           "field_8": {},
           "field_9": {},
           "field_10": {}
-        },
-        "example": {
-          "id": 0,
-          "job_num": "string",
-          "whse_num": "string",
-          "oper_num": "string",
-          "sequence": "string",
-          "matl_item": "string",
-          "uom": "string",
-          "matl_desc": "string",
-          "qty_per": "string",
-          "scrap_factor": "string",
-          "qty_required": 0.817075366431654,
-          "qty_issued": 0.384134391824688,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
         }
       },
       "Machine": {
