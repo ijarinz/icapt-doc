@@ -10,7 +10,6 @@
       "url": "https://icapt-api.azure-api.net"
     }
   ],
-  
   "paths": {
     "/warehouses": {
       "get": {
@@ -367,7 +366,7 @@
           "Item"
         ],
         "summary": "List Items",
-        "description": "This method will return the list of items that is created in iCAPT.",
+        "description": "This method will return the list of items from iCAPT.",
         "operationId": "list-items",
         "responses": {
           "200": {
@@ -1442,7 +1441,7 @@
           "ItemLocation"
         ],
         "summary": "Create Item Locations",
-        "description": "This method gives a Site admin the option to create an Item Location for a given Site.",
+        "description": "This method gives a Site admin the option to create an Item Location for a given Site.\n\n### Items Location Input Attributes:\nIn order to create a new item location, the following are required field\n- **Warehouse**: Identifies the warehouse the item is stored in\n- **Location**: Identified the specific location within abovementioned warehouse the item is stored in\n- **Item**: Identifies the item that is stored in the abovementioned warehouse and location\n- **Qty on hand**: The total number of units in the warehouse location at the current time\n- **Rank**: Location ranking of the item. 1 being the highest and will be the default location for this item",
         "operationId": "create-item-locations",
         "requestBody": {
           "content": {
@@ -1464,7 +1463,7 @@
           "ItemLocation"
         ],
         "summary": "List Item Locations",
-        "description": "List of Item Locations",
+        "description": "This method will return the list of item locations.",
         "operationId": "list-item-locations",
         "responses": {
           "200": {
@@ -1486,7 +1485,7 @@
           "ItemLocation"
         ],
         "summary": "Read Item Locations by ID",
-        "description": "GET Item  Locations by ID",
+        "description": "This method allow to retrieve item locations by item location ID.",
         "operationId": "read-item-locations-by-id",
         "parameters": [
           {
@@ -1516,7 +1515,7 @@
           "ItemLocation"
         ],
         "summary": "Delete Item Location",
-        "description": "This method gives a site the option to delete one Item Location from the Item Locations list.\n\nException:\n\n-  Qty On Hand is not 0\n\nThis Item Location will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Item Location from the Item Locations list.\n\n## Exception:\nItem location is unable to delete if:\n-  Qty On Hand is not 0\n\nThis Item Location will be immediately removed. This action is not reversible.",
         "operationId": "delete-item-location",
         "parameters": [
           {
@@ -1543,7 +1542,7 @@
           "ItemLocation"
         ],
         "summary": "Update Item Location",
-        "description": "Update Item Location\n\nThe following properties are read only:\n-id\n-whse_num\n-loc_num\n-item_num\n-site_id",
+        "description": "Use this method to update the item location.\n\nThe following properties are read only:\n-id\n-whse_num\n-loc_num\n-item_num\n-site_id",
         "operationId": "update-item-location",
         "parameters": [
           {
@@ -1692,7 +1691,7 @@
           "Employee"
         ],
         "summary": "List Employees",
-        "description": "This method will return the list of Employees created in system.",
+        "description": "This method will return the list of Employees created from iCAPT.",
         "operationId": "list-employees",
         "responses": {
           "200": {
@@ -2122,7 +2121,7 @@
           "JobOrder"
         ],
         "summary": "Create Job Orders",
-        "description": "Create Job Order",
+        "description": "Use this method to create Job Order in iCAPT.",
         "operationId": "create-job-orders",
         "requestBody": {
           "content": {
@@ -2144,7 +2143,7 @@
           "JobOrder"
         ],
         "summary": "List Job Orders",
-        "description": "List of Job Orders",
+        "description": "This method will return the list of job orders from iCAPT.",
         "operationId": "list-job-orders",
         "responses": {
           "200": {
@@ -2166,7 +2165,7 @@
           "JobOrder"
         ],
         "summary": "Read Job Order by ID",
-        "description": "GET Job Order by ID",
+        "description": "This method allow to retrieve job order list from iCAPT by job order ID.",
         "operationId": "read-job-order-by-id",
         "parameters": [
           {
@@ -2196,7 +2195,7 @@
           "JobOrder"
         ],
         "summary": "Delete Job Order",
-        "description": "This method gives a site the option to delete one Job Order from the Job Orders list.\n\nException: \n\n- Job Status is Completed\n- Qty Completed or Qty Scrapped is not 0 \n- At least one Material Transaction exists for this Job Order\n\nJob Order will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Job Order from the Job Orders list.\n\n## Exception: \nJob order is unable to delete if:\n- Job Status is Completed\n- Qty Completed or Qty Scrapped is not 0 \n- At least one Material Transaction exists for this Job Order\n\nJob Order will be immediately removed. This action is not reversible.",
         "operationId": "delete-job-order",
         "parameters": [
           {
@@ -2223,7 +2222,7 @@
           "JobOrder"
         ],
         "summary": "Update Job Order",
-        "description": "Update Job Order",
+        "description": "Update Job Order in iCAPT.\n\nThe following properties are read only:\n\n- joborder_id\n- whse_num\n- item_num\n- description\n- uom\n- qty_complete\n- qty_scrapped\n- site_id",
         "operationId": "update-job-order",
         "parameters": [
           {
