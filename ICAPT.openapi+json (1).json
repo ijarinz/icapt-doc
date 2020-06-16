@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "ICAPT",
-    "description": "",
+    "description": "\n",
     "version": "1.0"
   },
   "servers": [
@@ -343,14 +343,15 @@
           "Item"
         ],
         "summary": "Create Item",
-        "description": "This method gives a Site admin the option to create an Item for a given Site.",
+        "description": "This method gives a Site admin the option to create an Item for a given Site.\n\n### Items Input Attributes:\nIn order to create a new item, the following are required field\n- **Item Number**: The designated code given to the part/item\n- **Item Description**: The item description and may contain specifications/name of the item\n- **UOM**: The unit of measurement of the item. UOM defined must be exist in iCAPT\n- **Product Code**: Material classification. Product code defined must be exist in in iCAPT\n- **Unit Weight**: The expected mass per unit of part/item. The default UOM for weight is Kilogram (KG)\n- **Lot Tracked**: Item is lot tracked indicator. Lot tracked item must have lot number specified in all transactions\n- **Status**: Active status of item\n",
         "operationId": "create-item",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateItemRequest"
-              }
+              },
+              "examples": {}
             }
           }
         },
@@ -365,7 +366,7 @@
           "Item"
         ],
         "summary": "List Items",
-        "description": "List Items",
+        "description": "This method will return the list of items that is created in iCAPT.",
         "operationId": "list-items",
         "responses": {
           "200": {
@@ -380,7 +381,7 @@
           "Customer"
         ],
         "summary": "Create Customer",
-        "description": "This method gives a Site admin the option to create a Customer for a given Site.",
+        "description": "This method gives a Site admin the option to create a Customer for a given Site.\n\n### Customer Input Attributes:\nIn order to create a customer, the following are required field\n- **Customer Code**: A unique code to identifies the customer\n- **Name**: Description/Name of customer\n- **Active Status**: Status of customer",
         "operationId": "create-customer",
         "requestBody": {
           "content": {
@@ -389,7 +390,8 @@
                 "$ref": "#/components/schemas/CreateCustomerRequest"
               }
             }
-          }
+          },
+          "description": ""
         },
         "responses": {
           "201": {
@@ -402,14 +404,22 @@
               }
             }
           }
-        }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "header"
+          }
+        ]
       },
       "get": {
         "tags": [
           "Customer"
         ],
         "summary": "List of Customers",
-        "description": "List  of Customers",
+        "description": "This method allows to retrieve the list of all Customers.",
         "operationId": "list-of-customers",
         "responses": {
           "200": {
@@ -475,7 +485,7 @@
           "Item"
         ],
         "summary": "Delete an Item",
-        "description": "This method gives a site the option to delete one Item from the Items list.\n\nException : \n\n   - Item location exists with Qty On Hand not 0\n   - At least one PO Line /CO Line/Job/Job Material/Transfer Order exists for the Item\n\nThis Item will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Item from the Items list.\n\n## Exception : \nThe item is unable to delete if:\n   - Item location exists with Qty On Hand not 0\n   - At least one PO Line /CO Line/Job/Job Material/Transfer Order exists for the Item\n\nThis Item will be immediately removed. This action is not reversible.",
         "operationId": "5e82e36669167e6fe8436851",
         "parameters": [
           {
@@ -502,7 +512,7 @@
           "Item"
         ],
         "summary": "Read Item by ID",
-        "description": "GET Item by ID",
+        "description": "This method allow to retrieve item properties by Item ID.",
         "operationId": "read-item-by-id",
         "parameters": [
           {
@@ -959,7 +969,7 @@
           "Customer"
         ],
         "summary": "Read Customers by ID",
-        "description": "GET Customer by ID",
+        "description": "This method allow to retrieve the customer properties by customer ID.",
         "operationId": "read-customers-by-id",
         "parameters": [
           {
@@ -1012,7 +1022,7 @@
           "Customer"
         ],
         "summary": "Delete a Customer",
-        "description": "This method gives a site the option to delete one Customer from the Customers list.\n\nException: \n\n   - Customer exists in Customer Order Item\n\nThis Customer will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Customer from the Customers list.\n\n## Exception: \nCustomer is unable to delete if:\n   - Customer exists in Customer Order Item\n\nThis Customer will be immediately removed. This action is not reversible.",
         "operationId": "delete-a-customer",
         "parameters": [
           {
@@ -1596,13 +1606,40 @@
       }
     },
     "/lotlocs/{lotloc_id}": {
-      "get": {
+      "delete": {
         "tags": [
           "LotLocation"
         ],
-        "summary": "Read Lot Locations by ID",
-        "description": "GET Lot Locations by ID",
-        "operationId": "read-lot-locations-by-id",
+        "summary": "Delete Lot Location",
+        "description": "This method gives a site the option to delete one Lot Location from the Lot Locations list.\n\nException:\n\n-  Qty On Hand is not 0\n\nThis Lot Location will be immediately removed. This action is not reversible.",
+        "operationId": "delete-lot-location",
+        "parameters": [
+          {
+            "name": "lotloc_id",
+            "in": "path",
+            "description": "The Lot Location ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "LotLocation"
+        ],
+        "summary": "Update Lot Location",
+        "description": "Update Lot Location",
+        "operationId": "update-lot-location",
         "parameters": [
           {
             "name": "lotloc_id",
@@ -1615,14 +1652,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LotLocation"
-                }
-              }
-            }
+            "description": ""
           }
         }
       }
@@ -1633,7 +1663,7 @@
           "Employee"
         ],
         "summary": "Create Employees",
-        "description": "Create Employees",
+        "description": "Create an Employees in iCAPT by sending the POST request.\n\n### Employees Input Attributes:\nIn order to create a employee, the following are required field\n- **Employee Number**: A unique number to identifies the employee\n- **Employee Name**: Description/Name of employee\n- **Shift**: Employee Shift",
         "operationId": "create-employees",
         "requestBody": {
           "description": "Request Field",
@@ -1661,7 +1691,7 @@
           "Employee"
         ],
         "summary": "List Employees",
-        "description": "List of Employees",
+        "description": "This method will return the list of Employees created in system.",
         "operationId": "list-employees",
         "responses": {
           "200": {
@@ -1683,7 +1713,7 @@
           "Employee"
         ],
         "summary": "Read Employees by ID",
-        "description": "GET Employees by ID",
+        "description": "This method allow to retrieve the employee properties by employee ID.",
         "operationId": "read-employees-by-id",
         "parameters": [
           {
@@ -1736,7 +1766,7 @@
           "Employee"
         ],
         "summary": "Delete an Employee",
-        "description": "This method gives a site the option to delete one Employee from the Employees list.\n\nException:\n\n   - Employee exists as a Counter\n\nThis Employee will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Employee from the Employees list.\n\n## Exception:\nEmployee is unable to delete if:\n   - Employee exists as a Counter\n\nThis Employee will be immediately removed. This action is not reversible.",
         "operationId": "delete-an-employee",
         "parameters": [
           {
@@ -1888,7 +1918,7 @@
           "CustomerOrder"
         ],
         "summary": "Create Customers Orders",
-        "description": "Create Customer Orders",
+        "description": "Use this method to create a Customer Orders.\n",
         "operationId": "create-customers-orders",
         "requestBody": {
           "content": {
@@ -1911,7 +1941,7 @@
           "GET"
         ],
         "summary": "List Customer Orders",
-        "description": "List of Customer Orders",
+        "description": "The method allow you to retrieve the list of Customer Orders in ICAPT.",
         "operationId": "list-customer-orders",
         "responses": {
           "200": {
@@ -1933,7 +1963,7 @@
           "CustomerOrder"
         ],
         "summary": "Read Customer Orders by ID",
-        "description": "GET Customer Orders by ID",
+        "description": "This method allows to retrieve Customer Orders by the CO number.",
         "operationId": "read-customer-orders-by-id",
         "parameters": [
           {
@@ -2470,58 +2500,6 @@
         }
       }
     },
-    "/lotlocs/{lotloc_id}": {
-      "delete": {
-        "tags": [
-          "LotLocation"
-        ],
-        "summary": "Delete Lot Location",
-        "description": "This method gives a site the option to delete one Lot Location from the Lot Locations list.\n\nException:\n\n-  Qty On Hand is not 0\n\nThis Lot Location will be immediately removed. This action is not reversible.",
-        "operationId": "delete-lot-location",
-        "parameters": [
-          {
-            "name": "lotloc_id",
-            "in": "path",
-            "description": "The Lot Location ID",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": ""
-          },
-          "404": {
-            "description": ""
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "LotLocation"
-        ],
-        "summary": "Update Lot Location",
-        "description": "Update Lot Location",
-        "operationId": "update-lot-location",
-        "parameters": [
-          {
-            "name": "lotloc_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": ""
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/matltrans": {
       "get": {
         "tags": [
@@ -2594,7 +2572,7 @@
           "CustomerOrder"
         ],
         "summary": "Delete a Customer Order Item",
-        "description": "This method gives a site the option to delete one Customer Order Item from the Customer Order Items list. \n\nException:\n\n- Customer Order Item status is Completed\n- Qty Shipped or Qty Returned is not 0\n- Material Transaction exists for Customer Order Item\n\nCustomer Order Item will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Customer Order Item from the Customer Order Items list. \n\n## Exception:\nCustomer order is unable to delete if:\n- Customer Order Item status is Completed\n- Qty Shipped or Qty Returned is not 0\n- Material Transaction exists for Customer Order Item\n\nCustomer Order Item will be immediately removed. This action is not reversible.",
         "operationId": "delete-a-customer-order-item",
         "parameters": [
           {
