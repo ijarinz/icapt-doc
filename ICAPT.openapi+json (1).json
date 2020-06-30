@@ -3363,17 +3363,33 @@
       },
       "CreateEmployeeRequest": {
         "type": "object",
+        "description": "Create Employee Input",
+        "x-examples": {
+          "example": {
+            "emp_num": "E0001",
+            "emp_name": "John",
+            "emp_shift": 3
+          }
+        },
         "properties": {
           "emp_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Employee Num"
           },
           "emp_name": {
-            "type": "string"
+            "type": "string",
+            "description": "Desctipion or employee name"
           },
           "shift": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Employee shift"
           }
-        }
+        },
+        "required": [
+          "emp_num",
+          "emp_name",
+          "shift"
+        ]
       },
       "CreateCustomerRequest": {
         "type": "object",
@@ -3396,7 +3412,14 @@
           "cust_num",
           "cust_name",
           "cust_status"
-        ]
+        ],
+        "x-examples": {
+          "example": {
+            "cust_num": "C0099",
+            "cust_name": "Three Trading Inc",
+            "cust_status": 1
+          }
+        }
       },
       "CreateLocationRequest": {
         "required": [
@@ -3433,7 +3456,20 @@
         "type": "object",
         "description": "Create a customer order input",
         "x-examples": {
-          "example": {}
+          "example": {
+            "co_num": "C0002",
+            "co_line": "2",
+            "co_rel": "0",
+            "qty_released": 30,
+            "cust_num": "MZ01",
+            "add_num": "A0001",
+            "due_date": "29/09/2020",
+            "do_num": "DO007",
+            "qty_ordered": 50,
+            "item_num": "I0001",
+            "whse_num": "MAIN",
+            "rel_status": "O"
+          }
         },
         "properties": {
           "co_num": {
@@ -3511,9 +3547,12 @@
           "co_num",
           "co_line",
           "co_rel",
+          "qty_released",
           "cust_num",
+          "qty_ordered",
           "item_num",
-          "whse_num"
+          "whse_num",
+          "rel_status"
         ]
       },
       "CreateMachineRequest": {
@@ -3676,19 +3715,32 @@
             "type": "number",
             "description": "Quantity on Reserve"
           }
+        },
+        "description": "Create Item Location Input",
+        "x-examples": {
+          "example": {
+            "whse_num": "MAIN",
+            "loc_num": "L001",
+            "item_num": "I0001",
+            "qty_on_hand": 30,
+            "rank": 3
+          }
         }
       },
       "CreateItemRequest": {
-        "required": [
-          "item_num",
-          "item_desc",
-          "uom",
-          "product_code",
-          "lot_tracked",
-          "unit_weight",
-          "item_status"
-        ],
         "type": "object",
+        "description": "Create Item Input",
+        "x-examples": {
+          "example": {
+            "item_num": "I0003",
+            "item_desc": "6 inch block",
+            "uom": "EA",
+            "product_code": "FG-MA",
+            "lot_tracked": 1,
+            "unit_weight": 3,
+            "item_status": 1
+          }
+        },
         "properties": {
           "item_num": {
             "type": "string",
@@ -3708,37 +3760,46 @@
           },
           "lot_tracked": {
             "type": "boolean",
-            "description": "Is Item Lot Tracked?"
+            "description": "Is Item Lot Tracked? 1 = True, 0 = False"
           },
           "unit_weight": {
-            "type": "number"
+            "type": "number",
+            "description": "The unit weight of item in Kilogram(KG)"
           },
           "item_status": {
             "type": "boolean",
-            "description": "Is Item Active?"
+            "description": "Is Item Active? 1 = Active, 0 = Not Active"
           }
-        }
+        },
+        "required": [
+          "item_num",
+          "item_desc",
+          "uom",
+          "product_code",
+          "lot_tracked",
+          "unit_weight",
+          "item_status"
+        ]
       },
       "CreateJobMatlRequest": {
-        "required": [
-          "job_num",
-          "whse_num",
-          "matl_item"
-        ],
         "type": "object",
+        "description": "Create Job Material Input",
         "properties": {
           "job_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Job orders of this job material belongs to. Must exist in job order list"
           },
           "whse_num": {
             "type": "string",
             "description": "Warehouse Num. Must exist in Warehouses List"
           },
           "oper_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Sequence number of the process. Must exist in job route under the defined job order number"
           },
           "sequence": {
-            "type": "string"
+            "type": "string",
+            "description": "Sequence of material. Required to be unique"
           },
           "matl_item": {
             "type": "string",
@@ -3753,18 +3814,31 @@
             "description": "Material Description"
           },
           "qty_per": {
-            "type": "string"
+            "type": "string",
+            "description": "Quantity of material needed for a finished good"
           },
           "scrap_factor": {
-            "type": "string"
+            "type": "string",
+            "description": "The expected loss factors"
           },
           "qty_required": {
-            "type": "number"
+            "type": "number",
+            "description": "Total quantity required "
           },
           "qty_issued": {
-            "type": "number"
+            "type": "number",
+            "description": "Accumulated quantity finished "
           }
-        }
+        },
+        "required": [
+          "job_num",
+          "whse_num",
+          "oper_num",
+          "sequence",
+          "matl_item",
+          "qty_per",
+          "scrap_factor"
+        ]
       },
       "ProductCode": {
         "type": "object",
