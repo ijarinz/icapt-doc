@@ -3838,7 +3838,10 @@
           "matl_item",
           "qty_per",
           "scrap_factor"
-        ]
+        ],
+        "x-examples": {
+          "example-1": {}
+        }
       },
       "ProductCode": {
         "type": "object",
