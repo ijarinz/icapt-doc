@@ -17,7 +17,7 @@
           "Warehouse"
         ],
         "summary": "List Warehouses",
-        "description": "GET warehouses",
+        "description": "This method allow to retrieve a list of warehouses.",
         "operationId": "get-warehouses",
         "parameters": [
           {
@@ -49,7 +49,7 @@
           "Warehouse"
         ],
         "summary": "Create Warehouse",
-        "description": "Create a new Warehouse",
+        "description": "This method gives a Site admin the option to create warehouse for a given Site.\n\n### Warehouse Input Attributes:\nIn order to create a warehouse, the following are required field\n- **Warehouse**: The designated code given to the warehouse\n- **Description**: Description or full name of the warehouse\n- **Address**: The full address of the given warehouse",
         "operationId": "post-warehouses",
         "requestBody": {
           "content": {
@@ -76,7 +76,7 @@
           "Warehouse"
         ],
         "summary": "Read Warehouse by ID",
-        "description": "GET Warehouse by Id",
+        "description": "This method allow to retrieve a list of warehouses by warehoue ID.",
         "operationId": "get-warehouse-by-id",
         "parameters": [
           {
@@ -129,7 +129,7 @@
           "Warehouse"
         ],
         "summary": "Delete a Warehouse",
-        "description": "This method gives a site the option to delete one warehouse from the Warehouses list.\n\nException:\n\n- Warehouse exists in a Location\n\nThis warehouse will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one warehouse from the Warehouses list.\n\n## Exception\nWarehouse is unable to delete if:\n\n- At least one location (item location/lot location) exist for warehouse.\n- If warehouse exist in at least one material transaction.\n- At least one PO Line /CO Line/Job/Job Material/Transfer Order  exists for warehouse \n\nThis warehouse will be immediately removed. This action is not reversible.",
         "operationId": "delete-a-warehouse",
         "parameters": [
           {
@@ -194,7 +194,7 @@
           "Location"
         ],
         "summary": "List Locations",
-        "description": "List Locations",
+        "description": "This method will return the list of warehouse location from iCAPT.",
         "operationId": "list-locations",
         "responses": {
           "200": {
@@ -214,7 +214,7 @@
           "Location"
         ],
         "summary": "Create Location",
-        "description": "Create a new location by sending a POST request.",
+        "description": "This method will create a new location by sending a POST request.\n\n### Location Input Attributes:\nIn order to create a location, the following are required field\n- **Warehouse**: The warehouse of the location on\n- **Location**: The designated code given to the location\n- **Trans Type**: The function of the location. Stock - S, Quarantine - Q or Transit - T",
         "operationId": "create-location",
         "requestBody": {
           "content": {
@@ -245,7 +245,7 @@
           "Location"
         ],
         "summary": "Read Location by ID",
-        "description": "Read location by ID",
+        "description": "This method will return the list of warehouse location from iCAPT by location ID.",
         "operationId": "location",
         "parameters": [
           {
@@ -269,7 +269,7 @@
           "Location"
         ],
         "summary": "Delete a Location",
-        "description": "This method gives a site the option to delete one Location from the Locations list if\n\n   - Location exists in Item Location / Lot Location\n\nThis item will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Location from the Locations list\n\n## Exception: \nLocation is unable to delete if:\n\n   - Location exists in Item Location / Lot Location\n\nThis location will be immediately removed. This action is not reversible.",
         "operationId": "5e831e59dea6bbe8a430f7bd",
         "parameters": [
           {
@@ -296,7 +296,7 @@
           "Location"
         ],
         "summary": "Update Location",
-        "description": "Update Location",
+        "description": "Use this method to update location.\n\nThese entities are read only :\n- whse_num\n- loc_id\n\n",
         "operationId": "update-location",
         "parameters": [
           {
@@ -441,7 +441,7 @@
           "ProductCode"
         ],
         "summary": "Create Product Code",
-        "description": "Create Product Code",
+        "description": "Use this method to create a new Product Code.\n\n### Product Code Input Attributes:\nIn order to create a product code, the following are required field\n- **Product Code**: The designated code given to the product classification. This \n- **Active**: IIndicator of availability. 0 - Inactive, 1 - Active\n",
         "operationId": "create-product-code",
         "requestBody": {
           "content": {
@@ -463,7 +463,7 @@
           "ProductCode"
         ],
         "summary": "List Product Codes",
-        "description": "List Product Codes",
+        "description": "This method will return a list Product Codes from iCAPT.",
         "operationId": "list-product-codes",
         "responses": {
           "200": {
@@ -576,7 +576,7 @@
           "ProductCode"
         ],
         "summary": "Read Product Code by ID",
-        "description": "GET Product Code by ID",
+        "description": "Use this method to get a Product Code list by product code ID.",
         "operationId": "read-product-code-by-id",
         "parameters": [
           {
@@ -609,7 +609,7 @@
           "ProductCode"
         ],
         "summary": "Delete Product Code",
-        "description": "This method gives a site the option to delete one Product Code from theProduct Code list.\n\nException:\n\n-  Product Code exists in Item\n\nThis Product Code will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Product Code from theProduct Code list.\n\n## Exception\nProduct code is unable to delete if:\n\n- At least one Item/PO Line /CO Line/Job/Job Material/Transfer Order  exists for the product code\n\nThis Product Code will be immediately removed. This action is not reversible.",
         "operationId": "delete-product-code",
         "parameters": [
           {
@@ -636,7 +636,7 @@
           "ProductCode"
         ],
         "summary": "Update Product Code",
-        "description": "Update Product Code",
+        "description": "Use this method to change aspects of an existing product code.\n\nThese entities are read only :\n- productcode_ID",
         "operationId": "update-product-code",
         "parameters": [
           {
@@ -661,7 +661,7 @@
           "ReasonCode"
         ],
         "summary": "Create Reason Code",
-        "description": "Create Reason Code",
+        "description": "This method gives a Site admin the option to create a reason code for a given Site.\n\n### Reason Code Input Attributes:\nIn order to create a reason code, the following are required field\n- **Transaction**: Transactions where the reason code is used\n- **Code**: Reason Code",
         "operationId": "create-reason-code",
         "requestBody": {
           "content": {
@@ -686,7 +686,7 @@
           "ReasonCode"
         ],
         "summary": "List Reason Codes",
-        "description": "List Reason Codes",
+        "description": "This method allow to retrieve a list of Reason Codes.",
         "operationId": "list-reason-codes",
         "responses": {
           "200": {
@@ -708,7 +708,7 @@
           "PurchaseOrder"
         ],
         "summary": "List Purchase Order Lines",
-        "description": "List Purchase Order Lines",
+        "description": "This method allow to retrieve a list Purchase Order lines from iCAPT.",
         "operationId": "list-purchase-order-lines",
         "responses": {
           "200": {
@@ -762,7 +762,7 @@
           "ReasonCode"
         ],
         "summary": "Read Reason Code By ID",
-        "description": "GET Reason Code by ID",
+        "description": "This method will return the list of reason code by reason code ID.",
         "operationId": "read-reason-code-by-id",
         "parameters": [
           {
@@ -792,7 +792,7 @@
           "ReasonCode"
         ],
         "summary": "Delete Reason Code",
-        "description": "This method gives a site the option to delete one Reason Code from the Reason Codes list.\n\nVendor will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Reason Code from the Reason Codes list.\n\n## Exception\nReason code is unable to delete if:\n\n- At least one material/machine/job transaction exists for the reason code\n\nReason code will be immediately removed. This action is not reversible.",
         "operationId": "delete-reason-code",
         "parameters": [
           {
@@ -819,7 +819,7 @@
           "ReasonCode"
         ],
         "summary": "Update Reason Code",
-        "description": "Update Reason Code",
+        "description": "Use this method to change aspects of an existing reason code.\n\nThese entities are read only :\n- reason_class\n- reasoncode_ID",
         "operationId": "update-reason-code",
         "parameters": [
           {
@@ -844,7 +844,7 @@
           "WorkCenter"
         ],
         "summary": "Create Work Centers",
-        "description": "Create Work Centers",
+        "description": "This method gives a Site admin the option to create work center for a given Site.\n\n### Work Center Input Attributes:\nIn order to create a warehouse, the following are required field\n- **Work Center**: The designated code given to the work center\n- **Active**: Indicate the active status of work center. 0 - Inactive, 1 - Active",
         "operationId": "create-work-centers",
         "requestBody": {
           "content": {
@@ -866,7 +866,7 @@
           "WorkCenter"
         ],
         "summary": "List Work Centers",
-        "description": "List of Work Centers",
+        "description": "This method allow to retrieve a list of work centers.",
         "operationId": "list-work-centers",
         "responses": {
           "200": {
@@ -888,7 +888,7 @@
           "WorkCenter"
         ],
         "summary": "Read Work Center by ID",
-        "description": "GET Work Center by ID",
+        "description": "This method allow to retrieve a list of work center by work center ID.",
         "operationId": "read-work-center-by-id",
         "parameters": [
           {
@@ -918,7 +918,7 @@
           "WorkCenter"
         ],
         "summary": "Delete Work Center",
-        "description": "This method gives a site the option to delete one Location from the Locations list if\n\n   - Work Center exists in any Job Route\n\nThis item will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one work center from the Work Centers list if\n\n## Exception\nWork Center is unable to delete if:\n\n- Work Center exists in any Job Route\n\nThis work center will be immediately removed. This action is not reversible.",
         "operationId": "delete-work-center",
         "parameters": [
           {
@@ -944,7 +944,7 @@
           "WorkCenter"
         ],
         "summary": "Update Work Center",
-        "description": "Update Work Center",
+        "description": "Use this method to change aspects of an existing work center.\n\nThese entities are read only :\n- workcenter_id",
         "operationId": "update-work-center",
         "parameters": [
           {
@@ -1051,7 +1051,7 @@
           "UOM"
         ],
         "summary": "Create UOM",
-        "description": "Create UOM",
+        "description": "This method gives a Site admin the option to create UOM for a given Site.\n\n### UOM Input Attributes:\nIn order to create a UOM, the following are required field\n- **UOM**: The designated code given to the unit of measurement\n- **Description**: Description of the UOM\n- **Rounding Decimals**: Determines the number of decimal places the unit of measurement",
         "operationId": "create-uom",
         "requestBody": {
           "content": {
@@ -1073,7 +1073,7 @@
           "UOM"
         ],
         "summary": "List UOM",
-        "description": "List of UOM",
+        "description": "Use this method to retrievve the List of UOM from iCAPT.",
         "operationId": "list-uom",
         "responses": {
           "200": {
@@ -1095,7 +1095,7 @@
           "UOM"
         ],
         "summary": "Read UOM by ID",
-        "description": "GET UOM by ID",
+        "description": "Use this method to retrievve the List of UOM from iCAPT by UOM ID.",
         "operationId": "read-uom-by-id",
         "parameters": [
           {
@@ -1125,7 +1125,7 @@
           "UOM"
         ],
         "summary": "Delete UOM",
-        "description": "This method gives a site the option to delete one UOM from the UOM list.\n\nException : \n\n   - Purchase Order Item, Customer Order Item, Transfer Order, Job Route, Job or Material exists for the UOM\n\nThis UOM will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one UOM from the UOM list.\n\n## Exception\nUOM is unable to delete if:\n\n- At least one Item/PO Line /CO Line/Job/Job Material/Transfer Order  exists for the UOM\n\nThis UOM will be immediately removed. This action is not reversible.",
         "operationId": "delete-uom",
         "parameters": [
           {
@@ -1152,7 +1152,7 @@
           "UOM"
         ],
         "summary": "Update  UOM",
-        "description": "Update  UOM",
+        "description": "Use this method to change aspects of an existing UOM.\n\nThese entities are read only :\n- UOM_ID",
         "operationId": "update-uom",
         "parameters": [
           {
@@ -1177,7 +1177,7 @@
           "Task"
         ],
         "summary": "Create Tasks",
-        "description": "Create Tasks",
+        "description": "This method gives a Site admin the option to create a task for a given Site.\n\n### Reason Code Input Attributes:\nIn order to create a task, the following are required field\n- **Code**: Indirect task code\n- **Description**: Description of the indirect task",
         "operationId": "create-tasks",
         "requestBody": {
           "content": {
@@ -1199,7 +1199,7 @@
           "Task"
         ],
         "summary": "List Tasks",
-        "description": "List of Tasks",
+        "description": "This method allow to retrieve a list of task.",
         "operationId": "list-tasks",
         "responses": {
           "200": {
@@ -1221,7 +1221,7 @@
           "Task"
         ],
         "summary": "Read Tasks by ID",
-        "description": "GET Tasks by ID",
+        "description": "This method allow to retrieve a list of task by task ID.",
         "operationId": "read-tasks-by-id",
         "parameters": [
           {
@@ -1251,7 +1251,7 @@
           "Task"
         ],
         "summary": "Delete Task",
-        "description": "This method gives a site the option to delete one Task from the Task list.\n\nTask will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Task from the Task list.\n\n## Exception\nTask is unable to delete if:\n\n- Indirect task exist in at least one job transaction\n\nTask will be immediately removed. This action is not reversible.",
         "operationId": "delete-task",
         "parameters": [
           {
@@ -1278,7 +1278,7 @@
           "Task"
         ],
         "summary": "Update Task",
-        "description": "Update Task",
+        "description": "Use this method to change aspects of an existing task.\n\nThese entities are read only :\n- task_ID",
         "operationId": "update-task",
         "parameters": [
           {
@@ -1303,7 +1303,7 @@
           "Vendor"
         ],
         "summary": "Create Vendors",
-        "description": "Create Vendors",
+        "description": "This method gives a Site admin the option to create vendors for a given Site.\n\n### Vendor Input Attributes:\nIn order to create a vendor, the following are required field\n- **Vendor Code**: The designated code given to the vendor\n- **Vendor Name**: Description or full name of the vendor\n- **Active**: Indicate the active status of vendor. 0 - Inactive, 1 - Active",
         "operationId": "create-vendors",
         "requestBody": {
           "content": {
@@ -1325,7 +1325,7 @@
           "Vendor"
         ],
         "summary": "List Vendors",
-        "description": "List of Vendors",
+        "description": "This method allow to retrieve a list of vendors.",
         "operationId": "list-vendors",
         "responses": {
           "200": {
@@ -1347,7 +1347,7 @@
           "Vendor"
         ],
         "summary": "Read Vendors by ID",
-        "description": "GET Vendors by ID",
+        "description": "This method allow to retrieve a list of vendors by vendor ID.",
         "operationId": "read-vendors-by-id",
         "parameters": [
           {
@@ -1377,7 +1377,7 @@
           "Vendor"
         ],
         "summary": "Delete Vendor",
-        "description": "This method gives a site the option to delete one Vendor from the Vendors list if\n\n- Purchase Order exists for this Vendor\n\nVendor will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Vendor from the Vendors list.\n\n## Exception\nVendor is unable to delete if:\n\n- Purchase Order exists for this Vendor\n\nVendor will be immediately removed. This action is not reversible.",
         "operationId": "delete-vendor",
         "parameters": [
           {
@@ -1403,7 +1403,7 @@
           "Vendor"
         ],
         "summary": "Update Vendor",
-        "description": "Update Vendor",
+        "description": "Use this method to change aspects of an existing vendor.\n\nThese entities are read only :\n- vendor_ID",
         "operationId": "update-vendor",
         "parameters": [
           {
@@ -1567,7 +1567,7 @@
           "LotLocation"
         ],
         "summary": "Create Lot Locations",
-        "description": "Create Lot Locations",
+        "description": "Use this method to create a new Lot Locations in iCAPT.\n\n- To be create in lot location, item need to be as a lot track item.",
         "operationId": "create-lot-locations",
         "requestBody": {
           "content": {
@@ -1589,7 +1589,7 @@
           "LotLocation"
         ],
         "summary": "List Lot Locations",
-        "description": "List of Lot Locations",
+        "description": "This method will return a list of Item Lot Locations from iCAPT.",
         "operationId": "list-lot-locations",
         "responses": {
           "200": {
@@ -1611,7 +1611,7 @@
           "LotLocation"
         ],
         "summary": "Delete Lot Location",
-        "description": "This method gives a site the option to delete one Lot Location from the Lot Locations list.\n\nException:\n\n-  Qty On Hand is not 0\n\nThis Lot Location will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Lot Location from the Lot Locations list.\n\n## Exception: \nLot Location is unable to delete if:\n-  Qty On Hand is not 0\n\nThis Lot Location will be immediately removed. This action is not reversible.",
         "operationId": "delete-lot-location",
         "parameters": [
           {
@@ -1638,7 +1638,7 @@
           "LotLocation"
         ],
         "summary": "Update Lot Location",
-        "description": "Update Lot Location",
+        "description": "Use this method to update item lot location.\n",
         "operationId": "update-lot-location",
         "parameters": [
           {
@@ -1795,7 +1795,7 @@
           "Machine"
         ],
         "summary": "Create Machines",
-        "description": "This method gives a Site admin the option to create a Machine for a given Site.",
+        "description": "This method gives a Site admin the option to create a Machine for a given Site.\n\n### Machine Input Attributes:\nIn order to create a machine, the following are required field\n- **Machine ID**: A unique code to identifies the machine\n- **Description**: Description of the machine\n- **Active**: Identifies the active status of the machine. 0 - Inactive, 1 - Active\n",
         "operationId": "create-machines",
         "requestBody": {
           "content": {
@@ -1817,7 +1817,7 @@
           "Machine"
         ],
         "summary": "List Machines",
-        "description": "List of Machines",
+        "description": "Use this method to retrieve the list of Machines from iCAPT.",
         "operationId": "list-machines",
         "responses": {
           "200": {
@@ -1839,7 +1839,7 @@
           "Machine"
         ],
         "summary": "Read Machines by  ID",
-        "description": "GET  Machines by ID",
+        "description": "Use this method to retrieve a list of Machines by machine ID.",
         "operationId": "read-machines-by-id",
         "parameters": [
           {
@@ -1869,7 +1869,7 @@
           "Machine"
         ],
         "summary": "Delete Machine",
-        "description": "This method gives a site the option to delete one Machine from the Machines list.\n\nMachine will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Machine from the Machines list.\n\n## Exception: \nMachine is unable to delete if:\n-  Mahcine exist in at least one material/job transaction\n\n\nMachine will be immediately removed. This action is not reversible.",
         "operationId": "delete-machine",
         "parameters": [
           {
@@ -1893,7 +1893,7 @@
           "Machine"
         ],
         "summary": "Update Machine",
-        "description": "Update Machine",
+        "description": "Use this method to update machine.\n\nThese entities are read only :\n- machine_ID",
         "operationId": "update-machine",
         "parameters": [
           {
@@ -1995,7 +1995,7 @@
           "TransferOrder"
         ],
         "summary": "Create Transfer Orders",
-        "description": "Create transfer Orders",
+        "description": "This method gives a Site admin the option to create a transfer order for a given Site.\n\n### Transfer Order Input Attributes:\nIn order to create a tranfer order, the following are required field\n- **TO number**: A TO Number uniquely identifies a transfer order\n- **From Warehouse**: Warehouse transfer order from\n- **TO Warehouse**: Warehouse transfer order to\n- **Status**: Status of the TO. Open - O, Completed - C",
         "operationId": "create-transfer-orders",
         "requestBody": {
           "content": {
@@ -2017,7 +2017,7 @@
           "TransferOrder"
         ],
         "summary": "List Transfer Orders",
-        "description": "List of Transfer Orders",
+        "description": "This method allow to retrieve a list of transfer order.",
         "operationId": "list-transfer-orders",
         "responses": {
           "200": {
@@ -2039,7 +2039,7 @@
           "TransferOrder"
         ],
         "summary": "Read Transfer Order by ID",
-        "description": "GET Transfer Order by ID",
+        "description": "This method allow to retrieve a list of transfer order by transfer order ID.",
         "operationId": "read-transfer-order-by-id",
         "parameters": [
           {
@@ -2069,7 +2069,7 @@
           "TransferOrder"
         ],
         "summary": "Delete Transfer Order",
-        "description": "This method gives a site the option to delete one Transfer Order from the Transfer Orders list. \n\nExcept:\n\n- Transfer Order status is Completed\n- Qty Shipped, Qty Transferred or Qty Loss is not 0\n- Material Transaction exists for Transfer Order\n\nTransfer Order will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Transfer Order from the Transfer Orders list. \n\n## Exception\nTransfer order is unable to delete if:\n\n- Transfer Order status is Completed\n- Qty Shipped, Qty Transferred or Qty Loss is not 0\n- Material Transaction exists for Transfer Order\n\nTransfer Order will be immediately removed. This action is not reversible.",
         "operationId": "delete-transfer-order",
         "parameters": [
           {
@@ -2096,7 +2096,7 @@
           "TransferOrder"
         ],
         "summary": "Update Transfer Order",
-        "description": "Update Transfer Order",
+        "description": "se this method to change aspects of an existing transfer order.\n\nThese entities are read only :\n- transferorder_ID\n- to_warehouese\n- from_warehouse",
         "operationId": "update-transfer-order",
         "parameters": [
           {
@@ -2121,7 +2121,7 @@
           "JobOrder"
         ],
         "summary": "Create Job Orders",
-        "description": "Use this method to create Job Order in iCAPT.",
+        "description": "Use this method to create Job Order in iCAPT.\n\n### Job Order Input Attributes:\nIn order to create a new job order, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Customer Code**: Customer for this job order\n- **Item**: Item that is being produced from the order \n- **Job Date**: Job order creation date\n- **Start Date**: Date to begin production\n- **Qty Released**: The quantity required to be produce\n- **Status**: Status of the Job. Open (O), Released (R) or Completed (C) \n\n",
         "operationId": "create-job-orders",
         "requestBody": {
           "content": {
@@ -2195,7 +2195,7 @@
           "JobOrder"
         ],
         "summary": "Delete Job Order",
-        "description": "This method gives a site the option to delete one Job Order from the Job Orders list.\n\n## Exception: \nJob order is unable to delete if:\n- Job Status is Completed\n- Qty Completed or Qty Scrapped is not 0 \n- At least one Material Transaction exists for this Job Order\n\nJob Order will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Job Order from the Job Orders list.\n\n## Exception: \nJob order is unable to delete if:\n- Job Status is Completed\n- Qty Completed or Qty Scrapped is not 0 \n- At least one Material Transaction exists for this Job Order\n- Job order have existed job route\n\nJob Order will be immediately removed. This action is not reversible.",
         "operationId": "delete-job-order",
         "parameters": [
           {
@@ -2222,7 +2222,7 @@
           "JobOrder"
         ],
         "summary": "Update Job Order",
-        "description": "Update Job Order in iCAPT.\n\nThe following properties are read only:\n\n- joborder_id\n- whse_num\n- item_num\n- description\n- uom\n- qty_complete\n- qty_scrapped\n- site_id",
+        "description": "Update Job Order in iCAPT.\n\nThe following properties are read only:\n\n- joborder_id\n- whse_num\n- item_num\n- description\n- uom\n- qty_complete\n- qty_scrapped\n- site_id\n\nNot allow to update if:\n- If job order status = closed",
         "operationId": "update-job-order",
         "parameters": [
           {
@@ -2247,7 +2247,7 @@
           "JobRoute"
         ],
         "summary": "Create Job Route",
-        "description": "Create Job Route",
+        "description": "Use this method to create a new job route in iCAPT.\n\n### Job Route Input Attributes:\nIn order to create a new job route, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Operation**: Sequence number of the process\n- **Work Center**: The station/work center performing this process\n- **Status**: Active flag. 0 - Inactive, 1 - Active",
         "operationId": "create-job-route",
         "requestBody": {
           "content": {
@@ -2269,7 +2269,7 @@
           "JobRoute"
         ],
         "summary": "List Job Routes",
-        "description": "List of Job Routes",
+        "description": "This method will return the list of job routes from iCAPT.",
         "operationId": "list-job-routes",
         "responses": {
           "200": {
@@ -2291,7 +2291,7 @@
           "JobRoute"
         ],
         "summary": "Read Job Route by ID",
-        "description": "GET Job Route by ID",
+        "description": "This method will return the list of job routes from iCAPT by job ID.",
         "operationId": "read-job-route-by-id",
         "parameters": [
           {
@@ -2321,7 +2321,7 @@
           "JobRoute"
         ],
         "summary": "Delete Job Route",
-        "description": "This method gives a site the option to delete one Job Route from the Job Routes list. \n\nException:\n\n- Job status for this Job Route is Completed\n- Qty Moved, Qty Completed, Qty Received or Qty Scrapped is not 0\n- Material Transaction exists for this Job Route\n\nJob Route will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Job Route from the Job Routes list. \n\n## Exception: \nJob route is unable to delete if:\n- Job status for this Job Route is Completed\n- Qty Moved, Qty Completed, Qty Received or Qty Scrapped is not 0\n- Material Transaction exists for this Job Route\n- Job route have existed job material\n\nJob Route will be immediately removed. This action is not reversible.",
         "operationId": "delete-job-route",
         "parameters": [
           {
@@ -2348,7 +2348,7 @@
           "JobRoute"
         ],
         "summary": "Update Job Route",
-        "description": "Update Job Route",
+        "description": "This method to update Job Route in iCAPT.\n\nThe following properties are read only:\n\n- joborder_id\n- oper_num\n- qty_moved\n- qty_completed\n- qty_received  \n- qty_scrapped\n\nNot allow to update if:\n- If job order status = closed",
         "operationId": "update-job-route",
         "parameters": [
           {
@@ -2373,7 +2373,7 @@
           "JobMaterial"
         ],
         "summary": "Create Job Material",
-        "description": "Create Job Material",
+        "description": "This method allow user to create a new job material in iCAPT.\n\n### Job Material Input Attributes:\nIn order to create a new job material, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Operation**: Sequence number of the process\n- **Sequence**: Sequence of material. Required to be unique\n- **Material**: Item required in production\n- **Qty per**: Quantity of material needed for a finished good\n- **Scrap Factor**: The expected loss factors",
         "operationId": "create-job-material",
         "requestBody": {
           "content": {
@@ -2395,7 +2395,7 @@
           "JobMaterial"
         ],
         "summary": "List Job Materials",
-        "description": "List of Job Materials",
+        "description": "This method will return the list of job materials from iCAPT.",
         "operationId": "list-job-materials",
         "responses": {
           "200": {
@@ -2417,7 +2417,7 @@
           "JobMaterial"
         ],
         "summary": "Read Job Material by ID",
-        "description": "GET Job Material by ID",
+        "description": "This method will return the list of job material from iCAPT by job ID.",
         "operationId": "read-job-material-by-id",
         "parameters": [
           {
@@ -2447,7 +2447,7 @@
           "JobMaterial"
         ],
         "summary": "Delete Job Material",
-        "description": "This method gives a site the option to delete one Job Material from the  Job Materials list if\n\n1. Job Status is Completed\n2. Qty Moved, Completed, Received and Scrapped is not 0 \n3. At least one Material Transaction exists for this Job Material\n\nJob Material will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Job Material from the  Job Materials list\n\n## Exception: \nJob material is unable to delete if:\n- Job Status is Completed\n- Qty Moved, Completed, Received and Scrapped is not 0 \n- At least one Material Transaction exists for this Job Material\n\nJob Material will be immediately removed. This action is not reversible.",
         "operationId": "delete-job-material",
         "parameters": [
           {
@@ -2474,7 +2474,7 @@
           "JobMaterial"
         ],
         "summary": "Update Job Material",
-        "description": "Use this method to change aspects of an existing job material.\n\nThese entities are read only :\n- id\n- job_num\n-oper_num\n-site_id\n-qty_issued\n\nNot allow to update if:\n- If status = closed",
+        "description": "Use this method to change aspects of an existing job material.\n\nThese entities are read only :\n- id\n- job_num\n-oper_num\n-site_id\n-qty_issued\n\nNot allow to update if:\n- If job order status = closed",
         "operationId": "update-job-material",
         "parameters": [
           {
@@ -2506,7 +2506,7 @@
           "MaterialTransaction"
         ],
         "summary": "Material Transaction",
-        "description": "List of Material Transaction",
+        "description": "This method will return the list of material transaction history from iCAPT.",
         "operationId": "material-transaction",
         "responses": {
           "200": {
@@ -2528,7 +2528,7 @@
           "JobTransaction"
         ],
         "summary": "Job Transaction",
-        "description": "List of  History Job transaction",
+        "description": "This method will return the list of job transaction history from iCAPT.",
         "operationId": "job-transaction",
         "responses": {
           "200": {
@@ -2550,7 +2550,7 @@
           "MachineTransaction"
         ],
         "summary": "Machine Transaction",
-        "description": "List of History Machine Transaction",
+        "description": "This method will return the list of machine transaction history from iCAPT.",
         "operationId": "machine-transaction",
         "responses": {
           "200": {
@@ -2601,7 +2601,7 @@
           "TransferLine"
         ],
         "summary": "Delete a Transfer Order Line",
-        "description": "This method gives a site the option to delete one Transfer Order Line from the Transfer Order Lines list. \n\nException:\n\n- Transfer Order Line status is Completed\n- Qty Shipped , Qty Received or Qty Loss is not 0\n- Material Transaction exists for this Transfer Order Line\n\nTransfer Order Line will be immediately removed. This action is not reversible.",
+        "description": "This method gives a site the option to delete one Transfer Order Line from the Transfer Order Lines list. \n\n## Exception\nTransfer order line is unable to delete if:\n\n- Transfer Order Line status is Completed\n- Qty Shipped , Qty Received or Qty Loss is not 0\n- Material Transaction exists for this Transfer Order Line\n\nTransfer Order Line will be immediately removed. This action is not reversible.",
         "operationId": "delete-a-transfer-order-line",
         "parameters": [
           {
@@ -3376,12 +3376,8 @@
         }
       },
       "CreateCustomerRequest": {
-        "required": [
-          "cust_num",
-          "cust_name",
-          "cust_status"
-        ],
         "type": "object",
+        "description": "Create a customer input",
         "properties": {
           "cust_num": {
             "type": "string",
@@ -3395,7 +3391,12 @@
             "type": "boolean",
             "description": "Customer Status. 0 = inactive, 1 = active"
           }
-        }
+        },
+        "required": [
+          "cust_num",
+          "cust_name",
+          "cust_status"
+        ]
       },
       "CreateLocationRequest": {
         "required": [
@@ -3429,27 +3430,27 @@
         }
       },
       "CreateCustomerOrderRequest": {
-        "required": [
-          "co_num",
-          "co_line",
-          "co_rel",
-          "cust_num",
-          "item_num",
-          "whse_num"
-        ],
         "type": "object",
+        "description": "Create a customer order input",
+        "x-examples": {
+          "example": {}
+        },
         "properties": {
           "co_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Customer order number"
           },
           "co_line": {
-            "type": "string"
+            "type": "string",
+            "description": "CO line item"
           },
           "co_rel": {
-            "type": "string"
+            "type": "string",
+            "description": "Release or sub-line. Usually represents multiple delivery for the same item."
           },
           "qty_released": {
-            "type": "number"
+            "type": "number",
+            "description": "Quantity of the item to be ordered by to the customer of specified CO."
           },
           "qty_released_conv": {
             "type": "number"
@@ -3459,32 +3460,39 @@
             "description": "Customer number. Must exist in Customers List"
           },
           "add_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Delivery address"
           },
           "due_date": {
-            "type": "string"
+            "type": "string",
+            "description": "Target shipping date. The order is past due when passed the due date."
           },
           "do_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Delivery Order number"
           },
           "qty_ordered": {
-            "type": "number"
+            "type": "number",
+            "description": "Quantity of the item ordered "
           },
           "qty_ordered_conv": {
             "type": "number"
           },
           "qty_shipped": {
-            "type": "number"
+            "type": "number",
+            "description": "Total quantity shipped"
           },
           "qty_returned": {
-            "type": "number"
+            "type": "number",
+            "description": "Total Quantity returned"
           },
           "item_num": {
             "type": "string",
             "description": "Item number. Must exist in Items List"
           },
           "item_desc": {
-            "type": "string"
+            "type": "string",
+            "description": "Item description"
           },
           "whse_num": {
             "type": "string",
@@ -3495,9 +3503,18 @@
             "description": "UOM number. Must exist in UOMs List"
           },
           "rel_status": {
-            "type": "string"
+            "type": "string",
+            "description": "Status of the CO. O = Open, C = Completed"
           }
-        }
+        },
+        "required": [
+          "co_num",
+          "co_line",
+          "co_rel",
+          "cust_num",
+          "item_num",
+          "whse_num"
+        ]
       },
       "CreateMachineRequest": {
         "required": [

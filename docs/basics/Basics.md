@@ -16,10 +16,4 @@ The iCAPT API allows you to interact with our iCAPT from your ERP system. Using 
 In order to get permission to access the API, please send a ticket to our freshdesk and we'll get back to you etc.
 
 # Available Formats : JSON
-
-
-
-
-- This is a sentence
-- This is the second sentence
-- This is the third sentence
+JSON is the primary and recommend format for use with the iCAPT API.
