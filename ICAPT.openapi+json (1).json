@@ -221,6 +221,16 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateLocationRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "loc_num": "L001",
+                    "whse_num": "MAIN",
+                    "loc_name": "Location 1",
+                    "loc_type": "S"
+                  }
+                }
               }
             }
           }
@@ -351,7 +361,19 @@
               "schema": {
                 "$ref": "#/components/schemas/CreateItemRequest"
               },
-              "examples": {}
+              "examples": {
+                "example": {
+                  "value": {
+                    "item_num": "I0003",
+                    "item_desc": "6 inch block",
+                    "uom": "EA",
+                    "product_code": "FG-MA",
+                    "lot_tracked": 1,
+                    "unit_weight": 3,
+                    "item_status": 1
+                  }
+                }
+              }
             }
           }
         },
@@ -388,6 +410,15 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateCustomerRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "cust_num": "C0099",
+                    "cust_name": "Three Trading Inc",
+                    "cust_status": 1
+                  }
+                }
               }
             }
           },
@@ -1448,6 +1479,17 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateItemLocationRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "whse_num": "MAIN",
+                    "loc_num": "L001",
+                    "item_num": "I0001",
+                    "qty_on_hand": 30,
+                    "rank": 3
+                  }
+                }
               }
             }
           }
@@ -1574,9 +1616,21 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateLotLocationRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "whse_num": "MAIN",
+                    "loc_num": "L001",
+                    "item_num": "I011",
+                    "lot_num": "S07092020",
+                    "qty_on_hand": 40
+                  }
+                }
               }
             }
-          }
+          },
+          "description": ""
         },
         "responses": {
           "201": {
@@ -1676,6 +1730,15 @@
                 "emp_num": "string",
                 "emp_name": "string",
                 "shift": 0
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "emp_num": "E0001",
+                    "emp_name": "John",
+                    "emp_shift": 3
+                  }
+                }
               }
             }
           }
@@ -1918,13 +1981,31 @@
           "CustomerOrder"
         ],
         "summary": "Create Customers Orders",
-        "description": "Use this method to create a Customer Orders.\n",
+        "description": "Use this method to create a Customer Orders.\n\n### Customer Order Input Attributes:\nIn order to create a customer order, the following are required field\n- **CO Number**: A CO Number uniquely identifies a customer order\n- **CO Line**: Line Item\n- **CO Release**: Release or sub-line\n- **Warehouse**: Warehouse to ship from.\n- **Item**: Item that is ordered by customer \n- **Due Date**: Target shipping date\n- **Status**: Status of the CO\n- **Customer Code**: Customer of the order\n- **Qty Ordered**: Quantity of the item ordered \n- **Qty Released**: Quantity of the item to be order on this specified CO",
         "operationId": "create-customers-orders",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CustomerOrder"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "co_num": "C0002",
+                    "co_line": "2",
+                    "co_rel": "0",
+                    "qty_released": 30,
+                    "cust_num": "MZ01",
+                    "add_num": "A0001",
+                    "due_date": "29/09/2020",
+                    "do_num": "DO007",
+                    "qty_ordered": 50,
+                    "item_num": "I0001",
+                    "whse_num": "MAIN",
+                    "rel_status": "O"
+                  }
+                }
               }
             }
           }
@@ -2380,6 +2461,19 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateJobMatlRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "job_num": "J0001",
+                    "whse_num": "MAIN",
+                    "oper_num": "100",
+                    "sequence": "100",
+                    "matl_item": "S500-1",
+                    "qty_per": "3",
+                    "scrap_factor": "0.3"
+                  }
+                }
               }
             }
           }
@@ -3422,11 +3516,6 @@
         }
       },
       "CreateLocationRequest": {
-        "required": [
-          "whse_num",
-          "loc_num",
-          "loc_name"
-        ],
         "type": "object",
         "properties": {
           "loc_num": {
@@ -3450,7 +3539,21 @@
             "type": "string",
             "description": "Location Type - S, T, Q for Stock, Transit or Quarantine"
           }
-        }
+        },
+        "required": [
+          "loc_num",
+          "whse_num",
+          "loc_type"
+        ],
+        "x-examples": {
+          "example": {
+            "loc_num": "L001",
+            "whse_num": "MAIN",
+            "loc_name": "Location 1",
+            "loc_type": "S"
+          }
+        },
+        "description": "Create Location Input"
       },
       "CreateCustomerOrderRequest": {
         "type": "object",
@@ -3576,15 +3679,8 @@
         }
       },
       "CreateLotLocationRequest": {
-        "required": [
-          "whse_num",
-          "item_num",
-          "lot_num",
-          "qty_on_hand",
-          "uom",
-          "qty_on_reserved"
-        ],
         "type": "object",
+        "description": "Create Lot Location Input",
         "properties": {
           "id": {
             "type": "integer",
@@ -3595,18 +3691,20 @@
             "description": "Warehouse number. Must exist in Warehouses List"
           },
           "loc_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Location Number"
           },
           "item_num": {
             "type": "string",
-            "description": "Item number. Must exist in Items List"
+            "description": "Item number. Must exist in Items List & a Lot Track Item"
           },
           "lot_num": {
             "type": "string",
-            "description": "Lot number. Must exist in Lot Locations List"
+            "description": "Lot number."
           },
           "qty_on_hand": {
-            "type": "number"
+            "type": "number",
+            "description": "quantity of item"
           },
           "uom": {
             "type": "string",
@@ -3614,6 +3712,22 @@
           },
           "qty_on_rsvd": {
             "type": "number"
+          }
+        },
+        "required": [
+          "whse_num",
+          "loc_num",
+          "item_num",
+          "lot_num",
+          "qty_on_hand"
+        ],
+        "x-examples": {
+          "example": {
+            "whse_num": "MAIN",
+            "loc_num": "L001",
+            "item_num": "I011",
+            "lot_num": "S07092020",
+            "qty_on_hand": 40
           }
         }
       },
@@ -3840,7 +3954,15 @@
           "scrap_factor"
         ],
         "x-examples": {
-          "example-1": {}
+          "example": {
+            "job_num": "J0001",
+            "whse_num": "MAIN",
+            "oper_num": "100",
+            "sequence": "100",
+            "matl_item": "S500-1",
+            "qty_per": "3",
+            "scrap_factor": "0.3"
+          }
         }
       },
       "ProductCode": {
