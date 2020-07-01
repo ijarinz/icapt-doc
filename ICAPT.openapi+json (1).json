@@ -459,6 +459,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Customer"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "cust_num": "C0099",
+                      "cust_name": "Three Trading Inc",
+                      "cust_status": 1,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -1089,6 +1103,15 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateUOMRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "uom_num": "KG",
+                    "uom_desc": "Kilogram",
+                    "rounding": 2
+                  }
+                }
               }
             }
           }
@@ -1865,6 +1888,15 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CreateMachineRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "res_id": "BR-2300",
+                    "res_desc": "Drilling Machine",
+                    "res_status": 1
+                  }
+                }
               }
             }
           }
@@ -2774,30 +2806,50 @@
       },
       "Customer": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "cust_num": "string",
+          "cust_name": "string",
+          "cust_status": false,
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "description": "Create Customer Output",
         "properties": {
           "id": {
             "type": "integer",
             "readOnly": true
           },
           "cust_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Customer  Num"
           },
           "cust_name": {
-            "type": "string"
+            "type": "string",
+            "description": "Customer name or description"
           },
           "cust_status": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Customer status. 0 = Inactive and 1 = Active"
           },
           "site_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Site ID"
           },
-          "created_by": {},
-          "modified_by": {},
+          "created_by": {
+            "description": "The user ID that created the customer"
+          },
+          "modified_by": {
+            "description": "The user ID that last edited the customer"
+          },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the customer was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the customer was last edited"
           },
           "field_1": {},
           "field_2": {},
@@ -2810,14 +2862,17 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "cust_num": "string",
-          "cust_name": "string",
-          "cust_status": false,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
+        "x-examples": {
+          "example": {
+            "cust_num": "C0099",
+            "cust_name": "Three Trading Inc",
+            "cust_status": 1,
+            "site_ID": "demo",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "27-09-2019",
+            "modfied_date": "12-06-2020"
+          }
         }
       },
       "MaterialTransaction": {
@@ -3453,6 +3508,14 @@
           "field_10": {
             "type": "string"
           }
+        },
+        "description": "Create UOM Input",
+        "x-examples": {
+          "example": {
+            "uom_num": "KG",
+            "uom_desc": "Kilogram",
+            "rounding": 2
+          }
         }
       },
       "CreateEmployeeRequest": {
@@ -3659,24 +3722,34 @@
         ]
       },
       "CreateMachineRequest": {
+        "type": "object",
+        "properties": {
+          "res_id": {
+            "type": "string",
+            "description": "Machine Unique ID"
+          },
+          "res_desc": {
+            "type": "string",
+            "description": "Machine Name or Description"
+          },
+          "res_status": {
+            "type": "boolean",
+            "description": "Machine Status. 1 = Active or 0 = Inactive"
+          }
+        },
         "required": [
           "res_id",
           "res_desc",
           "res_status"
         ],
-        "type": "object",
-        "properties": {
-          "res_id": {
-            "type": "string"
-          },
-          "res_desc": {
-            "type": "string",
-            "description": "Machine description"
-          },
-          "res_status": {
-            "type": "boolean"
+        "x-examples": {
+          "example": {
+            "res_id": "BR-2300",
+            "res_desc": "Drilling Machine",
+            "res_status": 1
           }
-        }
+        },
+        "description": "Create Machine Input"
       },
       "CreateLotLocationRequest": {
         "type": "object",
