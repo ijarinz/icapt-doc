@@ -38,6 +38,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListWarehousesResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "whse_num": "MAIN",
+                      "whse_name": "Main Warehouse",
+                      "whse_address": "ABC Street",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -115,6 +129,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Warehouse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "whse_num": "MAIN",
+                      "whse_name": "Main Warehouse",
+                      "whse_address": "ABC Street",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -175,6 +203,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Warehouse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "whse_num": "MAIN",
+                      "whse_name": "Main Warehouse",
+                      "whse_address": "ABC Street",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -203,6 +245,21 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListLocationsResponse"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "loc_num": "L001",
+                      "whse_num": "MAIN",
+                      "loc_name": "Location 1",
+                      "loc_type": "S",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -242,6 +299,21 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Location"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "loc_num": "L001",
+                      "whse_num": "MAIN",
+                      "loc_name": "Location 1",
+                      "loc_type": "S",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -334,6 +406,21 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Location"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "loc_num": "L001",
+                      "whse_num": "MAIN",
+                      "loc_name": "Location 1",
+                      "loc_type": "S",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -392,7 +479,32 @@
         "operationId": "list-items",
         "responses": {
           "200": {
-            "description": "null"
+            "description": "null",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Item"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "item_num": "I0003",
+                      "item_desc": "6 inch block",
+                      "uom": "EA",
+                      "product_code": "FG-MA",
+                      "lot_tracked": 1,
+                      "unit_weight": 3,
+                      "item_status": 1,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -431,19 +543,26 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Customer"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "cust_num": "C0099",
+                      "cust_name": "Three Trading Inc",
+                      "cust_status": 1,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
           }
         },
-        "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "in": "header"
-          }
-        ]
+        "parameters": []
       },
       "get": {
         "tags": [
@@ -517,6 +636,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProductCode"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "product_code": "FG-MA",
+                      "product_desc": "Megatech-P100",
+                      "product_status": "1",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -576,6 +709,24 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Item"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "item_num": "I0003",
+                      "item_desc": "6 inch block",
+                      "uom": "EA",
+                      "product_code": "FG-MA",
+                      "lot_tracked": 1,
+                      "unit_weight": 3,
+                      "item_status": 1,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -640,6 +791,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProductCode"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "product_code": "FG-MA",
+                      "product_desc": "Megatech-P100",
+                      "product_status": "1",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -740,6 +905,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonCode"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "reason_class": "MiscIssue",
+                      "reason_code": "DMG",
+                      "reason_desc": "Damage goods",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -826,6 +1005,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonCode"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "reason_class": "MiscIssue",
+                      "reason_code": "DMG",
+                      "reason_desc": "Damage goods",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -920,6 +1113,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/WorkCenter"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "wc_num": "ASSY-01",
+                      "wc_desc": "Assembly Station 1",
+                      "wc_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -952,6 +1159,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/WorkCenter"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "wc_num": "ASSY-01",
+                      "wc_desc": "Assembly Station 1",
+                      "wc_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1033,6 +1254,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Customer"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "cust_num": "C0099",
+                      "cust_name": "Three Trading Inc",
+                      "cust_status": 1,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -1136,6 +1371,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UOM"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "uom_num": "KG",
+                      "uom_desc": "Kilogram",
+                      "rounding": 2,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1168,6 +1417,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UOM"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "uom_num": "KG",
+                      "uom_desc": "Kilogram",
+                      "rounding": 2,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1262,6 +1525,19 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Task"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "task_name": "KAIZEN",
+                      "task_desc": "Kaizen Activity",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1294,6 +1570,19 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Task"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "task_name": "KAIZEN",
+                      "task_desc": "Kaizen Activity",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1388,6 +1677,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Vendor"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "vend_num": "V0001",
+                      "vend_name": "MPH",
+                      "vend_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1420,6 +1723,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Vendor"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "vend_num": "V0001",
+                      "vend_name": "MPH",
+                      "vend_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1476,6 +1793,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Vendor"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "vend_num": "V0001",
+                      "vend_name": "MPH",
+                      "vend_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1537,6 +1868,22 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ItemLocation"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "loc_num": "L001",
+                      "whse_num": "MAIN",
+                      "item_num": "I001",
+                      "qty_on_hand": 30,
+                      "UOM": "EA",
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -1569,6 +1916,22 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ItemLocation"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "loc_num": "L001",
+                      "whse_num": "MAIN",
+                      "item_num": "I001",
+                      "qty_on_hand": 30,
+                      "UOM": "EA",
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -1675,6 +2038,24 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LotLocation"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "whse_num": "MAIN",
+                      "loc_num": "L001",
+                      "item_num": "I011",
+                      "lot_num": "S07092020",
+                      "qty_on_hand": 40,
+                      "uom": "EA",
+                      "qty_on_rsvd": 0,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1786,6 +2167,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Employee"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "emp_num": "E0001",
+                      "emp_name": "John",
+                      "emp_shift": 3,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -1818,6 +2213,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Employee"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "emp_num": "E0001",
+                      "emp_name": "John",
+                      "emp_shift": 3,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -1921,6 +2330,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Machine"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "res_id": "BR-2300",
+                      "res_desc": "Drilling Machine",
+                      "res_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -1953,6 +2376,20 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Machine"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "res_id": "BR-2300",
+                      "res_desc": "Drilling Machine",
+                      "res_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2063,6 +2500,33 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CustomerOrder"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "co_num": "C0002",
+                      "co_line": "2",
+                      "co_rel": "0",
+                      "qty_released": 30,
+                      "cust_num": "MZ01",
+                      "add_num": "A0001",
+                      "due_date": "29/09/2020",
+                      "do_num": "DO007",
+                      "qty_ordered": 50,
+                      "qty_shipped": 30,
+                      "qty_returned": 3,
+                      "item_num": "I0001",
+                      "item_desc": "E1 Motor 21W 220V 50Hz",
+                      "whse_num": "MAIN",
+                      "uom": "EA",
+                      "rel_status": "O",
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -2095,6 +2559,33 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CustomerOrder"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "co_num": "C0002",
+                      "co_line": "2",
+                      "co_rel": "0",
+                      "qty_released": 30,
+                      "cust_num": "MZ01",
+                      "add_num": "A0001",
+                      "due_date": "29/09/2020",
+                      "do_num": "DO007",
+                      "qty_ordered": 50,
+                      "qty_shipped": 30,
+                      "qty_returned": 3,
+                      "item_num": "I0001",
+                      "item_desc": "E1 Motor 21W 220V 50Hz",
+                      "whse_num": "MAIN",
+                      "uom": "EA",
+                      "rel_status": "O",
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2139,6 +2630,30 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/TransferOrder"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "trn_num": "TO01",
+                      "from_whse": "MAIN",
+                      "to_whse": "DIST",
+                      "stat": "O",
+                      "from_site": null,
+                      "to_site": null,
+                      "trn_loc": null,
+                      "driver_name": "Jane",
+                      "schedule_receive_date": "2020-06-12",
+                      "schedule_ship_date": "2020-06-10",
+                      "pickup_date": "2020-06-10",
+                      "driver_contact": null,
+                      "vehicle_num": null,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2171,6 +2686,30 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/TransferOrder"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "trn_num": "TO01",
+                      "from_whse": "MAIN",
+                      "to_whse": "DIST",
+                      "stat": "O",
+                      "from_site": null,
+                      "to_site": null,
+                      "trn_loc": null,
+                      "driver_name": "Jane",
+                      "schedule_receive_date": "2020-06-12",
+                      "schedule_ship_date": "2020-06-10",
+                      "pickup_date": "2020-06-10",
+                      "driver_contact": null,
+                      "vehicle_num": null,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2265,6 +2804,31 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobOrder"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "whse_num": "MAIN",
+                      "UOM": "EA",
+                      "job_date": "2020-01-30",
+                      "start_date_plan": "2020-02-12",
+                      "end_date_plan": "2020-02-15",
+                      "cust_num": "C001",
+                      "item_num": "I001",
+                      "qty_released": 30,
+                      "qty_completed": 0,
+                      "qty_scrapped": 0,
+                      "site_ID": "demo",
+                      "job_status": "R",
+                      "notes": "To be involve in drilling",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2297,6 +2861,31 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobOrder"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "whse_num": "MAIN",
+                      "UOM": "EA",
+                      "job_date": "2020-01-30",
+                      "start_date_plan": "2020-02-12",
+                      "end_date_plan": "2020-02-15",
+                      "cust_num": "C001",
+                      "item_num": "I001",
+                      "qty_released": 30,
+                      "qty_completed": 0,
+                      "qty_scrapped": 0,
+                      "site_ID": "demo",
+                      "job_status": "R",
+                      "notes": "To be involve in drilling",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2391,6 +2980,26 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobRoute"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "oper_num": "100",
+                      "oper_status": "1",
+                      "qty_moved": 30,
+                      "qty_completed": 0,
+                      "qty_received": 60,
+                      "qty_scrapped": 4,
+                      "notes": "A3 moved to zone2",
+                      "wc_num": "Stamping",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2423,6 +3032,26 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobRoute"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "oper_num": "100",
+                      "oper_status": "1",
+                      "qty_moved": 30,
+                      "qty_completed": 0,
+                      "qty_received": 60,
+                      "qty_scrapped": 4,
+                      "notes": "A3 moved to zone2",
+                      "wc_num": "Stamping",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2530,6 +3159,28 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobMaterial"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "whse_num": "MAIN",
+                      "oper_num": "100",
+                      "sequence": "100",
+                      "matl_item": "S500-1",
+                      "UOM": "EA",
+                      "matl_desc": "1-Stud Trapezium Green",
+                      "qty_per": 3,
+                      "scrap_factor": 0.3,
+                      "qty_required": 30,
+                      "qty_issued": 0,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -2562,6 +3213,28 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobMaterial"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "whse_num": "MAIN",
+                      "oper_num": "100",
+                      "sequence": "100",
+                      "matl_item": "S500-1",
+                      "UOM": "EA",
+                      "matl_desc": "1-Stud Trapezium Green",
+                      "qty_per": 3,
+                      "scrap_factor": 0.3,
+                      "qty_required": 30,
+                      "qty_issued": 0,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -2619,6 +3292,28 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobMaterial"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "whse_num": "MAIN",
+                      "oper_num": "100",
+                      "sequence": "100",
+                      "matl_item": "S500-1",
+                      "UOM": "EA",
+                      "matl_desc": "1-Stud Trapezium Green",
+                      "qty_per": 3,
+                      "scrap_factor": 0.3,
+                      "qty_required": 30,
+                      "qty_issued": 0,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "27-09-2019",
+                      "modfied_date": "12-06-2020"
+                    }
+                  }
                 }
               }
             }
@@ -2641,6 +3336,33 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MaterialTransaction"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "trans_num": 100,
+                      "trans_type": "PO Receipt",
+                      "trans_date": "2020-07-02 00:00:00",
+                      "item_num": "I0001",
+                      "vend_do": null,
+                      "vend_lot": null,
+                      "uom": "EA",
+                      "qty": 30,
+                      "whse_num": "MAIN",
+                      "loc_num": "L002",
+                      "lot_num": null,
+                      "wc": null,
+                      "ref_num": "P0001",
+                      "ref_line": "1",
+                      "ref_release": "0",
+                      "reason_code": null,
+                      "document_num": null,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2663,6 +3385,36 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/JobTransaction"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "trans_num": 22,
+                      "job_type": "Job Run",
+                      "start_date_time": "2020-07-01 11:12:21",
+                      "end_date_time": "2020-07-01 16:52:44",
+                      "emp_num": "E001",
+                      "job_num": "J0001",
+                      "oper_num": "100",
+                      "task": null,
+                      "hour": 5.67,
+                      "qty_moved": 30,
+                      "qty_completed": 30,
+                      "qty_scrapped": 0,
+                      "UOM": "EA",
+                      "whse_num": "MAIN",
+                      "loc_num": "L002",
+                      "lot_num": null,
+                      "resource_id": null,
+                      "reason_code": null,
+                      "document_num": null,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2685,6 +3437,34 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MachineTransaction"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "trans_num": 16,
+                      "job_type": "Machine Run",
+                      "res_id": "BR-2300",
+                      "start_date_time": "2020-07-01 17:16:22",
+                      "end_date_time": "2020-07-01 17:25:44",
+                      "hour": 0.16,
+                      "job_num": "J0001",
+                      "oper_num": "100",
+                      "item_num": "I0001",
+                      "qty_completed": 30,
+                      "qty_moved": 30,
+                      "qty_scrapped": 0,
+                      "reason_code": null,
+                      "whse_num": "MAIN",
+                      "loc_num": "L002",
+                      "lot_num": null,
+                      "start_by": "Admin",
+                      "stop_by": "Admin",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
                 }
               }
             }
@@ -2764,30 +3544,41 @@
           "created_date": "string",
           "modified_date": "string"
         },
+        "description": "Create UOM Output",
         "properties": {
           "id": {
             "type": "integer",
             "readOnly": true
           },
           "uom_num": {
-            "type": "string"
+            "type": "string",
+            "description": "The designated code given to the unit of measurement"
           },
           "uom_desc": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of UOM"
           },
           "rounding": {
-            "type": "string"
+            "type": "string",
+            "description": "Determines the number of decimal places the unit of measurement will be displayed"
           },
           "site_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Site ID"
           },
-          "created_by": {},
-          "modified_by": {},
+          "created_by": {
+            "description": "User that created the UOM"
+          },
+          "modified_by": {
+            "description": "User that last modified the UOM"
+          },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the UOM was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the UOM was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -2800,9 +3591,18 @@
           "field_9": {},
           "field_10": {}
         },
-        "required": [
-          "id"
-        ]
+        "x-examples": {
+          "example": {
+            "uom_num": "KG",
+            "uom_desc": "Kilogram",
+            "rounding": 2,
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        }
       },
       "Customer": {
         "type": "object",
@@ -2816,6 +3616,18 @@
           "modified_date": "string"
         },
         "description": "Create Customer Output",
+        "x-examples": {
+          "example": {
+            "cust_num": "C0099",
+            "cust_name": "Three Trading Inc",
+            "cust_status": 1,
+            "site_ID": "demo",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
         "properties": {
           "id": {
             "type": "integer",
@@ -2841,7 +3653,7 @@
             "description": "The user ID that created the customer"
           },
           "modified_by": {
-            "description": "The user ID that last edited the customer"
+            "description": "The user ID that last edited the customer information"
           },
           "created_date": {
             "type": "string",
@@ -2861,92 +3673,10 @@
           "field_8": {},
           "field_9": {},
           "field_10": {}
-        },
-        "x-examples": {
-          "example": {
-            "cust_num": "C0099",
-            "cust_name": "Three Trading Inc",
-            "cust_status": 1,
-            "site_ID": "demo",
-            "created_by": "sysadmin",
-            "modified_by": "John",
-            "created_date": "27-09-2019",
-            "modfied_date": "12-06-2020"
-          }
         }
       },
       "MaterialTransaction": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "readOnly": true
-          },
-          "trans_num": {
-            "type": "integer"
-          },
-          "trans_type": {
-            "type": "string"
-          },
-          "trans_date": {
-            "type": "string"
-          },
-          "item_num": {
-            "type": "string"
-          },
-          "vend_do": {
-            "type": "string"
-          },
-          "vendor_lot": {
-            "type": "string"
-          },
-          "uom": {
-            "type": "string"
-          },
-          "qty": {
-            "type": "string"
-          },
-          "whse_num": {
-            "type": "string"
-          },
-          "loc_num": {
-            "type": "string"
-          },
-          "lot_num": {
-            "type": "string"
-          },
-          "vend_lot": {
-            "type": "string"
-          },
-          "wc": {
-            "type": "string"
-          },
-          "ref_num": {
-            "type": "string"
-          },
-          "ref_line": {
-            "type": "string"
-          },
-          "ref_release": {
-            "type": "string"
-          },
-          "reason_code": {
-            "type": "string"
-          },
-          "document_num": {
-            "type": "string"
-          },
-          "site_id": {
-            "type": "string"
-          },
-          "created_by": {},
-          "created_date": {
-            "type": "string"
-          },
-          "modified_date": {
-            "type": "string"
-          }
-        },
         "example": {
           "id": 0,
           "trans_num": 0,
@@ -2970,80 +3700,129 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
-      },
-      "MachineTransaction": {
-        "type": "object",
+        },
+        "description": "Create Material Transaction Output",
         "properties": {
           "id": {
             "type": "integer",
             "readOnly": true
           },
           "trans_num": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Material transaction number"
           },
           "trans_type": {
-            "type": "string"
+            "type": "string",
+            "description": "Material transaction type"
           },
-          "res_id": {
-            "type": "string"
-          },
-          "start_datetime": {
-            "type": "string"
-          },
-          "end_datetime": {
-            "type": "string"
-          },
-          "hour": {
-            "type": "number"
-          },
-          "job_num": {
-            "type": "string"
-          },
-          "oper_num": {
-            "type": "string"
+          "trans_date": {
+            "type": "string",
+            "description": "Material transaction date"
           },
           "item_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Item used in the transaction"
           },
-          "qty_completed": {
-            "type": "string"
+          "vend_do": {
+            "type": "string",
+            "description": "Vendor delivery order number"
           },
-          "qty_moved": {
-            "type": "string"
+          "vendor_lot": {
+            "type": "string",
+            "description": "Vendor item lot number"
           },
-          "qty_scrapped": {
-            "type": "string"
+          "uom": {
+            "type": "string",
+            "description": "Unit of measuremnt of item"
           },
-          "reason_code": {
-            "type": "string"
+          "qty": {
+            "type": "string",
+            "description": "Transacted quantity.  Positive for increase. Negative for decrease"
           },
           "whse_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Warehouse where the transaction was performed"
           },
           "loc_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Location where the transaction was performed"
           },
           "lot_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifies the lot tracked number for the item if present"
           },
-          "start_by": {
-            "type": "string"
+          "vend_lot": {
+            "type": "string",
+            "description": "Vendor item lot number"
           },
-          "stop_by": {
-            "type": "string"
+          "wc": {
+            "type": "string",
+            "description": "Work center related to the production operation and job route"
+          },
+          "ref_num": {
+            "type": "string",
+            "description": "Reference document number "
+          },
+          "ref_line": {
+            "type": "string",
+            "description": "Reference document line number"
+          },
+          "ref_release": {
+            "type": "string",
+            "description": "Reference document line release number"
+          },
+          "reason_code": {
+            "type": "string",
+            "description": "Reason codes"
+          },
+          "document_num": {
+            "type": "string",
+            "description": "An external document or note reference number"
           },
           "site_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Site ID"
           },
-          "created_by": {},
+          "created_by": {
+            "description": "User that created the material transaction"
+          },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the material transaction was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the material transaction was last modified"
           }
         },
+        "x-examples": {
+          "example": {
+            "trans_num": 100,
+            "trans_type": "PO Receipt",
+            "trans_date": "2020-07-02 00:00:00",
+            "item_num": "I0001",
+            "vend_do": null,
+            "vend_lot": null,
+            "uom": "EA",
+            "qty": 30,
+            "whse_num": "MAIN",
+            "loc_num": "L002",
+            "lot_num": null,
+            "wc": null,
+            "ref_num": "P0001",
+            "ref_line": "1",
+            "ref_release": "0",
+            "reason_code": null,
+            "document_num": null,
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        }
+      },
+      "MachineTransaction": {
+        "type": "object",
         "example": {
           "id": 0,
           "trans_num": 0,
@@ -3067,41 +3846,179 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "trans_num": {
+            "type": "integer",
+            "description": "Machine transaction number"
+          },
+          "trans_type": {
+            "type": "string",
+            "description": "Machine transaction type"
+          },
+          "res_id": {
+            "type": "string",
+            "description": "Machine ID"
+          },
+          "start_datetime": {
+            "type": "string",
+            "description": "Machine run start date time"
+          },
+          "end_datetime": {
+            "type": "string",
+            "description": "Machine end date time"
+          },
+          "hour": {
+            "type": "number",
+            "description": "Total hours of machine run"
+          },
+          "job_num": {
+            "type": "string",
+            "description": "Job order number for the transaction"
+          },
+          "oper_num": {
+            "type": "string",
+            "description": "Job operation"
+          },
+          "item_num": {
+            "type": "string",
+            "description": "Item number"
+          },
+          "qty_completed": {
+            "type": "string",
+            "description": "Accumulated quantity finished "
+          },
+          "qty_moved": {
+            "type": "string",
+            "description": "Quantity moved to the next operation"
+          },
+          "qty_scrapped": {
+            "type": "string",
+            "description": "Quantity scrapped at the current operation"
+          },
+          "reason_code": {
+            "type": "string",
+            "description": "Reason codes"
+          },
+          "whse_num": {
+            "type": "string",
+            "description": "Warehouse number"
+          },
+          "loc_num": {
+            "type": "string",
+            "description": "Location where the transaction was performed"
+          },
+          "lot_num": {
+            "type": "string",
+            "description": "The lot tracked number for the item if present"
+          },
+          "start_by": {
+            "type": "string",
+            "description": "User started the machine run"
+          },
+          "stop_by": {
+            "type": "string",
+            "description": "User ended the machine run"
+          },
+          "site_id": {
+            "type": "string",
+            "description": "Site ID"
+          },
+          "created_by": {
+            "description": "User that created the machine transaction"
+          },
+          "created_date": {
+            "type": "string",
+            "description": "The timestamp when the machine transaction was created"
+          },
+          "modified_date": {
+            "type": "string",
+            "description": "The timestamp when the machine transaction was last modified"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "trans_num": 16,
+            "job_type": "Machine Run",
+            "res_id": "BR-2300",
+            "start_date_time": "2020-07-01 17:16:22",
+            "end_date_time": "2020-07-01 17:25:44",
+            "hour": 0.16,
+            "job_num": "J0001",
+            "oper_num": "100",
+            "item_num": "I0001",
+            "qty_completed": 30,
+            "qty_moved": 30,
+            "qty_scrapped": 0,
+            "reason_code": null,
+            "whse_num": "MAIN",
+            "loc_num": "L002",
+            "lot_num": null,
+            "start_by": "Admin",
+            "stop_by": "Admin",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
+        "description": "Create Machine Transaction Output"
       },
       "ReasonCode": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "reason_class": "string",
+          "reason_num": "string",
+          "reason_desc": "string",
+          "site_id": "string",
+          "created_date": "2020-03-30T00:00:00.0000000",
+          "modified_date": "2020-03-30T00:00:00.0000000"
+        },
+        "description": "Create Reason Code Output",
         "properties": {
           "id": {
             "type": "integer",
             "readOnly": true
           },
           "reason_class": {
-            "type": "string"
+            "type": "string",
+            "description": "Transactions where the reason code is used"
           },
           "reason_num": {
-            "type": "string"
+            "type": "string",
+            "description": "Reason code"
           },
           "reason_desc": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the reason code"
           },
           "site_id": {
             "type": "string",
-            "readOnly": true
+            "readOnly": true,
+            "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the reason code"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that last modified the reason code"
           },
           "created_date": {
             "type": "string",
-            "format": "datetime"
+            "format": "datetime",
+            "description": "The timestamp when the reason code was created"
           },
           "modified_date": {
             "type": "string",
-            "format": "datetime"
+            "format": "datetime",
+            "description": "The timestamp when the reason code was last modified"
           },
           "field_1": {
             "type": "string"
@@ -3120,14 +4037,17 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "reason_class": "string",
-          "reason_num": "string",
-          "reason_desc": "string",
-          "site_id": "string",
-          "created_date": "2020-03-30T00:00:00.0000000",
-          "modified_date": "2020-03-30T00:00:00.0000000"
+        "x-examples": {
+          "example": {
+            "reason_class": "MiscIssue",
+            "reason_code": "DMG",
+            "reason_desc": "Damage goods",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "ListWarehousesResponse": {
@@ -3356,95 +4276,11 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
+        },
+        "description": "Create Purchase Order Line Output"
       },
       "CustomerOrder": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "readOnly": true
-          },
-          "co_num": {
-            "type": "string"
-          },
-          "co_line": {
-            "type": "string"
-          },
-          "co_rel": {
-            "type": "string"
-          },
-          "qty_released": {
-            "type": "number"
-          },
-          "qty_released_conv": {
-            "type": "number"
-          },
-          "cust_num": {
-            "type": "string"
-          },
-          "add_num": {
-            "type": "string"
-          },
-          "due_date": {
-            "type": "string"
-          },
-          "do_num": {
-            "type": "string"
-          },
-          "qty_ordered": {
-            "type": "number"
-          },
-          "qty_ordered_conv": {
-            "type": "number"
-          },
-          "qty_shipped": {
-            "type": "number"
-          },
-          "qty_returned": {
-            "type": "number"
-          },
-          "item_num": {
-            "type": "string"
-          },
-          "item_desc": {
-            "type": "string"
-          },
-          "whse_num": {
-            "type": "string"
-          },
-          "uom": {
-            "type": "string"
-          },
-          "rel_status": {
-            "type": "string"
-          },
-          "site_id": {
-            "type": "string"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "modified_by": {
-            "type": "string"
-          },
-          "created_date": {
-            "type": "string"
-          },
-          "modified_date": {
-            "type": "string"
-          },
-          "field_1": {},
-          "field_2": {},
-          "field_3": {},
-          "field_4": {},
-          "field_5": {},
-          "field_6": {},
-          "field_7": {},
-          "field_8": {},
-          "field_9": {},
-          "field_10": {}
-        },
         "example": {
           "id": 0,
           "co_num": "string",
@@ -3468,6 +4304,138 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
+        },
+        "description": "Create Customer Output",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "co_num": {
+            "type": "string",
+            "description": "Customer order number"
+          },
+          "co_line": {
+            "type": "string",
+            "description": "CO line item"
+          },
+          "co_rel": {
+            "type": "string",
+            "description": "Release or sub-line. Usually represents multiple delivery for the same item."
+          },
+          "qty_released": {
+            "type": "number",
+            "description": "Quantity of the item to be ordered by to the customer of specified CO."
+          },
+          "qty_released_conv": {
+            "type": "number"
+          },
+          "cust_num": {
+            "type": "string",
+            "description": "Customer number. Must exist in customer list"
+          },
+          "add_num": {
+            "type": "string",
+            "description": "Delivery address"
+          },
+          "due_date": {
+            "type": "string",
+            "description": "Target shipping date. The order is past due when passed the due date."
+          },
+          "do_num": {
+            "type": "string",
+            "description": "Delivery order number"
+          },
+          "qty_ordered": {
+            "type": "number",
+            "description": "Total quantity ordered"
+          },
+          "qty_ordered_conv": {
+            "type": "number"
+          },
+          "qty_shipped": {
+            "type": "number",
+            "description": "Total quantity shipped"
+          },
+          "qty_returned": {
+            "type": "number",
+            "description": "Total quantity returned"
+          },
+          "item_num": {
+            "type": "string",
+            "description": "Item number. Must exist in Items List"
+          },
+          "item_desc": {
+            "type": "string",
+            "description": "Descripton/name of ordered item"
+          },
+          "whse_num": {
+            "type": "string",
+            "description": "Warehouse number. Must exist in warehouse list"
+          },
+          "uom": {
+            "type": "string",
+            "description": "UOM number. Must exist in UOM list"
+          },
+          "rel_status": {
+            "type": "string",
+            "description": "Status of the CO. O = Open, C = Completed"
+          },
+          "site_id": {
+            "type": "string",
+            "description": "Site ID"
+          },
+          "created_by": {
+            "type": "string",
+            "description": "The user ID that created the customer order"
+          },
+          "modified_by": {
+            "type": "string",
+            "description": "The user ID that last edited the customer order"
+          },
+          "created_date": {
+            "type": "string",
+            "description": "The timestamp when the customer order was created"
+          },
+          "modified_date": {
+            "type": "string",
+            "description": "The timestamp when the customer order was last edited"
+          },
+          "field_1": {},
+          "field_2": {},
+          "field_3": {},
+          "field_4": {},
+          "field_5": {},
+          "field_6": {},
+          "field_7": {},
+          "field_8": {},
+          "field_9": {},
+          "field_10": {}
+        },
+        "x-examples": {
+          "example": {
+            "co_num": "C0002",
+            "co_line": "2",
+            "co_rel": "0",
+            "qty_released": 30,
+            "cust_num": "MZ01",
+            "add_num": "A0001",
+            "due_date": "29/09/2020",
+            "do_num": "DO007",
+            "qty_ordered": 50,
+            "qty_shipped": 30,
+            "qty_returned": 3,
+            "item_num": "I0001",
+            "item_desc": "E1 Motor 21W 220V 50Hz",
+            "whse_num": "MAIN",
+            "uom": "EA",
+            "rel_status": "O",
+            "site_ID": "demo",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "CreateUOMRequest": {
@@ -3806,6 +4774,17 @@
       },
       "Location": {
         "type": "object",
+        "description": "Location Data",
+        "example": {
+          "id": 0,
+          "loc_num": "string",
+          "whse_num": "string",
+          "loc_name": "string",
+          "loc_type": "string",
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
         "properties": {
           "id": {
             "type": "integer",
@@ -3814,7 +4793,7 @@
           },
           "loc_num": {
             "type": "string",
-            "description": "Location Number"
+            "description": "The designated code given to the location"
           },
           "whse_num": {
             "type": "string",
@@ -3826,23 +4805,27 @@
           },
           "loc_type": {
             "type": "string",
-            "description": "Location Type"
+            "description": "Location Type. Stock = S, T = Transit, Q = Quarantine"
           },
           "site_id": {
             "type": "string",
             "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the location"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that last updated the location information"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the location was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the location was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -3855,16 +4838,18 @@
           "field_9": {},
           "field_10": {}
         },
-        "description": "Location Data",
-        "example": {
-          "id": 0,
-          "loc_num": "string",
-          "whse_num": "string",
-          "loc_name": "string",
-          "loc_type": "string",
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
+        "x-examples": {
+          "example": {
+            "loc_num": "L001",
+            "whse_num": "MAIN",
+            "loc_name": "Location 1",
+            "loc_type": "S",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "CreateItemLocationRequest": {
@@ -4040,6 +5025,16 @@
       },
       "ProductCode": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "product_code": "string",
+          "product_desc": "string",
+          "product_status": false,
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "description": "Create Product Code Output",
         "properties": {
           "id": {
             "type": "integer",
@@ -4054,23 +5049,29 @@
             "description": "Product description"
           },
           "product_status": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Product code status. 1 = Active, 0 = Inactive"
           },
           "site_id": {
             "type": "string",
-            "readOnly": true
+            "readOnly": true,
+            "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the product code"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that last modified the product code"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the product code was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the product code was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4083,46 +5084,21 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "product_code": "string",
-          "product_desc": "string",
-          "product_status": false,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
+        "x-examples": {
+          "example": {
+            "product_code": "FG-MA",
+            "product_desc": "Megatech-P100",
+            "product_status": "1",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "Task": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "readOnly": true
-          },
-          "task_name": {
-            "type": "string"
-          },
-          "task_desc": {
-            "type": "string"
-          },
-          "site_id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "modified_by": {
-            "type": "string"
-          },
-          "created_date": {
-            "type": "string"
-          },
-          "modified_date": {
-            "type": "string"
-          }
-        },
         "example": {
           "id": 0,
           "task_name": "string",
@@ -4130,10 +5106,78 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
+        },
+        "description": "Create Task Code Output",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "task_name": {
+            "type": "string",
+            "description": "Indirect task code"
+          },
+          "task_desc": {
+            "type": "string",
+            "description": "Indirect task description"
+          },
+          "site_id": {
+            "type": "string",
+            "readOnly": true,
+            "description": "Site ID"
+          },
+          "created_by": {
+            "type": "string",
+            "description": "User that created the indirect task"
+          },
+          "modified_by": {
+            "type": "string",
+            "description": "User that last modified the indirect task"
+          },
+          "created_date": {
+            "type": "string",
+            "description": "The timestamp when the indirect task was created"
+          },
+          "modified_date": {
+            "type": "string",
+            "description": "The timestamp when the indirect task was last modified"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "task_name": "KAIZEN",
+            "task_desc": "Kaizen Activity",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "Employee": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "emp_num": "string",
+          "emp_name": "string",
+          "shift": 0,
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "x-examples": {
+          "example": {
+            "emp_num": "E0001",
+            "emp_name": "John",
+            "emp_shift": 3,
+            "site_ID": "demo",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
         "properties": {
           "id": {
             "type": "integer",
@@ -4157,13 +5201,19 @@
             "description": "Site ID",
             "readOnly": true
           },
-          "created_by": {},
-          "modified_by": {},
+          "created_by": {
+            "description": "The user ID that created the employee"
+          },
+          "modified_by": {
+            "description": "The user ID that last edited the employee"
+          },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the employee was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the employee was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4176,18 +5226,39 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "emp_num": "string",
-          "emp_name": "string",
-          "shift": 0,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
-        }
+        "description": "Create Employee Output"
       },
       "Item": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "item_num": "string",
+          "item_desc": "string",
+          "uom": "string",
+          "product_code": "string",
+          "lot_tracked": false,
+          "unit_weight": 0.450192481868521,
+          "item_status": false,
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "x-examples": {
+          "example": {
+            "item_num": "I0003",
+            "item_desc": "6 inch block",
+            "uom": "EA",
+            "product_code": "FG-MA",
+            "lot_tracked": 1,
+            "unit_weight": 3,
+            "item_status": 1,
+            "site_ID": "demo",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
         "properties": {
           "id": {
             "type": "integer",
@@ -4204,39 +5275,43 @@
           },
           "uom": {
             "type": "string",
-            "description": "UOM"
+            "description": "Unit of measurement of the item"
           },
           "product_code": {
             "type": "string",
-            "description": "Product Code"
+            "description": "Product Code. Item Material classification."
           },
           "lot_tracked": {
             "type": "boolean",
-            "description": "Lot Tracked"
+            "description": "Item is lot tracked indicator. 0 = Inactive , 1 = Active"
           },
           "unit_weight": {
             "type": "number",
-            "description": "Unit seight"
+            "description": "The unit weight of item in Kilogram(KG)"
           },
           "item_status": {
             "type": "boolean",
-            "description": "Item status"
+            "description": "Is Item Active? 1 = Active, 0 = Not Active"
           },
           "site_id": {
             "type": "string",
             "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "The user ID that created the item"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "The user ID that last edited the item information"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the item was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the item was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4249,78 +5324,10 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "item_num": "string",
-          "item_desc": "string",
-          "uom": "string",
-          "product_code": "string",
-          "lot_tracked": false,
-          "unit_weight": 0.450192481868521,
-          "item_status": false,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
-        }
+        "description": "Create Item Output"
       },
       "ItemLocation": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "readOnly": true
-          },
-          "whse_num": {
-            "type": "string",
-            "description": "Warehouse Number. Must exist in Warehouses List"
-          },
-          "loc_num": {
-            "type": "string",
-            "description": "Location Number. Must exist in Locations List"
-          },
-          "item_num": {
-            "type": "string",
-            "description": "Item Number. Must exist in Items List"
-          },
-          "qty_on_hand": {
-            "type": "number",
-            "description": "Qty on hand"
-          },
-          "uom": {
-            "type": "string",
-            "description": "UOM. Must exist in UOMs List"
-          },
-          "qty_on_rsvd": {
-            "type": "number",
-            "description": "Qty on reserve"
-          },
-          "site_id": {
-            "type": "string",
-            "readOnly": true
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "modified_by": {
-            "type": "string"
-          },
-          "created_date": {
-            "type": "string"
-          },
-          "modified_date": {
-            "type": "string"
-          },
-          "field_1": {},
-          "field_2": {},
-          "field_3": {},
-          "field_4": {},
-          "field_5": {},
-          "field_6": {},
-          "field_7": {},
-          "field_8": {},
-          "field_9": {},
-          "field_10": {}
-        },
         "example": {
           "id": 0,
           "whse_num": "string",
@@ -4332,7 +5339,83 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "whse_num": {
+            "type": "string",
+            "description": "Identifies the warehouse the item is stored in. "
+          },
+          "loc_num": {
+            "type": "string",
+            "description": "Identified the specific location within above mentioned warehouse the item is stored in. "
+          },
+          "item_num": {
+            "type": "string",
+            "description": "Identifies the item that is stored in the above mentioned warehouse and location. "
+          },
+          "qty_on_hand": {
+            "type": "number",
+            "description": "Total item quantity on hand"
+          },
+          "uom": {
+            "type": "string",
+            "description": "Units of measurement of the item"
+          },
+          "qty_on_rsvd": {
+            "type": "number",
+            "description": "Qty on reserve"
+          },
+          "site_id": {
+            "type": "string",
+            "readOnly": true,
+            "description": "Site ID"
+          },
+          "created_by": {
+            "type": "string",
+            "description": "User that created the item location"
+          },
+          "modified_by": {
+            "type": "string",
+            "description": "The user that last updated the item location"
+          },
+          "created_date": {
+            "type": "string",
+            "description": "The timestamp when the item location was created"
+          },
+          "modified_date": {
+            "type": "string",
+            "description": "The timestamp when the item location was last modified"
+          },
+          "field_1": {},
+          "field_2": {},
+          "field_3": {},
+          "field_4": {},
+          "field_5": {},
+          "field_6": {},
+          "field_7": {},
+          "field_8": {},
+          "field_9": {},
+          "field_10": {}
+        },
+        "x-examples": {
+          "example": {
+            "loc_num": "L001",
+            "whse_num": "MAIN",
+            "item_num": "I001",
+            "qty_on_hand": 30,
+            "UOM": "EA",
+            "site_ID": "demo",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
+        "description": "Create Item Location Output"
       },
       "JobMaterial": {
         "type": "object",
@@ -4353,8 +5436,26 @@
           "created_date": "string",
           "modified_date": "string"
         },
-        "x-examples": {},
-        "description": "",
+        "x-examples": {
+          "example": {
+            "job_num": "J0001",
+            "whse_num": "MAIN",
+            "oper_num": "100",
+            "sequence": "100",
+            "matl_item": "S500-1",
+            "UOM": "EA",
+            "matl_desc": "3-STUD Green",
+            "qty_per": "3",
+            "scrap_factor": "0.3",
+            "job_date": "2020-01-30",
+            "site_ID": "demo",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
+        "description": "Create Job Material Output",
         "properties": {
           "id": {
             "type": "integer",
@@ -4362,27 +5463,27 @@
           },
           "job_num": {
             "type": "string",
-            "description": "Job Number"
+            "description": "A code uniquely identifies a job order"
           },
           "whse_num": {
             "type": "string",
-            "description": "Warehouse Number. Must exist in Warehouses List"
+            "description": "Warehouse to receive in"
           },
           "oper_num": {
             "type": "string",
-            "description": "Job Route Number"
+            "description": "Sequence number of the process"
           },
           "sequence": {
             "type": "string",
-            "description": "Job Sequence"
+            "description": "Job Sequence Number"
           },
           "matl_item": {
             "type": "string",
-            "description": "Material Item Number. Must exist in Items List"
+            "description": "Item required in production"
           },
           "uom": {
             "type": "string",
-            "description": "UOM. Must exist in UOMs List"
+            "description": "Unit of measure of the material item"
           },
           "matl_desc": {
             "type": "string",
@@ -4390,34 +5491,39 @@
           },
           "qty_per": {
             "type": "number",
-            "description": "Qty Per"
+            "description": "Quantity of material needed for a finished good"
           },
           "scrap_factor": {
             "type": "number",
-            "description": "Scrap Factor"
+            "description": "The expected loss factors."
           },
           "qty_required": {
             "type": "number",
-            "description": "Qty Required"
+            "description": "Total quantity required "
           },
           "qty_issued": {
             "type": "number",
-            "description": "Qty Issued"
+            "description": "Total quantity issued"
           },
           "site_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the job material"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "Last user that updated the job material"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the job material was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the job material was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4433,6 +5539,15 @@
       },
       "Machine": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "res_id": "string",
+          "res_desc": "string",
+          "res_status": false,
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
         "properties": {
           "id": {
             "type": "integer",
@@ -4448,23 +5563,27 @@
           },
           "res_status": {
             "type": "boolean",
-            "description": "Machine status"
+            "description": "Machine status. 0 = Inactive, 1 = Active"
           },
           "site_id": {
             "type": "string",
             "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the machine"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that last modified the machine information"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the machine was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the machine was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4477,18 +5596,35 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "res_id": "string",
-          "res_desc": "string",
-          "res_status": false,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
-        }
+        "x-examples": {
+          "example": {
+            "res_id": "BR-2300",
+            "res_desc": "Drilling Machine",
+            "res_status": 1,
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
+        "description": "Create Machine Output"
       },
       "Warehouse": {
         "type": "object",
+        "description": "Create Warehouse Output",
+        "x-examples": {
+          "example": {
+            "whse_num": "MAIN",
+            "whse_name": "Main Warehouse",
+            "whse_address": "ABC Street",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
         "properties": {
           "id": {
             "type": "integer",
@@ -4512,16 +5648,20 @@
             "readOnly": true
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the warehouse"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that last updated the warehouse"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the warehouse was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the warehouse was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4537,6 +5677,16 @@
       },
       "WorkCenter": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "wc_num": "string",
+          "wc_desc": "string",
+          "wc_status": "string",
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "description": "Create Work Center Output",
         "properties": {
           "id": {
             "type": "integer",
@@ -4553,23 +5703,27 @@
           },
           "wc_status": {
             "type": "string",
-            "description": "Work Center status"
+            "description": "Work Center status. 1 = Active, 0 = Inactive"
           },
           "site_id": {
             "type": "string",
             "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the work center"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that last updated the work center"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the workcenter was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the workcenter was last updated"
           },
           "field_1": {},
           "field_2": {},
@@ -4582,18 +5736,31 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "wc_num": "string",
-          "wc_desc": "string",
-          "wc_status": "string",
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
+        "x-examples": {
+          "example-1": {
+            "wc_num": "ASSY-01",
+            "wc_desc": "Assembly Station 1",
+            "wc_status": 1,
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "Vendor": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "vend_num": "string",
+          "vend_name": "string",
+          "vend_status": false,
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "description": "Create Vendor Output",
         "properties": {
           "id": {
             "type": "integer",
@@ -4609,7 +5776,7 @@
           },
           "vend_status": {
             "type": "boolean",
-            "description": "Vendor Status"
+            "description": "Vendor Status. 1 = Active, 0 = Inactive"
           },
           "site_id": {
             "type": "string",
@@ -4617,16 +5784,20 @@
             "readOnly": true
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the vendor"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that last modified the Vendor"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the vendor was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the vendor was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4639,18 +5810,41 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "vend_num": "string",
-          "vend_name": "string",
-          "vend_status": false,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
+        "x-examples": {
+          "example": {
+            "vend_num": "V0001",
+            "vend_name": "MPH",
+            "vend_status": 1,
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "TransferOrder": {
         "type": "object",
+        "example": {
+          "id": 0,
+          "trn_num": "string",
+          "from_whse": "string",
+          "to_whse": "string",
+          "stat": "string",
+          "from_site": "string",
+          "to_site": "string",
+          "trn_loc": "string",
+          "driver_name": "string",
+          "schedule_receive_date": "string",
+          "schedule_ship_date": "string",
+          "pickup_date": "string",
+          "driver_contact": "string",
+          "vehicle_num": "string",
+          "site_id": "string",
+          "created_date": "string",
+          "modified_date": "string"
+        },
+        "description": "Create Transfer Order Output",
         "properties": {
           "id": {
             "type": "integer",
@@ -4671,7 +5865,7 @@
           },
           "stat": {
             "type": "string",
-            "description": "Status"
+            "description": "Status. O = Open, C = Completed"
           },
           "from_site": {
             "type": "string"
@@ -4700,7 +5894,8 @@
             "description": "Pickup date"
           },
           "driver_contact": {
-            "type": "string"
+            "type": "string",
+            "description": "Driver Contact"
           },
           "vehicle_num": {
             "type": "string",
@@ -4712,16 +5907,20 @@
             "readOnly": true
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the transfer order"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that last modified the transfer order"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the transfer order was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the transfer order was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4734,112 +5933,31 @@
           "field_9": {},
           "field_10": {}
         },
-        "example": {
-          "id": 0,
-          "trn_num": "string",
-          "from_whse": "string",
-          "to_whse": "string",
-          "stat": "string",
-          "from_site": "string",
-          "to_site": "string",
-          "trn_loc": "string",
-          "driver_name": "string",
-          "schedule_receive_date": "string",
-          "schedule_ship_date": "string",
-          "pickup_date": "string",
-          "driver_contact": "string",
-          "vehicle_num": "string",
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
+        "x-examples": {
+          "example": {
+            "trn_num": "TO01",
+            "from_whse": "MAIN",
+            "to_whse": "DIST",
+            "stat": "O",
+            "from_site": null,
+            "to_site": null,
+            "trn_loc": null,
+            "driver_name": "Jane",
+            "schedule_receive_date": "2020-06-12",
+            "schedule_ship_date": "2020-06-10",
+            "pickup_date": "2020-06-10",
+            "driver_contact": null,
+            "vehicle_num": null,
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "JobOrder": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "Job ID",
-            "readOnly": true
-          },
-          "job_num": {
-            "type": "string",
-            "description": "Job number"
-          },
-          "whse_num": {
-            "type": "string",
-            "description": "Warehouse number"
-          },
-          "uom": {
-            "type": "string",
-            "description": "UOM number"
-          },
-          "job_date": {
-            "type": "string",
-            "description": "Job date"
-          },
-          "start_date_plan": {
-            "type": "string",
-            "description": "Planned start date"
-          },
-          "end_date_plan": {
-            "type": "string",
-            "description": "Planned end date"
-          },
-          "cust_num": {
-            "type": "string",
-            "description": "Customer number"
-          },
-          "item_num": {
-            "type": "string",
-            "description": "Item number"
-          },
-          "qty_released": {
-            "type": "number",
-            "description": "Qty released"
-          },
-          "qty_completed": {
-            "type": "number",
-            "description": "Qty completed"
-          },
-          "qty_scrapped": {
-            "type": "number",
-            "description": "Qty scrapped"
-          },
-          "job_status": {
-            "type": "string",
-            "description": "Job status"
-          },
-          "notes": {
-            "type": "string"
-          },
-          "site_id": {
-            "type": "string",
-            "description": "Site ID"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "modified_by": {
-            "type": "string"
-          },
-          "created_date": {
-            "type": "string"
-          },
-          "modified_date": {
-            "type": "string"
-          },
-          "field_1": {},
-          "field_2": {},
-          "field_3": {},
-          "field_4": {},
-          "field_5": {},
-          "field_6": {},
-          "field_7": {},
-          "field_8": {},
-          "field_9": {},
-          "field_10": {}
-        },
         "example": {
           "id": 0,
           "job_num": "string",
@@ -4860,65 +5978,84 @@
           "modified_by": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
-      },
-      "JobRoute": {
-        "type": "object",
+        },
         "properties": {
           "id": {
             "type": "integer",
+            "description": "Job ID",
             "readOnly": true
           },
           "job_num": {
             "type": "string",
             "description": "Job number"
           },
-          "oper_num": {
+          "whse_num": {
             "type": "string",
-            "description": "Job Route number"
+            "description": "Warehouse number"
           },
-          "oper_status": {
+          "uom": {
             "type": "string",
-            "description": "Job Route status"
+            "description": "Unit of measure of the job item"
           },
-          "qty_moved": {
+          "job_date": {
+            "type": "string",
+            "description": "Job Order creation date"
+          },
+          "start_date_plan": {
+            "type": "string",
+            "description": "Date to begin production"
+          },
+          "end_date_plan": {
+            "type": "string",
+            "description": "Target Date of production end"
+          },
+          "cust_num": {
+            "type": "string",
+            "description": "Customer number"
+          },
+          "item_num": {
+            "type": "string",
+            "description": "Item that is being produced from the order "
+          },
+          "qty_released": {
             "type": "number",
-            "description": "Qty moved"
+            "description": "The quantity required to be produced"
           },
           "qty_completed": {
             "type": "number",
-            "description": "Qty completed"
-          },
-          "qty_received": {
-            "type": "number",
-            "description": "Qty received"
+            "description": "Accumulated quantity finished "
           },
           "qty_scrapped": {
             "type": "number",
-            "description": "Qty scrapped"
+            "description": "Accumulated quantity rejected"
+          },
+          "job_status": {
+            "type": "string",
+            "description": "Job status. O = Open, R = Released, C = Completed"
           },
           "notes": {
             "type": "string",
-            "description": "Notes"
-          },
-          "wc_num": {
-            "type": "string"
+            "description": "Remarks"
           },
           "site_id": {
             "type": "string",
             "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the job order"
           },
           "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "Last user that modified the job order"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the job order was created"
           },
           "modified_date": {
-            "type": "string"
+            "type": "string",
+            "description": "The timestamp when the job order was last modified"
           },
           "field_1": {},
           "field_2": {},
@@ -4931,6 +6068,33 @@
           "field_9": {},
           "field_10": {}
         },
+        "description": "Create Job Order Output",
+        "x-examples": {
+          "example": {
+            "job_num": "J0001",
+            "whse_num": "MAIN",
+            "UOM": "EA",
+            "job_date": "2020-01-30",
+            "start_date_plan": "2020-02-12",
+            "end_date_plan": "2020-02-15",
+            "cust_num": "C001",
+            "item_num": "I001",
+            "qty_released": 30,
+            "qty_completed": 0,
+            "qty_scrapped": 0,
+            "site_ID": "demo",
+            "job_status": "R",
+            "notes": "To be involve in drilling",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        }
+      },
+      "JobRoute": {
+        "type": "object",
         "example": {
           "id": 0,
           "job_num": "string",
@@ -4945,32 +6109,30 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
-      },
-      "JobTransaction": {
-        "type": "object",
+        },
+        "x-examples": {
+          "example": {
+            "job_num": "J0001",
+            "oper_num": "100",
+            "oper_status": "1",
+            "qty_moved": 30,
+            "qty_completed": 0,
+            "qty_received": 60,
+            "qty_scrapped": 4,
+            "notes": "A3 moved to zone2",
+            "wc_num": "Stamping",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
+        "description": "Create Job Route Output",
         "properties": {
           "id": {
             "type": "integer",
             "readOnly": true
-          },
-          "trans_num": {
-            "type": "integer",
-            "description": "Job Transaction Number"
-          },
-          "job_type": {
-            "type": "string",
-            "description": "Job type"
-          },
-          "start_datetime": {
-            "type": "string"
-          },
-          "end_datetime": {
-            "type": "string"
-          },
-          "emp_num": {
-            "type": "string",
-            "description": "Employee number"
           },
           "job_num": {
             "type": "string",
@@ -4978,66 +6140,70 @@
           },
           "oper_num": {
             "type": "string",
-            "description": "Job Route number"
+            "description": "Sequence number of the process"
           },
-          "task": {
-            "type": "string"
-          },
-          "hour": {
-            "type": "number"
-          },
-          "qty_completed": {
-            "type": "number",
-            "description": "Qty completed"
+          "oper_status": {
+            "type": "string",
+            "description": "Job Route status. 0 = Inactive, 1 = Active"
           },
           "qty_moved": {
             "type": "number",
-            "description": "Qty moved"
+            "description": "The quantity moved to next operation"
+          },
+          "qty_completed": {
+            "type": "number",
+            "description": "Accumulated quantity finished "
+          },
+          "qty_received": {
+            "type": "number",
+            "description": "The quantity received/moved from previous operation"
           },
           "qty_scrapped": {
             "type": "number",
-            "description": "Qty scrapped"
+            "description": "Accumulated quantity rejected"
           },
-          "uom": {
+          "notes": {
             "type": "string",
-            "description": "UOM"
+            "description": "Remarks"
           },
-          "whse_num": {
-            "type": "string"
-          },
-          "loc_num": {
-            "type": "string"
-          },
-          "lot_num": {
-            "type": "string"
-          },
-          "resource_id": {
-            "type": "string"
-          },
-          "reason_code": {
-            "type": "string"
-          },
-          "document_num": {
-            "type": "string"
+          "wc_num": {
+            "type": "string",
+            "description": "Work center related to the production operation and job route"
           },
           "site_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the job order"
+          },
+          "modified_by": {
+            "type": "string",
+            "description": "Last user that modified the job route"
           },
           "created_date": {
             "type": "string",
-            "format": "datetime"
-          },
-          "modified_by": {
-            "type": "string"
+            "description": "The timestamp when the job route was created"
           },
           "modified_date": {
             "type": "string",
-            "format": "datetime"
-          }
-        },
+            "description": "The timestamp when the job route was last modified"
+          },
+          "field_1": {},
+          "field_2": {},
+          "field_3": {},
+          "field_4": {},
+          "field_5": {},
+          "field_6": {},
+          "field_7": {},
+          "field_8": {},
+          "field_9": {},
+          "field_10": {}
+        }
+      },
+      "JobTransaction": {
+        "type": "object",
         "example": {
           "id": 0,
           "trans_num": 0,
@@ -5062,62 +6228,141 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
-      },
-      "LotLocation": {
-        "type": "object",
+        },
         "properties": {
           "id": {
             "type": "integer",
             "readOnly": true
           },
-          "whse_num": {
-            "type": "string"
+          "trans_num": {
+            "type": "integer",
+            "description": "Job Transaction Number"
           },
-          "loc_num": {
-            "type": "string"
+          "job_type": {
+            "type": "string",
+            "description": "Job type"
           },
-          "item_num": {
-            "type": "string"
+          "start_datetime": {
+            "type": "string",
+            "description": "Job starting time"
           },
-          "lot_num": {
-            "type": "string"
+          "end_datetime": {
+            "type": "string",
+            "description": "Job ended time"
           },
-          "qty_on_hand": {
-            "type": "number"
+          "emp_num": {
+            "type": "string",
+            "description": "Employee number"
+          },
+          "job_num": {
+            "type": "string",
+            "description": "Job number"
+          },
+          "oper_num": {
+            "type": "string",
+            "description": "Job Route number"
+          },
+          "task": {
+            "type": "string",
+            "description": "Indirect task"
+          },
+          "hour": {
+            "type": "number",
+            "description": "Hours take to finish the job"
+          },
+          "qty_completed": {
+            "type": "number",
+            "description": "Accumulated quantity finished "
+          },
+          "qty_moved": {
+            "type": "number",
+            "description": "Qty moved to next operation"
+          },
+          "qty_scrapped": {
+            "type": "number",
+            "description": "Accumulated quantity rejected"
           },
           "uom": {
+            "type": "string",
+            "description": "Item units of measurement"
+          },
+          "whse_num": {
+            "type": "string",
+            "description": "Warehouse number of item received in"
+          },
+          "loc_num": {
+            "type": "string",
+            "description": "The specific location within above mentioned warehouse the item is stored in."
+          },
+          "lot_num": {
+            "type": "string",
+            "description": "Lot number of item"
+          },
+          "resource_id": {
             "type": "string"
           },
-          "qty_on_rsvd": {
-            "type": "number"
+          "reason_code": {
+            "type": "string",
+            "description": "Reason code for rejected quantity"
+          },
+          "document_num": {
+            "type": "string"
           },
           "site_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Site ID"
           },
           "created_by": {
-            "type": "string"
-          },
-          "modified_by": {
-            "type": "string"
+            "type": "string",
+            "description": "User that created the job transaction"
           },
           "created_date": {
-            "type": "string"
+            "type": "string",
+            "format": "datetime",
+            "description": "The timestamp when the job transaction was created"
+          },
+          "modified_by": {
+            "type": "string",
+            "description": "The user that last updated the job transaction information"
           },
           "modified_date": {
-            "type": "string"
-          },
-          "field_1": {},
-          "field_2": {},
-          "field_3": {},
-          "field_4": {},
-          "field_5": {},
-          "field_6": {},
-          "field_7": {},
-          "field_8": {},
-          "field_9": {},
-          "field_10": {}
+            "type": "string",
+            "format": "datetime",
+            "description": "The timestamp when the job transaction was last modified"
+          }
         },
+        "x-examples": {
+          "example": {
+            "trans_num": 22,
+            "job_type": "Job Run",
+            "start_date_time": "2020-07-01 11:12:21",
+            "end_date_time": "2020-07-01 16:52:44",
+            "emp_num": "E001",
+            "job_num": "J0001",
+            "oper_num": "100",
+            "task": null,
+            "hour": 5.67,
+            "qty_moved": 30,
+            "qty_completed": 30,
+            "qty_scrapped": 0,
+            "UOM": "EA",
+            "whse_num": "MAIN",
+            "loc_num": "L002",
+            "lot_num": null,
+            "resource_id": null,
+            "reason_code": null,
+            "document_num": null,
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
+        "description": "Create Job Transaction History Output"
+      },
+      "LotLocation": {
+        "type": "object",
         "example": {
           "id": 0,
           "whse_mum": "string",
@@ -5130,6 +6375,87 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
+        },
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "whse_num": {
+            "type": "string",
+            "description": "Identifies the warehouse the item is stored in"
+          },
+          "loc_num": {
+            "type": "string",
+            "description": "Identified the specific location within abovementioned warehouse the item is stored in"
+          },
+          "item_num": {
+            "type": "string",
+            "description": "Identifies the item that is stored in the abovementioned warehouse and location"
+          },
+          "lot_num": {
+            "type": "string",
+            "description": "Creates and assigns above selected item to a designated Lot within the Warehouse"
+          },
+          "qty_on_hand": {
+            "type": "number",
+            "description": "The total number of units that are in the warehouse location at the current time"
+          },
+          "uom": {
+            "type": "string",
+            "description": "Units of measurement of the item"
+          },
+          "qty_on_rsvd": {
+            "type": "number",
+            "description": "Quantity on reserve"
+          },
+          "site_id": {
+            "type": "string",
+            "description": "Site ID"
+          },
+          "created_by": {
+            "type": "string",
+            "description": "User that created the item lot location"
+          },
+          "modified_by": {
+            "type": "string",
+            "description": "User that last modified the item lot location"
+          },
+          "created_date": {
+            "type": "string",
+            "description": "The timestamp when the lot location was created"
+          },
+          "modified_date": {
+            "type": "string",
+            "description": "The timestamp when the lot location was last modified"
+          },
+          "field_1": {},
+          "field_2": {},
+          "field_3": {},
+          "field_4": {},
+          "field_5": {},
+          "field_6": {},
+          "field_7": {},
+          "field_8": {},
+          "field_9": {},
+          "field_10": {}
+        },
+        "description": "Create Lot Location Output",
+        "x-examples": {
+          "example": {
+            "whse_num": "MAIN",
+            "loc_num": "L001",
+            "item_num": "I011",
+            "lot_num": "S07092020",
+            "qty_on_hand": 40,
+            "uom": "EA",
+            "qty_on_rsvd": 0,
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
         }
       },
       "UpdateLocationRequest": {
@@ -5142,6 +6468,13 @@
           "loc_type": {
             "type": "string",
             "description": "Location Type"
+          }
+        },
+        "description": "Update Location",
+        "x-examples": {
+          "example": {
+            "loc_name": "L0001",
+            "loc_type": "S"
           }
         }
       },
