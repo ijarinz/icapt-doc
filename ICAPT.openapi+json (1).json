@@ -190,6 +190,7 @@
           {
             "name": "warehouse_id",
             "in": "path",
+            "description": "The Warehouse ID",
             "required": true,
             "schema": {
               "type": "integer"
@@ -333,7 +334,7 @@
           {
             "name": "location_id",
             "in": "path",
-            "description": "The location ID",
+            "description": "The Location ID",
             "required": true,
             "schema": {
               "type": "integer"
@@ -384,6 +385,7 @@
           {
             "name": "location_id",
             "in": "path",
+            "description": "The Location ID",
             "required": true,
             "schema": {
               "type": ""
@@ -696,6 +698,7 @@
           {
             "name": "item_id",
             "in": "path",
+            "description": "The Item ID",
             "required": true,
             "schema": {
               "type": ""
@@ -744,6 +747,7 @@
           {
             "name": "item_id",
             "in": "path",
+            "description": "The Item ID",
             "required": true,
             "schema": {
               "type": ""
@@ -778,6 +782,7 @@
           {
             "name": "productcode_id",
             "in": "path",
+            "description": "The Machine ID",
             "required": true,
             "schema": {
               "type": ""
@@ -852,6 +857,7 @@
           {
             "name": "productcode_id",
             "in": "path",
+            "description": "The Machine ID",
             "required": true,
             "schema": {
               "type": ""
@@ -992,6 +998,7 @@
           {
             "name": "reasoncode_id",
             "in": "path",
+            "description": "The Reason Code ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1063,6 +1070,7 @@
           {
             "name": "reasoncode_id",
             "in": "path",
+            "description": "The Reason Code ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1146,6 +1154,7 @@
           {
             "name": "workcenter_id",
             "in": "path",
+            "description": "The Work Center ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1190,6 +1199,7 @@
           {
             "name": "workcenter_id",
             "in": "path",
+            "description": "The Work Center ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1216,6 +1226,7 @@
           {
             "name": "workcenter_id",
             "in": "path",
+            "description": "The Work Center ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1241,6 +1252,7 @@
           {
             "name": "customer_id",
             "in": "path",
+            "description": "The Customer ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1285,6 +1297,7 @@
           {
             "name": "customer_id",
             "in": "path",
+            "description": "The Customer ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1404,6 +1417,7 @@
           {
             "name": "uom_id",
             "in": "path",
+            "description": "The UOM ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1475,6 +1489,7 @@
           {
             "name": "uom_id",
             "in": "path",
+            "description": "The UOM ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1557,6 +1572,7 @@
           {
             "name": "task_id",
             "in": "path",
+            "description": "The Task ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1627,6 +1643,7 @@
           {
             "name": "task_id",
             "in": "path",
+            "description": "The Task ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1710,6 +1727,7 @@
           {
             "name": "vendor_id",
             "in": "path",
+            "description": "The Vendors ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1754,6 +1772,7 @@
           {
             "name": "vendor_id",
             "in": "path",
+            "description": "The Vendors ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1780,6 +1799,7 @@
           {
             "name": "vendor_id",
             "in": "path",
+            "description": "The Vendors ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1903,6 +1923,7 @@
           {
             "name": "itemloc_id",
             "in": "path",
+            "description": "The Item Location ID",
             "required": true,
             "schema": {
               "type": ""
@@ -1976,6 +1997,7 @@
           {
             "name": "itemloc_id",
             "in": "path",
+            "description": "The Item Location ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2102,6 +2124,7 @@
           {
             "name": "lotloc_id",
             "in": "path",
+            "description": "The Lot Location ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2200,6 +2223,7 @@
           {
             "name": "employee_id",
             "in": "path",
+            "description": "The Employee ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2244,6 +2268,7 @@
           {
             "name": "employee_id",
             "in": "path",
+            "description": "The Employee ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2363,6 +2388,7 @@
           {
             "name": "machine_id",
             "in": "path",
+            "description": "The Machine ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2431,6 +2457,7 @@
           {
             "name": "machine_id",
             "in": "path",
+            "description": "The Machine ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2546,6 +2573,7 @@
           {
             "name": "custorders_id",
             "in": "path",
+            "description": "The Customer Order Item ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2673,6 +2701,7 @@
           {
             "name": "transorder_id",
             "in": "path",
+            "description": "The Transfer Order ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2754,6 +2783,7 @@
           {
             "name": "transorder_id",
             "in": "path",
+            "description": "The Transfer Order ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2848,6 +2878,7 @@
           {
             "name": "joborder_id",
             "in": "path",
+            "description": "The Job Order ID",
             "required": true,
             "schema": {
               "type": ""
@@ -2930,6 +2961,7 @@
           {
             "name": "joborder_id",
             "in": "path",
+            "description": "The Job Order ID",
             "required": true,
             "schema": {
               "type": ""
@@ -3019,6 +3051,7 @@
           {
             "name": "jobroute_id",
             "in": "path",
+            "description": "The Job Route ID",
             "required": true,
             "schema": {
               "type": ""
@@ -3096,6 +3129,7 @@
           {
             "name": "jobroute_id",
             "in": "path",
+            "description": "The Job Route ID",
             "required": true,
             "schema": {
               "type": ""
@@ -3200,6 +3234,7 @@
           {
             "name": "jobmaterial_id",
             "in": "path",
+            "description": "The Job Material ID",
             "required": true,
             "schema": {
               "type": ""
@@ -3279,6 +3314,7 @@
           {
             "name": "jobmaterial_id",
             "in": "path",
+            "description": "The Job Material ID",
             "required": true,
             "schema": {
               "type": ""
