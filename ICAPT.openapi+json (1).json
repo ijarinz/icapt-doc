@@ -4168,91 +4168,36 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
+        },
+        "x-examples": {
+          "example": {
+            "po_num": "PO00003",
+            "po_line": "2",
+            "po_rel": "1",
+            "qty_ordered": 30,
+            "qty_ordered_conv": 0,
+            "qty_received": 10,
+            "qty_returned": 3,
+            "item_num": "B3B8Z20OD1I1J",
+            "item_desc": "2-Studs 0.5' Dark Pink",
+            "vend_num": "V002",
+            "vend_name": "Associate Vendors Co.",
+            "notes": null,
+            "whese_num": "MAIN",
+            "UOM": "EA",
+            "due_date": "2020-07-01",
+            "rel_status": "O",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        },
+        "description": "Create Purchase Order Lines Output"
       },
       "PurchaseOrderLine": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "readOnly": true
-          },
-          "po_num": {
-            "type": "string"
-          },
-          "po_line": {
-            "type": "string"
-          },
-          "po_rel": {
-            "type": "string"
-          },
-          "vend_do": {
-            "type": "string"
-          },
-          "qty_ordered": {
-            "type": "number"
-          },
-          "qty_ordered_conv": {
-            "type": "number"
-          },
-          "qty_received": {
-            "type": "number"
-          },
-          "qty_picked": {
-            "type": "number"
-          },
-          "qty_returned": {
-            "type": "number"
-          },
-          "item_num": {
-            "type": "string"
-          },
-          "item_desc": {
-            "type": "string"
-          },
-          "vend_num": {
-            "type": "string"
-          },
-          "vend_name": {
-            "type": "string"
-          },
-          "notes": {
-            "type": "string"
-          },
-          "whse_num": {
-            "type": "string"
-          },
-          "uom": {
-            "type": "string"
-          },
-          "due_date": {
-            "type": "string"
-          },
-          "rel_status": {
-            "type": "string"
-          },
-          "site_id": {
-            "type": "string"
-          },
-          "created_by": {},
-          "modified_by": {},
-          "created_date": {
-            "type": "string"
-          },
-          "modified_date": {
-            "type": "string"
-          },
-          "field_1": {},
-          "field_2": {},
-          "field_3": {},
-          "field_4": {},
-          "field_5": {},
-          "field_6": {},
-          "field_7": {},
-          "field_8": {},
-          "field_9": {},
-          "field_10": {}
-        },
         "example": {
           "id": 0,
           "po_num": "string",
@@ -4277,7 +4222,134 @@
           "created_date": "string",
           "modified_date": "string"
         },
-        "description": "Create Purchase Order Line Output"
+        "description": "Create Purchase Order Line Output",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "readOnly": true
+          },
+          "po_num": {
+            "type": "string",
+            "description": "Purchase order number"
+          },
+          "po_line": {
+            "type": "string",
+            "description": "Line item"
+          },
+          "po_rel": {
+            "type": "string",
+            "description": "Release or sub-line. Usually represents multiple delivery for the same item"
+          },
+          "vend_do": {
+            "type": "string",
+            "description": "Vendor delivery order number"
+          },
+          "qty_ordered": {
+            "type": "number",
+            "description": "The quantity item required"
+          },
+          "qty_ordered_conv": {
+            "type": "number",
+            "description": "Quantity ordered convert"
+          },
+          "qty_received": {
+            "type": "number",
+            "description": "Total quantity received for this PO line"
+          },
+          "qty_returned": {
+            "type": "number",
+            "description": "Quantity of the item that is returned to vendor"
+          },
+          "item_num": {
+            "type": "string",
+            "description": "Item that is ordered from the vendor "
+          },
+          "item_desc": {
+            "type": "string",
+            "description": "Description of item"
+          },
+          "vend_num": {
+            "type": "string",
+            "description": "Vendor number of PO"
+          },
+          "vend_name": {
+            "type": "string",
+            "description": "Vendor name or description"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Remarks"
+          },
+          "whse_num": {
+            "type": "string",
+            "description": "Warehouse to receive in"
+          },
+          "uom": {
+            "type": "string",
+            "description": "Units of measurement of item"
+          },
+          "due_date": {
+            "type": "string",
+            "description": "Target receiving date"
+          },
+          "rel_status": {
+            "type": "string",
+            "description": "Status of PO. O = Open, C = Completed"
+          },
+          "site_id": {
+            "type": "string",
+            "description": "Site ID"
+          },
+          "created_by": {
+            "description": "User that created the purchase order line"
+          },
+          "modified_by": {
+            "description": "User that last modified the purchase order line"
+          },
+          "created_date": {
+            "type": "string",
+            "description": "The timestamp when the purchase order line was created"
+          },
+          "modified_date": {
+            "type": "string",
+            "description": "The timestamp when the purchase order line was last modified"
+          },
+          "field_1": {},
+          "field_2": {},
+          "field_3": {},
+          "field_4": {},
+          "field_5": {},
+          "field_6": {},
+          "field_7": {},
+          "field_8": {},
+          "field_9": {},
+          "field_10": {}
+        },
+        "x-examples": {
+          "example": {
+            "po_num": "PO00003",
+            "po_line": "2",
+            "po_rel": "1",
+            "qty_ordered": 30,
+            "qty_ordered_conv": 0,
+            "qty_received": 10,
+            "qty_returned": 3,
+            "item_num": "B3B8Z20OD1I1J",
+            "item_desc": "2-Studs 0.5' Dark Pink",
+            "vend_num": "V002",
+            "vend_name": "Associate Vendors Co.",
+            "notes": null,
+            "whese_num": "MAIN",
+            "UOM": "EA",
+            "due_date": "2020-07-01",
+            "rel_status": "O",
+            "site_id": "DEMO",
+            "created_by": "sysadmin",
+            "modified_by": "John",
+            "created_date": "2019-09-27",
+            "modfied_date": "2020-06-12"
+          }
+        }
       },
       "CustomerOrder": {
         "type": "object",
