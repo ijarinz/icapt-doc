@@ -188,13 +188,9 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Warehouse"
-        ],
-        "summary": "Update a Warehouse",
-        "description": "Use this method to change aspects of an existing warehouse.\n\nThese entities are read only :\n- id\n- whse_num\n- site_id\n",
-        "operationId": "update-a-warehouse",
+      "put": {
+        "summary": "Update Warehouse",
+        "operationId": "update-warehouse",
         "parameters": [
           {
             "name": "warehouse_id",
@@ -232,12 +228,13 @@
             }
           },
           "404": {
-            "description": ""
+            "description": "Not Found"
           },
           "422": {
-            "description": ""
+            "description": "Unprocessable Entity (WebDAV)"
           }
         },
+        "description": "Use this method to change aspects of an existing warehouse.\n\nThese entities are read only :\n- id\n- whse_num\n- site_id",
         "requestBody": {
           "content": {
             "application/json": {
@@ -254,7 +251,10 @@
               }
             }
           }
-        }
+        },
+        "tags": [
+          "Warehouse"
+        ]
       }
     },
     "/locations": {
@@ -400,12 +400,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Location"
-        ],
+      "put": {
         "summary": "Update Location",
-        "description": "Use this method to update location.\n\nThese entities are read only :\n- whse_num\n- loc_id\n\n",
         "operationId": "update-location",
         "parameters": [
           {
@@ -418,23 +414,6 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateLocationRequest"
-              },
-              "examples": {
-                "example": {
-                  "value": {
-                    "loc_name": "L0001",
-                    "loc_type": "S"
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "",
@@ -462,12 +441,33 @@
             }
           },
           "404": {
-            "description": ""
+            "description": "Not Found"
           },
           "422": {
-            "description": ""
+            "description": "Unprocessable Entity (WebDAV)"
           }
-        }
+        },
+        "description": "Use this method to update location.\n\nThese entities are read only :\n- whse_num\n- loc_id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLocationRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "loc_name": "L0001",
+                    "loc_type": "S"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Location"
+        ]
       }
     },
     "/items": {
@@ -1347,30 +1347,6 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Customer"
-        ],
-        "summary": "Update Customer",
-        "description": "Use this method to change aspects of an existing customer.\n\nThese entities are read only :\n- id\n- cust_num\n- site_id\n",
-        "operationId": "update-customer",
-        "parameters": [
-          {
-            "name": "customer_id",
-            "in": "path",
-            "description": "The Customer ID",
-            "required": true,
-            "schema": {
-              "type": ""
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        }
-      },
       "delete": {
         "tags": [
           "Customer"
@@ -1399,14 +1375,45 @@
         }
       },
       "put": {
-        "summary": "Update Customers",
+        "summary": "Update Customer",
         "operationId": "update-customers",
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "path",
+            "description": "The Customer ID",
+            "required": true,
+            "schema": {
+              "type": ""
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": ""
           }
         },
-        "description": "Use this method to change aspects of an existing customer.\n\nThese entities are read only :\n- id\n- cust_num\n- site_id\n"
+        "description": "Use this method to change aspects of an existing customer.\n\nThese entities are read only :\n- id\n- cust_num\n- site_id\n",
+        "tags": [
+          "Customer"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateCustomerRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "cust_name": "Three Trading Inc",
+                    "cust_status": 1
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/uoms": {
@@ -2345,30 +2352,6 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Employee"
-        ],
-        "summary": "Update  Employee",
-        "description": "Use this method to change aspects of an existing employee.\n\nThese entities are read only :\n- id\n- emp_num\n- site_id\n",
-        "operationId": "update-employee",
-        "parameters": [
-          {
-            "name": "employee_id",
-            "in": "path",
-            "description": "The Employee ID",
-            "required": true,
-            "schema": {
-              "type": ""
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        }
-      },
       "delete": {
         "tags": [
           "Employee"
@@ -2395,6 +2378,68 @@
             "description": ""
           }
         }
+      },
+      "put": {
+        "summary": "Update Employee",
+        "operationId": "update-employee",
+        "parameters": [
+          {
+            "name": "employee_id",
+            "in": "path",
+            "description": "The Employee ID",
+            "required": true,
+            "schema": {
+              "type": ""
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Employee"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "emp_num": "E0001",
+                      "emp_name": "John",
+                      "shift": 3,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Use this method to change aspects of an existing employee.\n\nThese entities are read only :\n- id\n- emp_num\n- site_id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateEmployeeRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "emp_name": "John",
+                    "shift": 3
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Employee"
+        ]
       }
     },
     "/machines": {
@@ -7080,6 +7125,48 @@
             "whse_address": "ABC Street"
           }
         }
+      },
+      "UpdateCustomerRequest": {
+        "title": "UpdateCustomerRequest",
+        "type": "object",
+        "description": "Update Customer",
+        "x-examples": {
+          "example": {
+            "cust_name": "Three Trading Inc",
+            "cust_status": 1
+          }
+        },
+        "properties": {
+          "cust_name": {
+            "type": "string",
+            "description": "Customer name or description"
+          },
+          "cust_status": {
+            "type": "string",
+            "description": "Customer status. 0 = Inactive and 1 = Active"
+          }
+        }
+      },
+      "UpdateEmployeeRequest": {
+        "title": "UpdateEmployeeRequest",
+        "type": "object",
+        "description": "Update Employee",
+        "x-examples": {
+          "example": {
+            "emp_name": "John",
+            "shift": 3
+          }
+        },
+        "properties": {
+          "emp_name": {
+            "type": "string",
+            "description": "Employee name"
+          },
+          "shift": {
+            "type": "integer",
+            "description": "Shift"
+          }
+        }
       }
     },
     "securitySchemes": {
@@ -7101,6 +7188,20 @@
     },
     {
       "apiKeyQuery": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Customer"
+    },
+    {
+      "name": "Warehouse"
+    },
+    {
+      "name": "Location"
+    },
+    {
+      "name": "Employee"
     }
   ]
 }
