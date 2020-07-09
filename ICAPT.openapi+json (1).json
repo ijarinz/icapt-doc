@@ -2650,7 +2650,21 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/TransferOrder"
+                "$ref": "#/components/schemas/CreateTransferOrderRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "trn_num": "TO01",
+                    "from_whse": "MAIN",
+                    "to_whse": "DIST",
+                    "stat": "O",
+                    "driver_name": "Jane",
+                    "schedule_receive_date": "2020-06-12",
+                    "schedule_ship_date": "2020-06-10",
+                    "pickup_date": "2020-06-10"
+                  }
+                }
               }
             }
           }
@@ -6845,6 +6859,80 @@
           "qty_received",
           "qty_scrapped",
           "wc_num"
+        ]
+      },
+      "CreateTransferOrderRequest": {
+        "title": "CreateTransferOrderRequest",
+        "type": "object",
+        "description": "Create Transfer Order Input",
+        "x-examples": {
+          "example": {
+            "trn_num": "TO01",
+            "from_whse": "MAIN",
+            "to_whse": "DIST",
+            "stat": "O",
+            "driver_name": "Jane",
+            "schedule_receive_date": "2020-06-12"
+          }
+        },
+        "properties": {
+          "trn_num": {
+            "type": "string",
+            "description": "Transfer order number"
+          },
+          "from_whse": {
+            "type": "string",
+            "description": "Warehouse Number (From). Must exist in Warehouses List"
+          },
+          "to_whse": {
+            "type": "string",
+            "description": "Warehouse Number (To). Must exist in Warehouses List"
+          },
+          "stat": {
+            "type": "string",
+            "description": "Status. O = Open, C = Completed",
+            "default": "1"
+          },
+          "from_site": {
+            "type": "string"
+          },
+          "to_site": {
+            "type": "string"
+          },
+          "trn_loc": {
+            "type": "string",
+            "description": "Transfer Location. Must exist in Locations List"
+          },
+          "driver_name": {
+            "type": "string",
+            "description": "Driver's Name"
+          },
+          "schedule_receive_date": {
+            "type": "string",
+            "description": "Scheduled received date"
+          },
+          "schedule_ship_date": {
+            "type": "string",
+            "description": "Scheduled shipping date"
+          },
+          "pickup_date": {
+            "type": "string",
+            "description": "Pickup date"
+          },
+          "driver_contact": {
+            "type": "string",
+            "description": "Driver Contact"
+          },
+          "vehicle_num": {
+            "type": "string",
+            "description": "Vehicle number"
+          }
+        },
+        "required": [
+          "trn_num",
+          "from_whse",
+          "to_whse",
+          "stat"
         ]
       }
     },
