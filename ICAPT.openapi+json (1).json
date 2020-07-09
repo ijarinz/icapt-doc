@@ -630,7 +630,16 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ProductCode"
+                "$ref": "#/components/schemas/CreateProductCodeRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "product_code": "FG-MA",
+                    "product_desc": "Megatech-P100",
+                    "product_status": "1"
+                  }
+                }
               }
             }
           }
@@ -900,7 +909,16 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReasonCode"
+                "$ref": "#/components/schemas/CreateReasonCodeRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "reason_class": "MiscIssue",
+                    "reason_code": "DMG",
+                    "reason_desc": "Damage goods"
+                  }
+                }
               }
             }
           }
@@ -1113,7 +1131,16 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WorkCenter"
+                "$ref": "#/components/schemas/CreateWorkCenterRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "wc_num": "ASSY-01",
+                    "wc_desc": "Assembly Station 1",
+                    "wc_status": 1
+                  }
+                }
               }
             }
           }
@@ -1532,7 +1559,15 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Task"
+                "$ref": "#/components/schemas/CreateTaskRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "task_name": "KAIZEN",
+                    "task_desc": "Kaizen Activity"
+                  }
+                }
               }
             }
           }
@@ -1686,7 +1721,16 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Vendor"
+                "$ref": "#/components/schemas/CreateVendorRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "vend_num": "V0001",
+                    "vend_name": "MPH",
+                    "vend_status": 1
+                  }
+                }
               }
             }
           }
@@ -2650,21 +2694,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTransferOrderRequest"
-              },
-              "examples": {
-                "example": {
-                  "value": {
-                    "trn_num": "TO01",
-                    "from_whse": "MAIN",
-                    "to_whse": "DIST",
-                    "stat": "O",
-                    "driver_name": "Jane",
-                    "schedule_receive_date": "2020-06-12",
-                    "schedule_ship_date": "2020-06-10",
-                    "pickup_date": "2020-06-10"
-                  }
-                }
+                "$ref": "#/components/schemas/TransferOrder"
               }
             }
           }
@@ -6861,78 +6891,146 @@
           "wc_num"
         ]
       },
-      "CreateTransferOrderRequest": {
-        "title": "CreateTransferOrderRequest",
+      "CreateProductCodeRequest": {
+        "title": "CreateProductCodeRequest",
         "type": "object",
-        "description": "Create Transfer Order Input",
+        "description": "Create Product Code Input",
         "x-examples": {
           "example": {
-            "trn_num": "TO01",
-            "from_whse": "MAIN",
-            "to_whse": "DIST",
-            "stat": "O",
-            "driver_name": "Jane",
-            "schedule_receive_date": "2020-06-12"
+            "product_code": "FG-MA",
+            "product_desc": "Megatech-P100",
+            "product_status": "1"
           }
         },
         "properties": {
-          "trn_num": {
+          "product_code": {
             "type": "string",
-            "description": "Transfer order number"
+            "description": "Product Code"
           },
-          "from_whse": {
+          "product_desc": {
             "type": "string",
-            "description": "Warehouse Number (From). Must exist in Warehouses List"
+            "description": "Product Description"
           },
-          "to_whse": {
-            "type": "string",
-            "description": "Warehouse Number (To). Must exist in Warehouses List"
-          },
-          "stat": {
-            "type": "string",
-            "description": "Status. O = Open, C = Completed",
-            "default": "1"
-          },
-          "from_site": {
-            "type": "string"
-          },
-          "to_site": {
-            "type": "string"
-          },
-          "trn_loc": {
-            "type": "string",
-            "description": "Transfer Location. Must exist in Locations List"
-          },
-          "driver_name": {
-            "type": "string",
-            "description": "Driver's Name"
-          },
-          "schedule_receive_date": {
-            "type": "string",
-            "description": "Scheduled received date"
-          },
-          "schedule_ship_date": {
-            "type": "string",
-            "description": "Scheduled shipping date"
-          },
-          "pickup_date": {
-            "type": "string",
-            "description": "Pickup date"
-          },
-          "driver_contact": {
-            "type": "string",
-            "description": "Driver Contact"
-          },
-          "vehicle_num": {
-            "type": "string",
-            "description": "Vehicle number"
+          "product_status": {
+            "type": "boolean",
+            "description": "Product code status. 1 = Active, 0 = Inactive"
           }
         },
         "required": [
-          "trn_num",
-          "from_whse",
-          "to_whse",
-          "stat"
+          "product_code",
+          "product_status"
+        ]
+      },
+      "CreateReasonCodeRequest": {
+        "title": "CreateReasonCodeRequest",
+        "type": "object",
+        "description": "Create Reason Code Input",
+        "x-examples": {
+          "example": {
+            "reason_class": "MiscIssue",
+            "reason_code": "DMG",
+            "reason_desc": "Damage goods"
+          }
+        },
+        "properties": {
+          "reason_class": {
+            "type": "string",
+            "description": "Transactions where the reason code is used"
+          },
+          "reason_num": {
+            "type": "string",
+            "description": "Reason code"
+          },
+          "reason_desc": {
+            "type": "string",
+            "description": "Description of reason code"
+          }
+        }
+      },
+      "CreateTaskRequest": {
+        "title": "CreateTaskRequest",
+        "type": "object",
+        "description": "Create Task Input",
+        "x-examples": {
+          "example": {
+            "task_name": "KAIZEN",
+            "task_desc": "Kaizen Activity"
+          }
+        },
+        "properties": {
+          "task_name": {
+            "type": "string",
+            "description": "Indirect task code"
+          },
+          "task_desc": {
+            "type": "string",
+            "description": "Indirect task description"
+          }
+        },
+        "required": [
+          "task_name"
+        ]
+      },
+      "CreateVendorRequest": {
+        "title": "CreateVendorRequest",
+        "type": "object",
+        "description": "Create Vendor Input",
+        "properties": {
+          "vend_num": {
+            "type": "string",
+            "description": "Vendor number"
+          },
+          "vend_name": {
+            "type": "string",
+            "description": "Vendor name"
+          },
+          "vend_status": {
+            "type": "boolean",
+            "description": "Vendor Status. 1 = Active, 0 = Inactive"
+          }
+        },
+        "required": [
+          "vend_num",
+          "vend_name",
+          "vend_status"
+        ],
+        "x-examples": {
+          "example": {
+            "vend_num": "V0001",
+            "vend_name": "MPH",
+            "vend_status": 1
+          }
+        }
+      },
+      "CreateWorkCenterRequest": {
+        "title": "CreateWorkCenterRequest",
+        "type": "object",
+        "description": "Create Work Center Input",
+        "x-examples": {
+          "example": {
+            "wc_num": "ASSY-01",
+            "wc_desc": "Assembly Station 1",
+            "wc_status": 1
+          }
+        },
+        "properties": {
+          "wc_num": {
+            "type": "string",
+            "description": "Work center name"
+          },
+          "wc_desc": {
+            "type": "string",
+            "description": "Work center description"
+          },
+          "wc_status": {
+            "type": "string",
+            "description": "Work Center status. 1 = Active, 0 = Inactive",
+            "default": "1"
+          }
+        },
+        "required": [
+          "wc_num",
+          "wc_status"
         ]
       }
     },
