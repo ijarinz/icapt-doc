@@ -69,7 +69,16 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Warehouse"
+                "$ref": "#/components/schemas/CreateWarehouseRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "whse_num": "WH2",
+                    "whse_name": "Warehouse2",
+                    "address": "12, Kilenny Road"
+                  }
+                }
               }
             }
           }
@@ -397,6 +406,14 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UpdateLocationRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "loc_name": "L0001",
+                    "loc_type": "S"
+                  }
+                }
               }
             }
           }
@@ -2483,7 +2500,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CustomerOrder"
+                "$ref": "#/components/schemas/CreateCustomerOrderRequest"
               },
               "examples": {
                 "example": {
@@ -2809,7 +2826,27 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobOrder"
+                "$ref": "#/components/schemas/CreateJobOrderRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "job_num": "J0001",
+                    "whse_num": "MAIN",
+                    "UOM": "EA",
+                    "job_date": "2020-01-30",
+                    "start_date_plan": "2020-02-12",
+                    "end_date_plan": "2020-02-15",
+                    "cust_num": "C001",
+                    "item_num": "I001",
+                    "qty_released": 30,
+                    "qty_completed": 0,
+                    "qty_scrapped": 0,
+                    "site_ID": "demo",
+                    "job_status": "R",
+                    "notes": "To be involve in drilling"
+                  }
+                }
               }
             }
           }
@@ -2987,7 +3024,22 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobRoute"
+                "$ref": "#/components/schemas/CreateJobRouteRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "job_num": "J0001",
+                    "oper_num": "100",
+                    "oper_status": "1",
+                    "qty_moved": 0,
+                    "qty_completed": 0,
+                    "qty_received": 0,
+                    "qty_scrapped": 0,
+                    "notes": "A3 moved to zone2",
+                    "wc_num": "Stamping"
+                  }
+                }
               }
             }
           }
@@ -6599,6 +6651,200 @@
         },
         "required": [
           "id"
+        ]
+      },
+      "CreateWarehouseRequest": {
+        "title": "CreateWarehouseRequest",
+        "type": "object",
+        "x-examples": {
+          "example": {
+            "whse_num": "WH2",
+            "whse_name": "Warehouse2",
+            "address": "12, Kilenny Road"
+          }
+        },
+        "description": "Create Warehouse Input",
+        "properties": {
+          "whse_num": {
+            "type": "string",
+            "description": "Warehouse number. This must be unique."
+          },
+          "whse_name": {
+            "type": "string",
+            "description": "Warehouse name"
+          },
+          "address": {
+            "type": "string",
+            "description": "Warehouse address"
+          }
+        },
+        "required": [
+          "whse_num",
+          "whse_name",
+          "address"
+        ]
+      },
+      "CreateJobOrderRequest": {
+        "title": "CreateJobOrderRequest",
+        "type": "object",
+        "description": "Create Job Order Input",
+        "x-examples": {
+          "example": {
+            "job_num": "J0001",
+            "whse_num": "MAIN",
+            "UOM": "EA",
+            "job_date": "2020-01-30",
+            "start_date_plan": "2020-02-12",
+            "end_date_plan": "2020-02-15",
+            "cust_num": "C001",
+            "item_num": "I001",
+            "qty_released": 30,
+            "qty_completed": 0,
+            "qty_scrapped": 0,
+            "site_ID": "demo",
+            "job_status": "R",
+            "notes": "To be involve in drilling"
+          }
+        },
+        "properties": {
+          "job_num": {
+            "type": "string",
+            "description": "Job number"
+          },
+          "whse_num": {
+            "type": "string",
+            "description": "Warehouse number"
+          },
+          "uom": {
+            "type": "string",
+            "description": "Unit of measure of job item"
+          },
+          "job_date": {
+            "type": "string",
+            "description": "Job order creation date"
+          },
+          "start_date_plan": {
+            "type": "string",
+            "description": "Date to begin production"
+          },
+          "end_date_plan": {
+            "type": "string",
+            "description": "Date to end production"
+          },
+          "cust_num": {
+            "type": "string",
+            "description": "Customer number"
+          },
+          "item_num": {
+            "type": "string",
+            "description": "Item that is being produced from the order "
+          },
+          "qty_released": {
+            "type": "number",
+            "description": "The quantity required to be produced"
+          },
+          "qty_completed": {
+            "type": "number",
+            "default": 0,
+            "description": "Accumulated quantity finished"
+          },
+          "qty_scrapped": {
+            "type": "number",
+            "default": 0,
+            "description": "Accumulated quantity rejected"
+          },
+          "job_status": {
+            "type": "string",
+            "description": "Job status. O = Open, R = Released, C = Completed"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Remarks"
+          }
+        },
+        "required": [
+          "job_num",
+          "whse_num",
+          "uom",
+          "job_date",
+          "start_date_plan",
+          "cust_num",
+          "item_num",
+          "qty_released",
+          "qty_completed",
+          "qty_scrapped",
+          "job_status"
+        ]
+      },
+      "CreateJobRouteRequest": {
+        "title": "CreateJobRouteRequest",
+        "type": "object",
+        "description": "Create Job Route Input",
+        "x-examples": {
+          "example": {
+            "job_num": "J0001",
+            "oper_num": "100",
+            "oper_status": "1",
+            "qty_moved": 0,
+            "qty_completed": 0,
+            "qty_received": 0,
+            "qty_scrapped": 0,
+            "notes": "A3 moved to zone2",
+            "wc_num": "Stamping"
+          }
+        },
+        "properties": {
+          "job_num": {
+            "type": "string",
+            "description": "Job number"
+          },
+          "oper_num": {
+            "type": "string",
+            "description": "Sequence number of the process"
+          },
+          "oper_status": {
+            "type": "string",
+            "default": "1",
+            "description": "Job route status. 0 = Inactive, 1 = Active"
+          },
+          "qty_moved": {
+            "type": "number",
+            "default": 0,
+            "description": "The quantity moved to next operation"
+          },
+          "qty_completed": {
+            "type": "number",
+            "default": 0,
+            "description": "Accumulated quantity finished "
+          },
+          "qty_received": {
+            "type": "number",
+            "default": 0,
+            "description": "The quantity received/moved from previous operation"
+          },
+          "qty_scrapped": {
+            "type": "number",
+            "default": 0,
+            "description": "Accumulated quantity rejected"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Remarks"
+          },
+          "wc_num": {
+            "type": "string",
+            "description": "Work center related to the production operation and job route"
+          }
+        },
+        "required": [
+          "job_num",
+          "oper_num",
+          "oper_status",
+          "qty_moved",
+          "qty_completed",
+          "qty_received",
+          "qty_scrapped",
+          "wc_num"
         ]
       }
     },
