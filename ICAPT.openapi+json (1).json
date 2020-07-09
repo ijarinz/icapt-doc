@@ -1397,6 +1397,16 @@
             "description": ""
           }
         }
+      },
+      "put": {
+        "summary": "Update Customers",
+        "operationId": "update-customers",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "description": "Use this method to change aspects of an existing customer.\n\nThese entities are read only :\n- id\n- cust_num\n- site_id\n"
       }
     },
     "/uoms": {
