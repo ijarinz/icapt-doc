@@ -208,7 +208,7 @@
         ],
         "responses": {
           "200": {
-            "description": "null",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
@@ -236,6 +236,23 @@
           },
           "422": {
             "description": ""
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWarehouseRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "whse_name": "Main Warehouse",
+                    "whse_address": "ABC Street"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -7032,6 +7049,27 @@
           "wc_num",
           "wc_status"
         ]
+      },
+      "UpdateWarehouseRequest": {
+        "title": "UpdateWarehouseRequest",
+        "type": "object",
+        "description": "Update Warehouse",
+        "properties": {
+          "whse_name": {
+            "type": "string",
+            "description": "Warehouse name"
+          },
+          "whse_address": {
+            "type": "string",
+            "description": "Warehouse address"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "whse_name": "Main Warehouse",
+            "whse_address": "ABC Street"
+          }
+        }
       }
     },
     "securitySchemes": {
