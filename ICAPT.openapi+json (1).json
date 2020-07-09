@@ -2224,7 +2224,7 @@
                   "value": {
                     "emp_num": "E0001",
                     "emp_name": "John",
-                    "emp_shift": 3
+                    "shift": 3
                   }
                 }
               }
@@ -4697,7 +4697,7 @@
           "example": {
             "emp_num": "E0001",
             "emp_name": "John",
-            "emp_shift": 3
+            "shift": 3
           }
         },
         "properties": {
@@ -5374,7 +5374,7 @@
           "example": {
             "emp_num": "E0001",
             "emp_name": "John",
-            "emp_shift": 3,
+            "shift": 3,
             "site_ID": "demo",
             "created_by": "sysadmin",
             "modified_by": "John",
