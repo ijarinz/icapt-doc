@@ -779,12 +779,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Item"
-        ],
-        "summary": "Update  Item",
-        "description": "Use this method to change aspects of an existing employee.\n\nThese entities are read only :\n- id\n- item_num\n- site_id",
+      "put": {
+        "summary": "Update Item",
         "operationId": "update-item",
         "parameters": [
           {
@@ -797,20 +793,61 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Item"
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Item"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "item_num": "I0003",
+                      "item_desc": "6 inch block",
+                      "uom": "EA",
+                      "product_code": "FG-MA",
+                      "lot_tracked": 1,
+                      "unit_weight": 3,
+                      "item_status": 1,
+                      "site_ID": "demo",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": ""
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateItemRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "item_desc": "6 inch block",
+                    "uom": "EA",
+                    "product_code": "FG-MA",
+                    "lot_tracked": 1,
+                    "unit_weight": 3,
+                    "item_status": 1
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "description": "Use this method to change aspects of an existing employee.\n\nThese entities are read only :\n- id\n- item_num\n- site_id",
+        "tags": [
+          "Item"
+        ]
       }
     },
     "/productcodes/{productcode_id}": {
@@ -889,12 +926,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "ProductCode"
-        ],
+      "put": {
         "summary": "Update Product Code",
-        "description": "Use this method to change aspects of an existing product code.\n\nThese entities are read only :\n- productcode_ID",
         "operationId": "update-product-code",
         "parameters": [
           {
@@ -909,8 +942,51 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductCode"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "product_code": "FG-MA",
+                      "product_desc": "Megatech-P100",
+                      "product_status": "1",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
           }
+        },
+        "description": "Use this method to change aspects of an existing product code.\n\nThese entities are read only :\n- productcode_ID",
+        "tags": [
+          "ProductCode"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProductCodeRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "product_desc": "Megatech-P100",
+                    "product_status": "1"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
         }
       }
     },
@@ -1111,12 +1187,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "ReasonCode"
-        ],
+      "put": {
         "summary": "Update Reason Code",
-        "description": "Use this method to change aspects of an existing reason code.\n\nThese entities are read only :\n- reason_class\n- reasoncode_ID",
         "operationId": "update-reason-code",
         "parameters": [
           {
@@ -1131,9 +1203,50 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonCode"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "reason_class": "MiscIssue",
+                      "reason_code": "DMG",
+                      "reason_desc": "Damage goods",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "description": "Use this method to change aspects of an existing reason code.\n\nThese entities are read only :\n- reason_class\n- reasoncode_ID",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReasonCodeRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "reason_desc": "Damage goods"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "ReasonCode"
+        ]
       }
     },
     "/workcenters": {
@@ -1276,12 +1389,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "WorkCenter"
-        ],
+      "put": {
         "summary": "Update Work Center",
-        "description": "Use this method to change aspects of an existing work center.\n\nThese entities are read only :\n- workcenter_id",
         "operationId": "update-work-center",
         "parameters": [
           {
@@ -1296,9 +1405,51 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkCenter"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "wc_num": "ASSY-01",
+                      "wc_desc": "Assembly Station 1",
+                      "wc_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "description": "Use this method to change aspects of an existing work center.\n\nThese entities are read only :\n- workcenter_id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateWorkCenterRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "wc_desc": "Assembly Station 1",
+                    "wc_status": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "WorkCenter"
+        ]
       }
     },
     "/customers/{customer_id}": {
@@ -1556,12 +1707,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "UOM"
-        ],
-        "summary": "Update  UOM",
-        "description": "Use this method to change aspects of an existing UOM.\n\nThese entities are read only :\n- UOM_ID",
+      "put": {
+        "summary": "Update UOM",
         "operationId": "update-uom",
         "parameters": [
           {
@@ -1576,7 +1723,49 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UOM"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "uom_num": "KG",
+                      "uom_desc": "Kilogram",
+                      "rounding": 2,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Use this method to change aspects of an existing UOM.\n\nThese entities are read only :\n- UOM_ID",
+        "tags": [
+          "UOM"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUOMRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "uom_desc": "Kilogram",
+                    "rounding": 2
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -1718,12 +1907,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Task"
-        ],
+      "put": {
         "summary": "Update Task",
-        "description": "Use this method to change aspects of an existing task.\n\nThese entities are read only :\n- task_ID",
         "operationId": "update-task",
         "parameters": [
           {
@@ -1738,9 +1923,49 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "task_name": "KAIZEN",
+                      "task_desc": "Kaizen Activity",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "description": "Use this method to change aspects of an existing task.\n\nThese entities are read only :\n- task_ID",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "task_desc": "Kaizen Activity"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Task"
+        ]
       }
     },
     "/vendors": {
@@ -1815,7 +2040,7 @@
         "tags": [
           "Vendor"
         ],
-        "summary": "Read Vendors by ID",
+        "summary": "Read Vendor by ID",
         "description": "This method allow to retrieve a list of vendors by vendor ID.",
         "operationId": "read-vendors-by-id",
         "parameters": [
@@ -1883,12 +2108,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Vendor"
-        ],
+      "put": {
         "summary": "Update Vendor",
-        "description": "Use this method to change aspects of an existing vendor.\n\nThese entities are read only :\n- vendor_ID",
         "operationId": "update-vendor",
         "parameters": [
           {
@@ -1925,12 +2146,27 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": ""
-          },
-          "422": {
-            "description": ""
+          }
+        },
+        "description": "Use this method to change aspects of an existing vendor.\n\nThese entities are read only :\n- vendor_ID",
+        "tags": [
+          "Vendor"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateVendorRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "vend_name": "MPH",
+                    "vend_status": 1
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -2081,12 +2317,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "ItemLocation"
-        ],
+      "put": {
         "summary": "Update Item Location",
-        "description": "Use this method to update the item location.\n\nThe following properties are read only:\n-id\n-whse_num\n-loc_num\n-item_num\n-site_id",
         "operationId": "update-item-location",
         "parameters": [
           {
@@ -2103,7 +2335,11 @@
           "200": {
             "description": ""
           }
-        }
+        },
+        "description": "Use this method to update the item location.\n\nThe following properties are read only:\n-id\n-whse_num\n-loc_num\n-item_num\n-site_id",
+        "tags": [
+          "ItemLocation"
+        ]
       }
     },
     "/lotlocs": {
@@ -2579,12 +2815,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "Machine"
-        ],
+      "put": {
         "summary": "Update Machine",
-        "description": "Use this method to update machine.\n\nThese entities are read only :\n- machine_ID",
         "operationId": "update-machine",
         "parameters": [
           {
@@ -2599,9 +2831,52 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Machine"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "res_id": "BR-2300",
+                      "res_desc": "Drilling Machine",
+                      "res_status": 1,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "description": "Use this method to update machine.\n\nThese entities are read only :\n- machine_ID",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMachineRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "res_desc": "Drilling Machine",
+                    "res_status": 1
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "Machine"
+        ]
       }
     },
     "/customerorders": {
@@ -2905,12 +3180,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "TransferOrder"
-        ],
+      "put": {
         "summary": "Update Transfer Order",
-        "description": "se this method to change aspects of an existing transfer order.\n\nThese entities are read only :\n- transferorder_ID\n- to_warehouese\n- from_warehouse",
         "operationId": "update-transfer-order",
         "parameters": [
           {
@@ -2925,9 +3196,66 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferOrder"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "trn_num": "TO01",
+                      "from_whse": "MAIN",
+                      "to_whse": "DIST",
+                      "stat": "O",
+                      "from_site": null,
+                      "to_site": null,
+                      "trn_loc": null,
+                      "driver_name": "Jane",
+                      "schedule_receive_date": "2020-06-12",
+                      "schedule_ship_date": "2020-06-10",
+                      "pickup_date": "2020-06-10",
+                      "driver_contact": null,
+                      "vehicle_num": null,
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "description": "Use this method to change aspects of an existing transfer order.\n\nThese entities are read only :\n- transferorder_ID\n- to_warehouese\n- from_warehouse",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTransferOrderRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "stat": "O",
+                    "driver_name": "Jane",
+                    "schedule_receive_date": "2020-06-12",
+                    "schedule_ship_date": "2020-06-10",
+                    "pickup_date": "2020-06-10",
+                    "driver_contact": "0127878552",
+                    "vehicle_num": "VAA3702"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "TransferOrder"
+        ]
       }
     },
     "/joborders": {
@@ -3103,12 +3431,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "JobOrder"
-        ],
+      "put": {
         "summary": "Update Job Order",
-        "description": "Update Job Order in iCAPT.\n\nThe following properties are read only:\n\n- joborder_id\n- whse_num\n- item_num\n- description\n- uom\n- qty_complete\n- qty_scrapped\n- site_id\n\nNot allow to update if:\n- If job order status = closed",
         "operationId": "update-job-order",
         "parameters": [
           {
@@ -3123,7 +3447,65 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobOrder"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "whse_num": "MAIN",
+                      "UOM": "EA",
+                      "job_date": "2020-01-30",
+                      "start_date_plan": "2020-02-12",
+                      "end_date_plan": "2020-02-15",
+                      "cust_num": "C001",
+                      "item_num": "I001",
+                      "qty_released": 30,
+                      "qty_completed": 0,
+                      "qty_scrapped": 0,
+                      "site_ID": "demo",
+                      "job_status": "R",
+                      "notes": "To be involve in drilling",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Update Job Order in iCAPT.\n\nThe following properties are read only:\n\n- joborder_id\n- whse_num\n- item_num\n- description\n- uom\n- qty_complete\n- qty_scrapped\n- site_id\n\nNot allow to update if:\n- If job order status = closed\n\nNot allow to update qty released if: \n- If job order status <> open",
+        "tags": [
+          "JobOrder"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateJobOrderRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "job_date": "2020-01-30",
+                    "start_date_plan": "2020-02-12",
+                    "end_date_plan": "2020-02-15",
+                    "cust_num": "C001",
+                    "qty_released": 30,
+                    "job_status": "R",
+                    "notes": "To be involve in drilling"
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -3286,12 +3668,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "JobRoute"
-        ],
+      "put": {
         "summary": "Update Job Route",
-        "description": "This method to update Job Route in iCAPT.\n\nThe following properties are read only:\n\n- joborder_id\n- oper_num\n- qty_moved\n- qty_completed\n- qty_received  \n- qty_scrapped\n\nNot allow to update if:\n- If job order status = closed",
         "operationId": "update-job-route",
         "parameters": [
           {
@@ -3306,9 +3684,58 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobRoute"
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "job_num": "J0001",
+                      "oper_num": "100",
+                      "oper_status": "1",
+                      "qty_moved": 30,
+                      "qty_completed": 0,
+                      "qty_received": 60,
+                      "qty_scrapped": 4,
+                      "notes": "A3 moved to zone2",
+                      "wc_num": "Stamping",
+                      "site_id": "DEMO",
+                      "created_by": "sysadmin",
+                      "modified_by": "John",
+                      "created_date": "2019-09-27",
+                      "modfied_date": "2020-06-12"
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        },
+        "description": "This method to update Job Route in iCAPT.\n\nThe following properties are read only:\n\n- joborder_id\n- oper_num\n- qty_moved\n- qty_completed\n- qty_received  \n- qty_scrapped\n\nNot allow to update if:\n- If job order status = closed",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateJobRouteRequest"
+              },
+              "examples": {
+                "example": {
+                  "value": {
+                    "oper_status": "1",
+                    "notes": "A3 moved to zone2",
+                    "wc_num": "Stamping"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "JobRoute"
+        ]
       }
     },
     "/jobmaterials": {
@@ -3471,12 +3898,8 @@
           }
         }
       },
-      "post": {
-        "tags": [
-          "JobMaterial"
-        ],
+      "put": {
         "summary": "Update Job Material",
-        "description": "Use this method to change aspects of an existing job material.\n\nThese entities are read only :\n- id\n- job_num\n-oper_num\n-site_id\n-qty_issued\n\nNot allow to update if:\n- If job order status = closed",
         "operationId": "update-job-material",
         "parameters": [
           {
@@ -3522,7 +3945,11 @@
               }
             }
           }
-        }
+        },
+        "description": "Use this method to change aspects of an existing job material.\n\nThese entities are read only :\n- id\n- job_num\n-oper_num\n-site_id\n-qty_issued\n\nNot allow to update if:\n- If job order status = closed",
+        "tags": [
+          "JobMaterial"
+        ]
       }
     },
     "/matltrans": {
@@ -7167,6 +7594,302 @@
             "description": "Shift"
           }
         }
+      },
+      "UpdateItemRequest": {
+        "title": "UpdateItemRequest",
+        "type": "object",
+        "x-examples": {
+          "example": {
+            "item_desc": "6 inch block",
+            "uom": "EA",
+            "product_code": "FG-MA",
+            "lot_tracked": 1,
+            "unit_weight": 3,
+            "item_status": 1
+          }
+        },
+        "description": "Update Item",
+        "properties": {
+          "item_desc": {
+            "type": "string",
+            "description": "Item description"
+          },
+          "uom": {
+            "type": "string",
+            "description": "Unit of measurement of the item"
+          },
+          "product_code": {
+            "type": "string",
+            "description": "Product Code. Item Material classification."
+          },
+          "lot_tracked": {
+            "type": "string",
+            "description": "Item is lot tracked indicator. 0 = Inactive , 1 = Active"
+          },
+          "unit_weight": {
+            "type": "string",
+            "description": "The unit weight of item in Kilogram(KG)"
+          },
+          "item_status": {
+            "type": "string",
+            "description": "Is Item Active? 1 = Active, 0 = Not Active"
+          }
+        }
+      },
+      "UpdateJobRouteRequest": {
+        "title": "UpdateJobRouteRequest",
+        "type": "object",
+        "description": "Update Job Route",
+        "properties": {
+          "oper_status": {
+            "type": "string",
+            "description": "Job Route status. 0 = Inactive, 1 = Active"
+          },
+          "wc_num": {
+            "type": "string",
+            "description": "Work center related to the production operation and job route"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Remarks"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "oper_status": "1",
+            "notes": "A3 moved to zone2",
+            "wc_num": "Stamping"
+          }
+        }
+      },
+      "UpdateMachineRequest": {
+        "title": "UpdateMachineRequest",
+        "type": "object",
+        "description": "Update Machine",
+        "x-examples": {
+          "example": {
+            "res_desc": "Drilling Machine",
+            "res_status": 1
+          }
+        },
+        "properties": {
+          "res_desc": {
+            "type": "string",
+            "description": "Machine description"
+          },
+          "res_status": {
+            "type": "boolean",
+            "description": "Machine status. 0 = Inactive, 1 = Active"
+          }
+        }
+      },
+      "UpdateProductCodeRequest": {
+        "title": "UpdateProductCodeRequest",
+        "type": "object",
+        "description": "Update Product Code",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "product_desc": {
+            "type": "string",
+            "description": "Product description"
+          },
+          "product_status": {
+            "type": "boolean",
+            "description": "Product code status. 1 = Active, 0 = Inactive"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "product_desc": "Megatech-P100",
+            "product_status": "1"
+          }
+        }
+      },
+      "UpdateReasonCodeRequest": {
+        "title": "UpdateReasonCodeRequest",
+        "type": "object",
+        "properties": {
+          "reason_desc": {
+            "type": "string",
+            "description": "Description of the reason code"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "reason_desc": "Damage goods"
+          }
+        },
+        "description": "Update Reason Code"
+      },
+      "UpdateTaskRequest": {
+        "title": "UpdateTaskRequest",
+        "type": "object",
+        "properties": {
+          "task_desc": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "task_desc": "Kaizen Activity"
+          }
+        },
+        "description": "Update Task"
+      },
+      "UpdateTransferOrderRequest": {
+        "title": "UpdateTransferOrderRequest",
+        "type": "object",
+        "properties": {
+          "stat": {
+            "type": "string",
+            "description": "Status. O = Open, C = Completed"
+          },
+          "driver_name": {
+            "type": "string",
+            "description": "Driver's Name"
+          },
+          "schedule_receive_date": {
+            "type": "string",
+            "description": "Scheduled received date"
+          },
+          "schedule_ship_date": {
+            "type": "string",
+            "description": "Scheduled shipping date"
+          },
+          "pickup_date": {
+            "type": "string",
+            "description": "Pickup date"
+          },
+          "driver_contact": {
+            "type": "string",
+            "description": "Driver contact"
+          },
+          "vehicle_num": {
+            "type": "string",
+            "description": "Vehicle number"
+          }
+        },
+        "description": "Update Transfer Order",
+        "x-examples": {
+          "example": {
+            "stat": "O",
+            "driver_name": "Jane",
+            "schedule_receive_date": "2020-06-12",
+            "schedule_ship_date": "2020-06-10",
+            "pickup_date": "2020-06-10",
+            "driver_contact": "0127878552",
+            "vehicle_num": "VAA3702"
+          }
+        }
+      },
+      "UpdateUOMRequest": {
+        "title": "UpdateUOMRequest",
+        "type": "object",
+        "description": "Update UOM",
+        "x-examples": {
+          "example": {
+            "uom_desc": "Kilogram",
+            "rounding": 2
+          }
+        },
+        "properties": {
+          "uom_desc": {
+            "type": "string",
+            "description": "Description of UOM"
+          },
+          "rounding": {
+            "type": "string",
+            "description": "Determines the number of decimal places the unit of measurement will be displayed"
+          }
+        }
+      },
+      "UpdateVendorRequest": {
+        "title": "UpdateVendorRequest",
+        "type": "object",
+        "properties": {
+          "vend_name": {
+            "type": "string",
+            "description": "Vendor Name"
+          },
+          "vend_status": {
+            "type": "string",
+            "description": "Vendor Status. 1 = Active, 0 = Inactive"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "vend_name": "MPH",
+            "vend_status": 1
+          }
+        },
+        "description": "Update Vendor"
+      },
+      "UpdateWorkCenterRequest": {
+        "title": "UpdateWorkCenterRequest",
+        "type": "object",
+        "description": "Update Work Center",
+        "properties": {
+          "wc_desc": {
+            "type": "string"
+          },
+          "wc_status": {
+            "type": "string"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "wc_desc": "Assembly Station 1",
+            "wc_status": 1
+          }
+        }
+      },
+      "UpdateJobOrderRequest": {
+        "title": "UpdateJobOrderRequest",
+        "type": "object",
+        "description": "Update Job Order",
+        "properties": {
+          "cust_num": {
+            "type": "string",
+            "description": "Customer number"
+          },
+          "job_date": {
+            "type": "string",
+            "description": "Job Order creation date"
+          },
+          "start_date_plan": {
+            "type": "string",
+            "description": "Date to begin production"
+          },
+          "end_date_plan": {
+            "type": "string",
+            "description": "Target Date of production end"
+          },
+          "qty_released": {
+            "type": "number",
+            "description": "The quantity required to be produced"
+          },
+          "job_status": {
+            "type": "string",
+            "description": "Job status. O = Open, R = Released, C = Completed"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Remarks"
+          }
+        },
+        "x-examples": {
+          "example": {
+            "job_date": "2020-01-30",
+            "start_date_plan": "2020-02-12",
+            "end_date_plan": "2020-02-15",
+            "cust_num": "C001",
+            "qty_released": 30,
+            "job_status": "R",
+            "notes": "To be involve in drilling"
+          }
+        }
       }
     },
     "securitySchemes": {
@@ -7202,6 +7925,45 @@
     },
     {
       "name": "Employee"
+    },
+    {
+      "name": "Item"
+    },
+    {
+      "name": "ItemLocation"
+    },
+    {
+      "name": "Machine"
+    },
+    {
+      "name": "JobRoute"
+    },
+    {
+      "name": "ProductCode"
+    },
+    {
+      "name": "ReasonCode"
+    },
+    {
+      "name": "Task"
+    },
+    {
+      "name": "TransferOrder"
+    },
+    {
+      "name": "UOM"
+    },
+    {
+      "name": "Vendor"
+    },
+    {
+      "name": "WorkCenter"
+    },
+    {
+      "name": "JobMaterial"
+    },
+    {
+      "name": "JobOrder"
     }
   ]
 }
