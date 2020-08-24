@@ -39,9 +39,23 @@
         "url": ""
       }
     },
+        {
+      "name": "LotLocation",
+      "description": "Everything about your Items",
+      "externalDocs": {
+        "url": ""
+      }
+    },
     {
       "name": "ProductCode",
       "description": "Everything about your ProductCode",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+        {
+      "name": "ReasonCode",
+      "description": "Everything about your ReasonCode",
       "externalDocs": {
         "url": ""
       }
@@ -88,6 +102,13 @@
         "url": ""
       }
     },
+        {
+      "name": "Transfer Line",
+      "description": "Everything about your Transfer Line",
+      "externalDocs": {
+        "url": ""
+      }
+    },
     {
       "name": "PurchaseOrder",
       "description": "Everything about your PurchaseOrder",
@@ -102,6 +123,20 @@
         "url": ""
       }
     },
+        {
+      "name": "Vendor",
+      "description": "Everything about your Vendor",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "WorkCenter",
+      "description": "Everything about your JobRoute",
+      "externalDocs": {
+        "url": ""
+      }
+    },
     {
       "name": "JobOrder",
       "description": "Everything about your JobOrder",
@@ -112,6 +147,20 @@
     {
       "name": "JobMaterial",
       "description": "Everything about your JobMaterial",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+        {
+      "name": "JobTransaction",
+      "description": "Everything about your JobTransaction",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "JobRoute",
+      "description": "Everything about your JobRoute",
       "externalDocs": {
         "url": ""
       }
@@ -2991,7 +3040,7 @@
     "/transfrerlines/{transferline_id}": {
       "delete": {
         "tags": [
-          "TransferLine"
+          "Transfer Line"
         ],
         "summary": "Delete a Transfer Order Line",
         "description": "This method gives a site the option to delete one Transfer Order Line from the Transfer Order Lines list. \n\nException:\n\n- Transfer Order Line status is Completed\n- Qty Shipped , Qty Received or Qty Loss is not 0\n- Material Transaction exists for this Transfer Order Line\n\nTransfer Order Line will be immediately removed. This action is not reversible.",
