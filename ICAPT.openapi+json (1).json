@@ -1176,6 +1176,11 @@
               "schema": {
                 "$ref": "#/components/schemas/UpdateCustomerRequest"
               }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCustomerRequest"
+              }
             }
           }
         },
@@ -1958,7 +1963,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                }
+              }
+            }
           }
         }
       },
@@ -2249,7 +2261,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerOrder"
+                }
+              }
+            }
           }
         }
       },
