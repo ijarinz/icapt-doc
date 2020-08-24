@@ -10,7 +10,6 @@
       "url": "https://icapt-api.azure-api.net"
     }
   ],
-  
   "paths": {
     "/warehouses": {
       "get": {
@@ -410,7 +409,7 @@
           "Customer"
         ],
         "summary": "List of Customers",
-        "description": "List  of Customers",
+        "description": "The Customer List contains the collection of all customers the business is in conduct with. For a customer to be available in the system record, the customer details must be created and present within the Customer List. ",
         "operationId": "list-of-customers",
         "responses": {
           "200": {
@@ -3886,7 +3885,8 @@
           "site_id": "string",
           "created_date": "string",
           "modified_date": "string"
-        }
+        },
+        "description": ""
       },
       "Item": {
         "type": "object",
@@ -4846,21 +4846,6 @@
             "description": "Location Type"
           }
         }
-      },
-      "yss": {
-        "title": "yss",
-        "type": "object",
-        "x-tags": [
-          "Customer"
-        ],
-        "properties": {
-          "id": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "id"
-        ]
       }
     },
     "securitySchemes": {
