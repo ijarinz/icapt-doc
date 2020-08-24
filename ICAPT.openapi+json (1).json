@@ -605,7 +605,7 @@
           "Customer"
         ],
         "summary": "List of Customers",
-        "description": "This method allows to retrieve the list of all Customers.",
+        "description": "The Customer List contains the collection of all customers the business is in conduct with. For a customer to be available in the system record, the customer details must be created and present within the Customer List. ",
         "operationId": "list-of-customers",
         "responses": {
           "200": {
@@ -5933,19 +5933,6 @@
       },
       "Item": {
         "type": "object",
-        "example": {
-          "id": 0,
-          "item_num": "string",
-          "item_desc": "string",
-          "uom": "string",
-          "product_code": "string",
-          "lot_tracked": false,
-          "unit_weight": 0.450192481868521,
-          "item_status": false,
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
-        },
         "x-examples": {
           "example": {
             "item_num": "I0003",
@@ -7180,21 +7167,13 @@
             "loc_type": "S"
           }
         }
-      },
-      "yss": {
-        "title": "yss",
-        "type": "object",
-        "x-tags": [
-          "Customer"
-        ],
-        "properties": {
-          "id": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "id"
-        ]
+      }
+    },
+    "securitySchemes": {
+      "apiKeyHeader": {
+        "type": "apiKey",
+        "name": "Ocp-Apim-Subscription-Key",
+        "in": "header"
       },
       "CreateWarehouseRequest": {
         "title": "CreateWarehouseRequest",
