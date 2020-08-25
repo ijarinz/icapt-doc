@@ -1,4 +1,9 @@
 {
+  "x-stoplight": {
+    "docs": {
+      "showModels": false
+    }
+  },
   "openapi": "3.0.1",
   "info": {
     "title": "ICAPT",
@@ -47,14 +52,14 @@
       }
     },
     {
-      "name": "ProductCode",
+      "name": "Product Code",
       "description": "Everything about your ProductCode",
       "externalDocs": {
         "url": ""
       }
     },
     {
-      "name": "ReasonCode",
+      "name": "Reason Code",
       "description": "Everything about your ReasonCode",
       "externalDocs": {
         "url": ""
@@ -82,7 +87,7 @@
       }
     },
     {
-      "name": "TransferOrder",
+      "name": "Transfer Order",
       "description": "Everything about your TransferOrders",
       "externalDocs": {
         "url": ""
@@ -110,7 +115,7 @@
       }
     },
     {
-      "name": "PurchaseOrder",
+      "name": "Purchase Order",
       "description": "Everything about your PurchaseOrder",
       "externalDocs": {
         "url": ""
@@ -594,7 +599,7 @@
     "/productcodes": {
       "post": {
         "tags": [
-          "ProductCode"
+          "Product Code"
         ],
         "summary": "Create Product Code",
         "description": "Create Product Code",
@@ -616,7 +621,7 @@
       },
       "get": {
         "tags": [
-          "ProductCode"
+          "Product Code"
         ],
         "summary": "List Product Codes",
         "description": "List Product Codes",
@@ -738,7 +743,7 @@
     "/productcodes/{productcode_id}": {
       "get": {
         "tags": [
-          "ProductCode"
+          "Product Code"
         ],
         "summary": "Read Product Code by ID",
         "description": "GET Product Code by ID",
@@ -771,7 +776,7 @@
       },
       "delete": {
         "tags": [
-          "ProductCode"
+          "Product Code"
         ],
         "summary": "Delete Product Code",
         "description": "This method gives a site the option to delete one Product Code from theProduct Code list.\n\nException:\n\n-  Product Code exists in Item\n\nThis Product Code will be immediately removed. This action is not reversible.",
@@ -798,7 +803,7 @@
       },
       "post": {
         "tags": [
-          "ProductCode"
+          "Product Code"
         ],
         "summary": "Update Product Code",
         "description": "Update Product Code",
@@ -837,7 +842,7 @@
     "/reasoncodes": {
       "post": {
         "tags": [
-          "ReasonCode",
+          "Reason Code",
           "POST"
         ],
         "summary": "Create Reason Code",
@@ -863,7 +868,7 @@
       },
       "get": {
         "tags": [
-          "ReasonCode"
+          "Reason Code"
         ],
         "summary": "List Reason Codes",
         "description": "List Reason Codes",
@@ -885,7 +890,7 @@
     "/purchaseorders": {
       "get": {
         "tags": [
-          "PurchaseOrder"
+          "Purchase Order"
         ],
         "summary": "List Purchase Order Lines",
         "description": "List Purchase Order Lines",
@@ -939,7 +944,7 @@
     "/reasoncodes/{reasoncode_id}": {
       "get": {
         "tags": [
-          "ReasonCode"
+          "Reason Code"
         ],
         "summary": "Read Reason Code By ID",
         "description": "GET Reason Code by ID",
@@ -973,7 +978,7 @@
       },
       "delete": {
         "tags": [
-          "ReasonCode"
+          "Reason Code"
         ],
         "summary": "Delete Reason Code",
         "description": "This method gives a site the option to delete one Reason Code from the Reason Codes list.\n\nVendor will be immediately removed. This action is not reversible.",
@@ -1000,7 +1005,7 @@
       },
       "post": {
         "tags": [
-          "ReasonCode"
+          "Reason Code"
         ],
         "summary": "Update Reason Code",
         "description": "Update Reason Code",
@@ -2424,7 +2429,7 @@
     "/transferorders": {
       "post": {
         "tags": [
-          "TransferOrder"
+          "Transfer Order"
         ],
         "summary": "Create Transfer Orders",
         "description": "Create transfer Orders",
@@ -2446,7 +2451,7 @@
       },
       "get": {
         "tags": [
-          "TransferOrder"
+          "Transfer Order"
         ],
         "summary": "List Transfer Orders",
         "description": "List of Transfer Orders",
@@ -2468,7 +2473,7 @@
     "/transferorders/{transorder_id}": {
       "get": {
         "tags": [
-          "TransferOrder"
+          "Transfer Order"
         ],
         "summary": "Read Transfer Order by ID",
         "description": "GET Transfer Order by ID",
@@ -2502,7 +2507,7 @@
       },
       "delete": {
         "tags": [
-          "TransferOrder"
+          "Transfer Order"
         ],
         "summary": "Delete Transfer Order",
         "description": "This method gives a site the option to delete one Transfer Order from the Transfer Orders list. \n\nExcept:\n\n- Transfer Order status is Completed\n- Qty Shipped, Qty Transferred or Qty Loss is not 0\n- Material Transaction exists for Transfer Order\n\nTransfer Order will be immediately removed. This action is not reversible.",
@@ -2529,7 +2534,7 @@
       },
       "post": {
         "tags": [
-          "TransferOrder"
+          "Transfer Order"
         ],
         "summary": "Update Transfer Order",
         "description": "Update Transfer Order",
@@ -3018,7 +3023,7 @@
     "/machinetrans": {
       "get": {
         "tags": [
-          "MachineTransaction"
+          "Machine Transaction"
         ],
         "summary": "Machine Transaction",
         "description": "List of History Machine Transaction",
@@ -4538,7 +4543,7 @@
           "modified_date": "string"
         }
       },
-      "TransferOrder": {
+      "Transfer Order": {
         "type": "object",
         "properties": {
           "id": {
