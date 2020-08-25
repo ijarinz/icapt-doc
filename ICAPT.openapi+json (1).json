@@ -1,9 +1,4 @@
 {
-  "x-stoplight": {
-    "docs": {
-      "showModels": false
-    }
-  },
   "openapi": "3.0.1",
   "info": {
     "title": "ICAPT",
@@ -101,8 +96,8 @@
       }
     },
     {
-      "name": "CustomerOrder",
-      "description": "Everything about your CustomerOrder",
+      "name": "Customer Order",
+      "description": "Everything about your Customer Order",
       "externalDocs": {
         "url": ""
       }
@@ -1172,7 +1167,41 @@
       }
     },
     "/customers/{customer_id}": {
-            "post": {
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Read Customers by ID",
+        "description": "GET Customer by ID",
+        "operationId": "read-customers-by-id",
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "path",
+            "description": "The Customer ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found"
+          }
+        }
+      },
+      "post": {
         "tags": [
           "Customer"
         ],
@@ -1223,41 +1252,6 @@
           }
         }
       },
-      "get": {
-        "tags": [
-          "Customer"
-        ],
-        "summary": "Read Customers by ID",
-        "description": "GET Customer by ID",
-        "operationId": "read-customers-by-id",
-        "parameters": [
-          {
-            "name": "customer_id",
-            "in": "path",
-            "description": "The Customer ID",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Customer"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Customer not found"
-          }
-        }
-      },
-
       "delete": {
         "tags": [
           "Customer"
@@ -2300,7 +2294,7 @@
     "/customerorders": {
       "post": {
         "tags": [
-          "CustomerOrder"
+          "Customer Order"
         ],
         "summary": "Create Customers Orders",
         "description": "Create Customer Orders",
@@ -2329,7 +2323,7 @@
       },
       "get": {
         "tags": [
-          "CustomerOrder"
+          "Customer Order"
         ],
         "summary": "List Customer Orders",
         "description": "List of Customer Orders",
@@ -2351,7 +2345,7 @@
     "/customerorders/{customerorder_id}": {
       "get": {
         "tags": [
-          "CustomerOrder"
+          "Customer Order"
         ],
         "summary": "Read Customer Orders by ID",
         "description": "GET Customer Order by ID",
@@ -2385,7 +2379,7 @@
       },
       "delete": {
         "tags": [
-          "CustomerOrder"
+          "Customer Order"
         ],
         "summary": "Delete a Customer Order Item",
         "description": "This method gives a site the option to delete one Customer Order Item from the Customer Order Items list. \n\nException:\n\n- Customer Order Item status is Completed\n- Qty Shipped or Qty Returned is not 0\n- Material Transaction exists for Customer Order Item\n\nCustomer Order Item will be immediately removed. This action is not reversible.",
