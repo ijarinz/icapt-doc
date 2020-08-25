@@ -1167,41 +1167,7 @@
       }
     },
     "/customers/{customer_id}": {
-      "get": {
-        "tags": [
-          "Customer"
-        ],
-        "summary": "Read Customers by ID",
-        "description": "GET Customer by ID",
-        "operationId": "read-customers-by-id",
-        "parameters": [
-          {
-            "name": "customer_id",
-            "in": "path",
-            "description": "The Customer ID",
-            "required": true,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Customer"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Customer not found"
-          }
-        }
-      },
-      "post": {
+            "post": {
         "tags": [
           "Customer"
         ],
@@ -1252,6 +1218,41 @@
           }
         }
       },
+      "get": {
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Read Customers by ID",
+        "description": "GET Customer by ID",
+        "operationId": "read-customers-by-id",
+        "parameters": [
+          {
+            "name": "customer_id",
+            "in": "path",
+            "description": "The Customer ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Customer"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found"
+          }
+        }
+      },
+
       "delete": {
         "tags": [
           "Customer"
