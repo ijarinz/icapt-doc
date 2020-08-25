@@ -45,7 +45,7 @@
       }
     },
     {
-      "name": "LotLocation",
+      "name": "Lot Location",
       "description": "Everything about your Items",
       "externalDocs": {
         "url": ""
@@ -143,14 +143,14 @@
       }
     },
     {
-      "name": "JobOrder",
+      "name": "Job Order",
       "description": "Everything about your JobOrder",
       "externalDocs": {
         "url": ""
       }
     },
     {
-      "name": "JobMaterial",
+      "name": "Job Material",
       "description": "Everything about your JobMaterial",
       "externalDocs": {
         "url": ""
@@ -164,7 +164,7 @@
       }
     },
     {
-      "name": "JobRoute",
+      "name": "Job Route",
       "description": "Everything about your JobRoute",
       "externalDocs": {
         "url": ""
@@ -842,8 +842,7 @@
     "/reasoncodes": {
       "post": {
         "tags": [
-          "Reason Code",
-          "POST"
+          "Reason Code"
         ],
         "summary": "Create Reason Code",
         "description": "Create Reason Code",
@@ -1859,7 +1858,7 @@
     "/lotlocs": {
       "post": {
         "tags": [
-          "LotLocation"
+          "Lot Location"
         ],
         "summary": "Create Lot Locations",
         "description": "Create Lot Locations",
@@ -1881,7 +1880,7 @@
       },
       "get": {
         "tags": [
-          "LotLocation"
+          "Lot Location"
         ],
         "summary": "List Lot Locations",
         "description": "List of Lot Locations",
@@ -1903,7 +1902,7 @@
     "/lotlocs/{lotloc_id}": {
       "get": {
         "tags": [
-          "LotLocation"
+          "Lot Location"
         ],
         "summary": "Read Lot Locations by ID",
         "description": "GET Lot Locations by ID",
@@ -1934,7 +1933,7 @@
       },
       "delete": {
         "tags": [
-          "LotLocation"
+          "Lot Location"
         ],
         "summary": "Delete Lot Location",
         "description": "This method gives a site the option to delete one Lot Location from the Lot Locations list.\n\nException:\n\n-  Qty On Hand is not 0\n\nThis Lot Location will be immediately removed. This action is not reversible.",
@@ -1961,7 +1960,7 @@
       },
       "post": {
         "tags": [
-          "LotLocation"
+          "Lot Location"
         ],
         "summary": "Update Lot Location",
         "description": "Update Lot Location",
@@ -2559,7 +2558,7 @@
     "/joborders": {
       "post": {
         "tags": [
-          "JobOrder"
+          "Job Order"
         ],
         "summary": "Create Job Orders",
         "description": "Create Job Order",
@@ -2581,7 +2580,7 @@
       },
       "get": {
         "tags": [
-          "JobOrder"
+          "Job Order"
         ],
         "summary": "List Job Orders",
         "description": "List of Job Orders",
@@ -2603,7 +2602,7 @@
     "/joborders/{joborder_id}": {
       "get": {
         "tags": [
-          "JobOrder"
+          "Job Order"
         ],
         "summary": "Read Job Order by ID",
         "description": "GET Job Order by ID",
@@ -2634,7 +2633,7 @@
       },
       "delete": {
         "tags": [
-          "JobOrder"
+          "Job Order"
         ],
         "summary": "Delete Job Order",
         "description": "This method gives a site the option to delete one Job Order from the Job Orders list.\n\nException: \n\n- Job Status is Completed\n- Qty Completed or Qty Scrapped is not 0 \n- At least one Material Transaction exists for this Job Order\n\nJob Order will be immediately removed. This action is not reversible.",
@@ -2661,7 +2660,7 @@
       },
       "post": {
         "tags": [
-          "JobOrder"
+          "Job Order"
         ],
         "summary": "Update Job Order",
         "description": "Update Job Order",
@@ -2702,7 +2701,7 @@
     "/jobroutes": {
       "post": {
         "tags": [
-          "JobRoute"
+          "Job Route"
         ],
         "summary": "Create Job Route",
         "description": "Create Job Route",
@@ -2724,7 +2723,7 @@
       },
       "get": {
         "tags": [
-          "JobRoute"
+          "Job Route"
         ],
         "summary": "List Job Routes",
         "description": "List of Job Routes",
@@ -2746,7 +2745,7 @@
     "/jobroutes/{jobroute_id}": {
       "get": {
         "tags": [
-          "JobRoute"
+          "Job Route"
         ],
         "summary": "Read Job Route by ID",
         "description": "GET Job Route by ID",
@@ -2777,7 +2776,7 @@
       },
       "delete": {
         "tags": [
-          "JobRoute"
+          "Job Route"
         ],
         "summary": "Delete Job Route",
         "description": "This method gives a site the option to delete one Job Route from the Job Routes list. \n\nException:\n\n- Job status for this Job Route is Completed\n- Qty Moved, Qty Completed, Qty Received or Qty Scrapped is not 0\n- Material Transaction exists for this Job Route\n\nJob Route will be immediately removed. This action is not reversible.",
@@ -2804,7 +2803,7 @@
       },
       "post": {
         "tags": [
-          "JobRoute"
+          "Job Route"
         ],
         "summary": "Update Job Route",
         "description": "Update Job Route",
@@ -2829,7 +2828,7 @@
     "/jobmaterials": {
       "post": {
         "tags": [
-          "JobMaterial"
+          "Job Material"
         ],
         "summary": "Create Job Material",
         "description": "Create Job Material",
@@ -2851,7 +2850,7 @@
       },
       "get": {
         "tags": [
-          "JobMaterial"
+          "Job Material"
         ],
         "summary": "List Job Materials",
         "description": "List of Job Materials",
@@ -2873,7 +2872,7 @@
     "/jobmaterials/{jobmaterial_id}": {
       "get": {
         "tags": [
-          "JobMaterial"
+          "Job Material"
         ],
         "summary": "Read Job Material by ID",
         "description": "GET Job Material by ID",
@@ -2913,7 +2912,7 @@
       },
       "delete": {
         "tags": [
-          "JobMaterial"
+          "Job Material"
         ],
         "summary": "Delete Job Material",
         "description": "This method gives a site the option to delete one Job Material from the  Job Materials list if\n\n1. Job Status is Completed\n2. Qty Moved, Completed, Received and Scrapped is not 0 \n3. At least one Material Transaction exists for this Job Material\n\nJob Material will be immediately removed. This action is not reversible.",
@@ -2940,7 +2939,7 @@
       },
       "post": {
         "tags": [
-          "JobMaterial"
+          "Job Material"
         ],
         "summary": "Update Job Material",
         "description": "Use this method to change aspects of an existing job material.\n\nThese entities are read only :\n- id\n- job_num\n-oper_num\n-site_id\n-qty_issued\n\nNot allow to update if:\n- If status = closed",
@@ -3001,7 +3000,7 @@
     "/jobtrans": {
       "get": {
         "tags": [
-          "JobTransaction"
+          "Job Transaction"
         ],
         "summary": "Job Transaction",
         "description": "List of  History Job transaction",
