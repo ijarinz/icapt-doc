@@ -136,7 +136,7 @@
       }
     },
     {
-      "name": "WorkCenter",
+      "name": "Work Center",
       "description": "Everything about your JobRoute",
       "externalDocs": {
         "url": ""
@@ -157,7 +157,7 @@
       }
     },
     {
-      "name": "JobTransaction",
+      "name": "Job Transaction",
       "description": "Everything about your JobTransaction",
       "externalDocs": {
         "url": ""
@@ -540,7 +540,14 @@
         "operationId": "list-items",
         "responses": {
           "200": {
-            "description": "null"
+            "description": "null",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListItemsResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -1036,7 +1043,7 @@
     "/workcenters": {
       "post": {
         "tags": [
-          "WorkCenter"
+          "Work Center"
         ],
         "summary": "Create Work Centers",
         "description": "Create Work Centers",
@@ -1058,7 +1065,7 @@
       },
       "get": {
         "tags": [
-          "WorkCenter"
+          "Work Center"
         ],
         "summary": "List Work Centers",
         "description": "List of Work Centers",
@@ -1080,7 +1087,7 @@
     "/workcenters/{workcenter_id}": {
       "get": {
         "tags": [
-          "WorkCenter"
+          "Work Center"
         ],
         "summary": "Read Work Center by ID",
         "description": "GET Work Center by ID",
@@ -1114,7 +1121,7 @@
       },
       "delete": {
         "tags": [
-          "WorkCenter"
+          "Work Center"
         ],
         "summary": "Delete Work Center",
         "description": "This method gives a site the option to delete one Location from the Locations list if\n\n   - Work Center exists in any Job Route\n\nThis item will be immediately removed. This action is not reversible.",
@@ -1141,7 +1148,7 @@
       },
       "post": {
         "tags": [
-          "WorkCenter"
+          "Work Center"
         ],
         "summary": "Update Work Center",
         "description": "Update Work Center",
@@ -3388,112 +3395,16 @@
           "$ref": "#/components/schemas/Location"
         }
       },
-      "PurchaseOrderLines": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "readOnly": true
-          },
-          "po_num": {
-            "type": "string"
-          },
-          "po_line": {
-            "type": "string"
-          },
-          "po_rel": {
-            "type": "string"
-          },
-          "vend_do": {
-            "type": "string"
-          },
-          "qty_ordered": {
-            "type": "number"
-          },
-          "qty_ordered_conv": {
-            "type": "number"
-          },
-          "qty_received": {
-            "type": "number"
-          },
-          "qty_picked": {
-            "type": "number"
-          },
-          "qty_returned": {
-            "type": "number"
-          },
-          "item_num": {
-            "type": "string"
-          },
-          "item_desc": {
-            "type": "string"
-          },
-          "vend_num": {
-            "type": "string"
-          },
-          "vend_name": {
-            "type": "string"
-          },
-          "notes": {
-            "type": "string"
-          },
-          "whse_num": {
-            "type": "string"
-          },
-          "uom": {
-            "type": "string"
-          },
-          "due_date": {
-            "type": "string"
-          },
-          "rel_status": {
-            "type": "string"
-          },
-          "site_id": {
-            "type": "string"
-          },
-          "created_by": {},
-          "modified_by": {},
-          "created_date": {
-            "type": "string"
-          },
-          "modified_date": {
-            "type": "string"
-          },
-          "field_1": {},
-          "field_2": {},
-          "field_3": {},
-          "field_4": {},
-          "field_5": {},
-          "field_6": {},
-          "field_7": {},
-          "field_8": {},
-          "field_9": {},
-          "field_10": {}
-        },
-        "example": {
-          "id": 0,
-          "po_num": "string",
-          "po_line": "string",
-          "po_rel": "string",
-          "vend_do": "string",
-          "qty_ordered": 0.666827221226756,
-          "qty_ordered_conv": 0.650404634723636,
-          "qty_received": 0.783045740915347,
-          "qty_picked": 0.898952667056966,
-          "qty_returned": 0.58214399000844,
-          "item_num": "string",
-          "item_desc": "string",
-          "vend_num": "string",
-          "vend_name": "string",
-          "notes": "string",
-          "whse_num": "string",
-          "uom": "string",
-          "due_date": "string",
-          "rel_status": "string",
-          "site_id": "string",
-          "created_date": "string",
-          "modified_date": "string"
+      "ListItemsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Item"
+        }
+      },
+      "ListCustomersResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Customer"
         }
       },
       "PurchaseOrderLine": {
@@ -4542,7 +4453,7 @@
           "modified_date": "string"
         }
       },
-      "Transfer Order": {
+      "TransferOrder": {
         "type": "object",
         "properties": {
           "id": {
