@@ -61,8 +61,8 @@
       }
     },
     {
-      "name": "ItemLocation",
-      "description": "Everything about your ItemLocation",
+      "name": "Item Location",
+      "description": "Everything about your Item Location",
       "externalDocs": {
         "url": ""
       }
@@ -1708,7 +1708,7 @@
     "/itemlocs": {
       "post": {
         "tags": [
-          "ItemLocation"
+          "Item Location"
         ],
         "summary": "Create Item Locations",
         "description": "This method gives a Site admin the option to create an Item Location for a given Site.",
@@ -1730,7 +1730,7 @@
       },
       "get": {
         "tags": [
-          "ItemLocation"
+          "Item Location"
         ],
         "summary": "List Item Locations",
         "description": "List of Item Locations",
@@ -1752,7 +1752,7 @@
     "/itemlocs/{itemloc_id}": {
       "get": {
         "tags": [
-          "ItemLocation"
+          "Item Location"
         ],
         "summary": "Read Item Locations by ID",
         "description": "GET Item  Locations by ID",
@@ -1786,7 +1786,7 @@
       },
       "delete": {
         "tags": [
-          "ItemLocation"
+          "Item Location"
         ],
         "summary": "Delete Item Location",
         "description": "This method gives a site the option to delete one Item Location from the Item Locations list.\n\nException:\n\n-  Qty On Hand is not 0\n\nThis Item Location will be immediately removed. This action is not reversible.",
@@ -1813,7 +1813,7 @@
       },
       "post": {
         "tags": [
-          "ItemLocation"
+          "Item Location"
         ],
         "summary": "Update Item Location",
         "description": "Update Item Location\n\nThe following properties are read only:\n-id\n-whse_num\n-loc_num\n-item_num\n-site_id",
@@ -2080,7 +2080,7 @@
         "tags": [
           "Employee"
         ],
-        "summary": "Update  Employee",
+        "summary": "Update Employee",
         "description": "Use this method to change aspects of an existing employee.\n\nThese entities are read only :\n- id\n- emp_num\n- site_id\n",
         "operationId": "update-employee",
         "parameters": [
