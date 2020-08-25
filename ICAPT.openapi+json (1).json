@@ -39,7 +39,7 @@
         "url": ""
       }
     },
-        {
+    {
       "name": "LotLocation",
       "description": "Everything about your Items",
       "externalDocs": {
@@ -53,7 +53,7 @@
         "url": ""
       }
     },
-        {
+    {
       "name": "ReasonCode",
       "description": "Everything about your ReasonCode",
       "externalDocs": {
@@ -102,7 +102,7 @@
         "url": ""
       }
     },
-        {
+    {
       "name": "Transfer Line",
       "description": "Everything about your Transfer Line",
       "externalDocs": {
@@ -123,7 +123,7 @@
         "url": ""
       }
     },
-        {
+    {
       "name": "Vendor",
       "description": "Everything about your Vendor",
       "externalDocs": {
@@ -151,7 +151,7 @@
         "url": ""
       }
     },
-        {
+    {
       "name": "JobTransaction",
       "description": "Everything about your JobTransaction",
       "externalDocs": {
@@ -546,7 +546,7 @@
           "Customer"
         ],
         "summary": "Create Customer",
-        "description": "This method gives a Site admin the option to create a Customer for a given Site.",
+        "description": "This method gives a Site admin the option to create a Customer for a given Site.\n\n### Customer Input Attributes",
         "operationId": "create-customer",
         "requestBody": {
           "content": {
