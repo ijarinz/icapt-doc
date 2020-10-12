@@ -7182,21 +7182,6 @@
           }
         }
       },
-      "yss": {
-        "title": "yss",
-        "type": "object",
-        "x-tags": [
-          "Customer"
-        ],
-        "properties": {
-          "id": {
-            "type": "integer"
-          }
-        },
-        "required": [
-          "id"
-        ]
-      },
       "CreateWarehouseRequest": {
         "title": "CreateWarehouseRequest",
         "type": "object",
