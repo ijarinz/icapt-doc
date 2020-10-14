@@ -4,15 +4,16 @@ tags: [basics, overview]
 
 # Introduction
 
-The iCAPT API allows you to integrate and interact the iCAPT system with any API-enabled Enterprise Resource Planning (ERP) system. The API would allow for you to perform the following functions within the Production and Inventory Modules of the iCAPT system:
 
-1.	Create, edit and delete Master Files and Transaction Files throughout the iCAPT system using HTTP verbs
-2.	Upload Transaction History into your API-enabled ERP system. For example: Material Transactions and Job Transactions 
-3.	Extract transaction and file listings 
-4.	Read Master Data by ID
+The iCAPT system consists of the Production and Inventory modules, each serving different function and facilities on the manufacturing floor. 
 
-User may perform operation in iCAPT via API such as extract listing, read master data by ID, create master/transactional data, edit master/transaction data and delete data by using the HTTP verbs (GET, POST, PUT, and DELETE).
+The iCAPT Production Module consists of production transactions.
+Using the handheld device, users perform the production transactions in real time, thus eliminating the need for manual recording. Workers can record the labor and machine run time using kiosks on the shop floor. User can put barcodes of employee ID on their badges to ease input.
 
+The iCAPT Inventory Module allows users to gather, process and identify a myriad of information regarding the flow and use of inventory throughout the manufacturing operation. 
+Using handheld device, users may record inventory transactions in real time, thus eliminating the need for manual recording. This module provides users with the functions to track and record all inventory related transactions from purchase order receiving to customer order shipping. 
+
+Both modules feature a Mobile and Web Application for the full usage and maintenance of all files, transactions and reports that are required for a smooth operation of the manufacturing floor.
 
 # API Permission
 In order to get permission to access the API, please send a ticket to our freshdesk and we'll get back to you.
