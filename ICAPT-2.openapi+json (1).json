@@ -17,7 +17,7 @@
           "Warehouse"
         ],
         "summary": "List Warehouses",
-        "description": "This method allow to retrieve a list of warehouses.\n\nThis method allows the Site admin to generate the list of all items within the Warehouse List. \nNote: This generation is read-only and changes to this Warehouse should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Warehouse List. \nNote: This generation is read-only and changes to this Warehouse should be made using the Update function.",
         "operationId": "get-warehouses",
         "parameters": [
           {
@@ -63,7 +63,7 @@
           "Warehouse"
         ],
         "summary": "Create Warehouse",
-        "description": "This method gives a Site admin the option to create warehouse for a given Site.\n\nThe Warehouse List contains the collection of all the warehouse codes, description and addresses currently utilized by the business. For a warehouse to be available in the system record, the warehouse must be created and present in the Warehouse List.\n\n### Warehouse Input Attributes:\nIn order to create a warehouse, the following are required field\n- **Warehouse**: The designated code given to the warehouse\n- **Description**: Description or full name of the warehouse\n- **Address**: The full address of the given warehouse",
+        "description": "The Warehouse List contains the collection of all the warehouse codes, description and addresses currently utilized by the business. For a warehouse to be available in the system record, the warehouse must be created and present in the Warehouse List.\n\nThis method gives a Site admin the option to create warehouse for a given Site.\n\n### Warehouse Input Attributes:\nIn order to create a warehouse, the following are required field\n- **Warehouse**: The designated code given to the warehouse\n- **Description**: Description or full name of the warehouse\n- **Address**: The full address of the given warehouse",
         "operationId": "post-warehouses",
         "requestBody": {
           "content": {
@@ -99,7 +99,7 @@
           "Warehouse"
         ],
         "summary": "Read Warehouse by ID",
-        "description": "This method allow to retrieve a list of warehouses by warehoue ID.\n\nThis method allows the Site admin to filter and search for specific Warehouse by their given unique ID. \nNote: This generation is read-only and changes to this Warehouse should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Warehouse by their given unique ID. \nNote: This generation is read-only and changes to this Warehouse should be made using the Update function.",
         "operationId": "get-warehouse-by-id",
         "parameters": [
           {
@@ -263,7 +263,7 @@
           "Location"
         ],
         "summary": "List Locations",
-        "description": "This method will return the list of warehouse location from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Locations List. \nNote: This generation is read-only and changes to this Location should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Locations List. \nNote: This generation is read-only and changes to this Location should be made using the Update function.",
         "operationId": "list-locations",
         "responses": {
           "200": {
@@ -298,7 +298,7 @@
           "Location"
         ],
         "summary": "Create Location",
-        "description": "This method will create a new location by sending a POST request.\n\nThe Location List contains the collection of all locations within the warehouse. For a location to be available in the system record, the location must be created and present in the Location List.\n\n### Location Input Attributes:\nIn order to create a location, the following are required field\n- **Warehouse**: The warehouse of the location on\n- **Location**: The designated code given to the location\n- **Trans Type**: The function of the location. Stock - S, Quarantine - Q or Transit - T",
+        "description": "The Location List contains the collection of all locations within the warehouse. For a location to be available in the system record, the location must be created and present in the Location List.\n\nThis method allows the Site admin the option to create a Location\n\n### Location Input Attributes:\nIn order to create a location, the following are required field\n- **Warehouse**: The warehouse of the location on\n- **Location**: The designated code given to the location\n- **Trans Type**: The function of the location. Stock - S, Quarantine - Q or Transit - T",
         "operationId": "create-location",
         "requestBody": {
           "content": {
@@ -354,7 +354,7 @@
           "Location"
         ],
         "summary": "Read Location by ID",
-        "description": "This method will return the list of warehouse location from iCAPT by location ID.\n\nThis method allows the Site admin to filter and search for specific Location by their given unique Location ID. \nNote: This generation is read-only and changes to this Location should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Location by their given unique Location ID. \nNote: This generation is read-only and changes to this Location should be made using the Update function.",
         "operationId": "location",
         "parameters": [
           {
@@ -476,7 +476,7 @@
           "Item"
         ],
         "summary": "Create Item",
-        "description": "This method gives a Site admin the option to create an Item for a given Site.\n\nThe Item List contains the collection of all items currently in use by the company. For an Item to be available in the system record, the item must be created and present in the Item List.\n\n### Items Input Attributes:\nIn order to create a new item, the following are required field\n- **Item Number**: The designated code given to the part/item\n- **Item Description**: The item description and may contain specifications/name of the item\n- **UOM**: The unit of measurement of the item. UOM defined must be exist in iCAPT\n- **Product Code**: Material classification. Product code defined must be exist in in iCAPT\n- **Unit Weight**: The expected mass per unit of part/item. The default UOM for weight is Kilogram (KG)\n- **Lot Tracked**: Item is lot tracked indicator. Lot tracked item must have lot number specified in all transactions\n- **Status**: Active status of item\n",
+        "description": "The Item List contains the collection of all items currently in use by the company. For an Item to be available in the system record, the item must be created and present in the Item List.\n\nThis method gives a Site admin the option to create an Item for a given Site.\n\n### Items Input Attributes:\nIn order to create a new item, the following are required field\n- **Item Number**: The designated code given to the part/item\n- **Item Description**: The item description and may contain specifications/name of the item\n- **UOM**: The unit of measurement of the item. UOM defined must be exist in iCAPT\n- **Product Code**: Material classification. Product code defined must be exist in in iCAPT\n- **Unit Weight**: The expected mass per unit of part/item. The default UOM for weight is Kilogram (KG)\n- **Lot Tracked**: Item is lot tracked indicator. Lot tracked item must have lot number specified in all transactions\n- **Status**: Active status of item\n",
         "operationId": "create-item",
         "requestBody": {
           "content": {
@@ -511,7 +511,7 @@
           "Item"
         ],
         "summary": "List Items",
-        "description": "This method will return the list of items from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Item List. \nNote: This generation is read-only and changes to this Item should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Item List. \nNote: This generation is read-only and changes to this Item should be made using the Update function.",
         "operationId": "list-items",
         "responses": {
           "200": {
@@ -551,7 +551,7 @@
           "Customer"
         ],
         "summary": "Create Customer",
-        "description": "This method gives a Site admin the option to create a Customer for a given Site.\n\nThe Customer List contains the collection of all customers the business is in conduct with. For a customer to be available in the system record, the customer details must be created and present within the Customer List. \n\n### Customer Input Attributes:\nIn order to create a customer, the following are required field\n- **Customer Code**: A unique code to identifies the customer\n- **Name**: Description/Name of customer\n- **Active Status**: Status of customer",
+        "description": "The Customer List contains the collection of all customers the business is in conduct with. For a customer to be available in the system record, the customer details must be created and present within the Customer List. \n\nThis method gives a Site admin the option to create a Customer for a given Site.\n\n### Customer Input Attributes:\nIn order to create a customer, the following are required field\n- **Customer Code**: A unique code to identifies the customer\n- **Name**: Description/Name of customer\n- **Active Status**: Status of customer",
         "operationId": "create-customer",
         "requestBody": {
           "content": {
@@ -605,7 +605,7 @@
           "Customer"
         ],
         "summary": "List of Customers",
-        "description": "This method allows to retrieve the list of all Customers.\n\nThis method allows the Site admin to generate the list of all items within the Customers List. \nNote: This generation is read-only and changes to the Customer should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Customers List. \nNote: This generation is read-only and changes to the Customer should be made using the Update function.",
         "operationId": "list-of-customers",
         "responses": {
           "200": {
@@ -641,7 +641,7 @@
           "Product Code"
         ],
         "summary": "Create Product Code",
-        "description": "Use this method to create a new Product Code.\n\nThe Product Code List contains the collection of all products currently or previously in use within the production facility. For a product to be available in the system record, the product code must be created and present in the Product Code List.\n\n### Product Code Input Attributes:\nIn order to create a product code, the following are required field\n- **Product Code**: The designated code given to the product classification. This \n- **Active**: IIndicator of availability. 0 - Inactive, 1 - Active\n",
+        "description": "The Product Code List contains the collection of all products currently or previously in use within the production facility. For a product to be available in the system record, the product code must be created and present in the Product Code List.\n\nThis method allows the Site admin the option to create a Product Code.\n\n### Product Code Input Attributes:\nIn order to create a product code, the following are required field\n- **Product Code**: The designated code given to the product classification. This \n- **Active**: IIndicator of availability. 0 - Inactive, 1 - Active\n",
         "operationId": "create-product-code",
         "requestBody": {
           "content": {
@@ -672,7 +672,7 @@
           "Product Code"
         ],
         "summary": "List Product Codes",
-        "description": "This method will return a list Product Codes from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Product Codes List. \nNote: This generation is read-only and changes to this Product Code should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Product Codes List. \nNote: This generation is read-only and changes to this Product Code should be made using the Update function.",
         "operationId": "list-product-codes",
         "responses": {
           "200": {
@@ -735,7 +735,7 @@
           "Item"
         ],
         "summary": "Read Item by ID",
-        "description": "This method allow to retrieve item properties by Item ID.\n\nThis method allows the Site admin to filter and search for specific Item by their given unique ID. \nNote: This generation is read-only and changes to this Item should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Item by their given unique ID. \nNote: This generation is read-only and changes to this Item should be made using the Update function.",
         "operationId": "read-item-by-id",
         "parameters": [
           {
@@ -856,7 +856,7 @@
           "Product Code"
         ],
         "summary": "Read Product Code by ID",
-        "description": "Use this method to get a Product Code list by product code ID.\n\nThis method allows the Site admin to filter and search for specific Product Code by their given unique ID. \nNote: This generation is read-only and changes to this Product Code should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Product Code by their given unique ID. \nNote: This generation is read-only and changes to this Product Code should be made using the Update function.",
         "operationId": "read-product-code-by-id",
         "parameters": [
           {
@@ -996,7 +996,7 @@
           "Reason Code"
         ],
         "summary": "Create Reason Code",
-        "description": "This method gives a Site admin the option to create a reason code for a given Site.\n\nThe Reason Code List contains the collection of all reasons required when conducting certain transaction forms. A reason code defines the purpose certain transactions are performed. For a Reason Code to be available in the system record, the Reason Code must be created and present in the Reason Code List.\n\n### Reason Code Input Attributes:\nIn order to create a reason code, the following are required field\n- **Transaction**: Transactions where the reason code is used\n- **Code**: Reason Code",
+        "description": "The Reason Code List contains the collection of all reasons required when conducting certain transaction forms. A reason code defines the purpose certain transactions are performed. For a Reason Code to be available in the system record, the Reason Code must be created and present in the Reason Code List.\n\nThis method allows the Site admin the option to create a Reason Code.\n\n### Reason Code Input Attributes:\nIn order to create a reason code, the following are required field\n- **Transaction**: Transactions where the reason code is used\n- **Code**: Reason Code",
         "operationId": "create-reason-code",
         "requestBody": {
           "content": {
@@ -1030,7 +1030,7 @@
           "Reason Code"
         ],
         "summary": "List Reason Codes",
-        "description": "This method allow to retrieve a list of Reason Codes.\n\nThis method allows the Site admin to generate the list of all items within the Reason Codes List. \nNote: This generation is read-only and changes to this Reason Code should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Reason Codes List. \nNote: This generation is read-only and changes to this Reason Code should be made using the Update function.",
         "operationId": "list-reason-codes",
         "responses": {
           "200": {
@@ -1066,7 +1066,7 @@
           "Purchase Order"
         ],
         "summary": "List Purchase Order Lines",
-        "description": "This method allow to retrieve a list Purchase Order lines from iCAPT.\n\nThe Purchase Order (PO) List contains the collection of all PO used throughout the inventory management and production cycle. For a PO to be available in the system record, the PO must be created and present in the PO List.\n\nThis method allows the Site admin to generate the list of all items within the Purchase Order Lines. \nNote: This generation is read-only.",
+        "description": "The Purchase Order (PO) List contains the collection of all PO used throughout the inventory management and production cycle. For a PO to be available in the system record, the PO must be created and present in the PO List.\n\nThis method allows the Site admin to generate the list of all items within the Purchase Order Lines. \nNote: This generation is read-only.",
         "operationId": "list-purchase-order-lines",
         "responses": {
           "200": {
@@ -1081,7 +1081,7 @@
           "Login"
         ],
         "summary": "Login",
-        "description": "Login to ICAPT to fetch bearer token\n\nThe Login function allows users to retrieve their system settings and privileges from the iCAPT database, enabling them to access and perform functions provided by the iCAPT system. To be able to Login, a user must first have a login ID and password assigned to them from an Administrator. ",
+        "description": "The Login function allows users to retrieve their system settings and privileges from the iCAPT database, enabling them to access and perform functions provided by the iCAPT system. To be able to Login, a user must first have a login ID and password assigned to them from an Administrator. ",
         "operationId": "login",
         "parameters": [
           {
@@ -1120,7 +1120,7 @@
           "Reason Code"
         ],
         "summary": "Read Reason Code By ID",
-        "description": "This method will return the list of reason code by reason code ID.\n\nThis method allows the Site admin to filter and search for specific Reason Code by their given unique Reason Code ID. \nNote: This generation is read-only and changes to this Reason Code should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Reason Code by their given unique Reason Code ID. \nNote: This generation is read-only and changes to this Reason Code should be made using the Update function.",
         "operationId": "read-reason-code-by-id",
         "parameters": [
           {
@@ -1255,7 +1255,7 @@
           "Work Center"
         ],
         "summary": "Create Work Centers",
-        "description": "This method gives a Site admin the option to create work center for a given Site.\n\nThe Work Center List contains the collection of all job operations within the production floor. For a work center to be available in the system record, the work center must be created and present in the work center List.\n\n### Work Center Input Attributes:\nIn order to create a warehouse, the following are required field\n- **Work Center**: The designated code given to the work center\n- **Active**: Indicate the active status of work center. 0 - Inactive, 1 - Active",
+        "description": "The Work Center List contains the collection of all job operations within the production floor. For a work center to be available in the system record, the work center must be created and present in the work center List.\n\nThis method gives a Site admin the option to create work center for a given Site.\n\n### Work Center Input Attributes:\nIn order to create a warehouse, the following are required field\n- **Work Center**: The designated code given to the work center\n- **Active**: Indicate the active status of work center. 0 - Inactive, 1 - Active",
         "operationId": "create-work-centers",
         "requestBody": {
           "content": {
@@ -1286,7 +1286,7 @@
           "Work Center"
         ],
         "summary": "List Work Centers",
-        "description": "This method allow to retrieve a list of work centers.\n\nThis method allows the Site admin to generate the list of all items within the Work Centers List. \nNote: This generation is read-only and changes to this Work Center should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Work Centers List. \nNote: This generation is read-only and changes to this Work Center should be made using the Update function.",
         "operationId": "list-work-centers",
         "responses": {
           "200": {
@@ -1322,7 +1322,7 @@
           "Work Center"
         ],
         "summary": "Read Work Center by ID",
-        "description": "This method allow to retrieve a list of work center by work center ID.\n\nThis method allows the Site admin to filter and search for specific Work Center by their given unique ID. \nNote: This generation is read-only and changes to this Work Center should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Work Center by their given unique ID. \nNote: This generation is read-only and changes to this Work Center should be made using the Update function.",
         "operationId": "read-work-center-by-id",
         "parameters": [
           {
@@ -1458,7 +1458,7 @@
           "Customer"
         ],
         "summary": "Read Customers by ID",
-        "description": "This method allow to retrieve the customer properties by customer ID.\n\nThis method allows the Site admin to filter and search for specific Customer by their given unique ID. \nNote: This generation is read-only and changes to this Customer should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Customer by their given unique ID. \nNote: This generation is read-only and changes to this Customer should be made using the Update function.",
         "operationId": "read-customers-by-id",
         "parameters": [
           {
@@ -1573,7 +1573,7 @@
           "UOM"
         ],
         "summary": "Create UOM",
-        "description": "This method gives a Site admin the option to create UOM for a given Site.\n\nThe UOM List contains the collection of all units of measurement that can be associated with an item. A base unit of measure should be assigned to each item on the Items form For a UOM to be available in the system record, the UOM must be created and present in the UOM List.\n\n### UOM Input Attributes:\nIn order to create a UOM, the following are required field\n- **UOM**: The designated code given to the unit of measurement\n- **Description**: Description of the UOM\n- **Rounding Decimals**: Determines the number of decimal places the unit of measurement",
+        "description": "The UOM List contains the collection of all units of measurement that can be associated with an item. A base unit of measure should be assigned to each item on the Items form For a UOM to be available in the system record, the UOM must be created and present in the UOM List.\n\nThis method gives a Site admin the option to create UOM for a given Site.\n\n### UOM Input Attributes:\nIn order to create a UOM, the following are required field\n- **UOM**: The designated code given to the unit of measurement\n- **Description**: Description of the UOM\n- **Rounding Decimals**: Determines the number of decimal places the unit of measurement",
         "operationId": "create-uom",
         "requestBody": {
           "content": {
@@ -1604,7 +1604,7 @@
           "UOM"
         ],
         "summary": "List UOM",
-        "description": "Use this method to retrievve the List of UOM from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the UOM List. \nNote: This generation is read-only and changes to this UOM should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the UOM List. \nNote: This generation is read-only and changes to this UOM should be made using the Update function.",
         "operationId": "list-uom",
         "responses": {
           "200": {
@@ -1640,7 +1640,7 @@
           "UOM"
         ],
         "summary": "Read UOM by ID",
-        "description": "Use this method to retrievve the List of UOM from iCAPT by UOM ID.\n\nThis method allows the Site admin to filter and search for specific UOM by their given unique ID. \nNote: This generation is read-only and changes to this UOM should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific UOM by their given unique ID. \nNote: This generation is read-only and changes to this UOM should be made using the Update function.",
         "operationId": "read-uom-by-id",
         "parameters": [
           {
@@ -1776,7 +1776,7 @@
           "Task"
         ],
         "summary": "Create Tasks",
-        "description": "This method gives a Site admin the option to create a task for a given Site.\n\nThe Indirect Task List contains the collection of all non-production related entries used by employees of the production cycle. For a Task to be available in the system record, the task must be created and present in the Indirect Task List.\n\n### Reason Code Input Attributes:\nIn order to create a task, the following are required field\n- **Code**: Indirect task code\n- **Description**: Description of the indirect task",
+        "description": "The Indirect Task List contains the collection of all non-production related entries used by employees of the production cycle. For a Task to be available in the system record, the task must be created and present in the Indirect Task List.\n\nThis method allows the Site admin the option to create a Task.\n\n### Reason Code Input Attributes:\nIn order to create a task, the following are required field\n- **Code**: Indirect task code\n- **Description**: Description of the indirect task",
         "operationId": "create-tasks",
         "requestBody": {
           "content": {
@@ -1806,7 +1806,7 @@
           "Task"
         ],
         "summary": "List Tasks",
-        "description": "This method allow to retrieve a list of task.\n\nThis method allows the Site admin to generate the list of all items within the Task List. \nNote: This generation is read-only and changes to this Task should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Task List. \nNote: This generation is read-only and changes to this Task should be made using the Update function.",
         "operationId": "list-tasks",
         "responses": {
           "200": {
@@ -1841,7 +1841,7 @@
           "Task"
         ],
         "summary": "Read Tasks by ID",
-        "description": "This method allow to retrieve a list of task by task ID.\n\nThis method allows the Site admin to filter and search for specific Task by their given unique ID. \nNote: This generation is read-only and changes to this Task should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Task by their given unique ID. \nNote: This generation is read-only and changes to this Task should be made using the Update function.",
         "operationId": "read-tasks-by-id",
         "parameters": [
           {
@@ -1974,7 +1974,7 @@
           "Vendor"
         ],
         "summary": "Create Vendors",
-        "description": "This method gives a Site admin the option to create vendors for a given Site.\n\nThe Vendors List contains the collection of all vendors the business is in conduct with. For a vendor to be available in the system record, the vendor must be created and present in the Vendors List.\n\n### Vendor Input Attributes:\nIn order to create a vendor, the following are required field\n- **Vendor Code**: The designated code given to the vendor\n- **Vendor Name**: Description or full name of the vendor\n- **Active**: Indicate the active status of vendor. 0 - Inactive, 1 - Active",
+        "description": "The Vendors List contains the collection of all vendors the business is in conduct with. For a vendor to be available in the system record, the vendor must be created and present in the Vendors List.\n\nThis method gives a Site admin the option to create vendors for a given Site.\n\n### Vendor Input Attributes:\nIn order to create a vendor, the following are required field\n- **Vendor Code**: The designated code given to the vendor\n- **Vendor Name**: Description or full name of the vendor\n- **Active**: Indicate the active status of vendor. 0 - Inactive, 1 - Active",
         "operationId": "create-vendors",
         "requestBody": {
           "content": {
@@ -2005,7 +2005,7 @@
           "Vendor"
         ],
         "summary": "List Vendors",
-        "description": "This method allow to retrieve a list of vendors.\n\nThis method allows the Site admin to generate the list of all items within the Vendors List. \nNote: This generation is read-only and changes to this Vendor should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Vendors List. \nNote: This generation is read-only and changes to this Vendor should be made using the Update function.",
         "operationId": "list-vendors",
         "responses": {
           "200": {
@@ -2041,7 +2041,7 @@
           "Vendor"
         ],
         "summary": "Read Vendor by ID",
-        "description": "This method allow to retrieve a list of vendors by vendor ID.\n\nThis method allows the Site admin to filter and search for specific Vendor by their given unique ID. \nNote: This generation is read-only and changes to this Vendor should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Vendor by their given unique ID. \nNote: This generation is read-only and changes to this Vendor should be made using the Update function.",
         "operationId": "read-vendors-by-id",
         "parameters": [
           {
@@ -2177,7 +2177,7 @@
           "Item Location"
         ],
         "summary": "Create Item Locations",
-        "description": "This method gives a Site admin the option to create an Item Location for a given Site.\n\nThe Item Location List contains the collection of all locations within the warehouse and the item parts designated to them. The Item Location List also tracks the available quantity on hand for a certain item in each location. For an item location to be available in the system record, the customer must be created and present in the Customer List.\n\n### Items Location Input Attributes:\nIn order to create a new item location, the following are required field\n- **Warehouse**: Identifies the warehouse the item is stored in\n- **Location**: Identified the specific location within abovementioned warehouse the item is stored in\n- **Item**: Identifies the item that is stored in the abovementioned warehouse and location\n- **Qty on hand**: The total number of units in the warehouse location at the current time\n- **Rank**: Location ranking of the item. 1 being the highest and will be the default location for this item",
+        "description": "The Item Location List contains the collection of all locations within the warehouse and the item parts designated to them. The Item Location List also tracks the available quantity on hand for a certain item in each location. For an item location to be available in the system record, the customer must be created and present in the Customer List.\n\nThis method gives a Site admin the option to create an Item Location for a given Site.\n\n### Items Location Input Attributes:\nIn order to create a new item location, the following are required field\n- **Warehouse**: Identifies the warehouse the item is stored in\n- **Location**: Identified the specific location within abovementioned warehouse the item is stored in\n- **Item**: Identifies the item that is stored in the abovementioned warehouse and location\n- **Qty on hand**: The total number of units in the warehouse location at the current time\n- **Rank**: Location ranking of the item. 1 being the highest and will be the default location for this item",
         "operationId": "create-item-locations",
         "requestBody": {
           "content": {
@@ -2210,7 +2210,7 @@
           "Item Location"
         ],
         "summary": "List Item Locations",
-        "description": "This method will return the list of item locations.\n\nThis method allows the Site admin to generate the list of all items within the Item Locations List. \nNote: This generation is read-only and changes to this Item Location should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Item Locations List. \nNote: This generation is read-only and changes to this Item Location should be made using the Update function.",
         "operationId": "list-item-locations",
         "responses": {
           "200": {
@@ -2248,7 +2248,7 @@
           "Item Location"
         ],
         "summary": "Read Item Locations by ID",
-        "description": "This method allow to retrieve item locations by item location ID.\n\nThis method allows the Site admin to filter and search for specific Item Location by their given unique ID. \nNote: This generation is read-only and changes to this Item Location should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Item Location by their given unique ID. \nNote: This generation is read-only and changes to this Item Location should be made using the Update function.",
         "operationId": "read-item-locations-by-id",
         "parameters": [
           {
@@ -2348,7 +2348,7 @@
           "Lot Location"
         ],
         "summary": "Create Lot Locations",
-        "description": "Use this method to create a new Lot Locations in iCAPT.\n\nThe Lot List contains the collection of all Lot number and location for each Lot tracked Item Part. A lot is a quantity of material you choose to group together. For a Lot to be available in the system record, the Lot Location must be created and present in the Lot List.",
+        "description": "The Lot List contains the collection of all Lot number and location for each Lot tracked Item Part. A lot is a quantity of material you choose to group together. For a Lot to be available in the system record, the Lot Location must be created and present in the Lot List.\n\nThis method allows the Site admin the option to create a Lot Location.",
         "operationId": "create-lot-locations",
         "requestBody": {
           "content": {
@@ -2382,7 +2382,7 @@
           "Lot Location"
         ],
         "summary": "List Lot Locations",
-        "description": "This method will return a list of Item Lot Locations from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Lot Location List. \nNote: This generation is read-only and changes to this Lot Location should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Lot Location List. \nNote: This generation is read-only and changes to this Lot Location should be made using the Update function.",
         "operationId": "list-lot-locations",
         "responses": {
           "200": {
@@ -2475,7 +2475,7 @@
           "Employee"
         ],
         "summary": "Create Employees",
-        "description": "Create an Employees in iCAPT by sending the POST request.\n\nThe Employee List contains the collection of all employees employed by the production floor and have access to the iCAPT system. For an employee to be available in the system record, the employee must be created and present in the Employee List.\n\n### Employees Input Attributes:\nIn order to create a employee, the following are required field\n- **Employee Number**: A unique number to identifies the employee\n- **Employee Name**: Description/Name of employee\n- **Shift**: Employee Shift",
+        "description": "The Employee List contains the collection of all employees employed by the production floor and have access to the iCAPT system. For an employee to be available in the system record, the employee must be created and present in the Employee List.\n\nThis method gives the Site admin the option to create an Employee\n\n### Employees Input Attributes:\nIn order to create a employee, the following are required field\n- **Employee Number**: A unique number to identifies the employee\n- **Employee Name**: Description/Name of employee\n- **Shift**: Employee Shift",
         "operationId": "create-employees",
         "requestBody": {
           "description": "Request Field",
@@ -2512,7 +2512,7 @@
           "Employee"
         ],
         "summary": "List Employees",
-        "description": "This method will return the list of Employees created from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Employees List. \nNote: This generation is read-only and changes to this Employee should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Employees List. \nNote: This generation is read-only and changes to this Employee should be made using the Update function.",
         "operationId": "list-employees",
         "responses": {
           "200": {
@@ -2548,7 +2548,7 @@
           "Employee"
         ],
         "summary": "Read Employees by ID",
-        "description": "This method allow to retrieve the employee properties by employee ID.\n\nThis method allows the Site admin to filter and search for specific Employee by their given unique ID. \nNote: This generation is read-only and changes to this Employee should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Employee by their given unique ID. \nNote: This generation is read-only and changes to this Employee should be made using the Update function.",
         "operationId": "read-employees-by-id",
         "parameters": [
           {
@@ -2684,7 +2684,7 @@
           "Machine"
         ],
         "summary": "Create Machines",
-        "description": "This method gives a Site admin the option to create a Machine for a given Site.\n\nThe Machine List contains the collection of all machines used throughout the production cycle. For a machine to be available in the system location, the machine must be created and present in the Machine List.\n\n### Machine Input Attributes:\nIn order to create a machine, the following are required field\n- **Machine ID**: A unique code to identifies the machine\n- **Description**: Description of the machine\n- **Active**: Identifies the active status of the machine. 0 - Inactive, 1 - Active\n",
+        "description": "The Machine List contains the collection of all machines used throughout the production cycle. For a machine to be available in the system location, the machine must be created and present in the Machine List.\n\nThis method allows the Site admin to create a Machine.\n\n### Machine Input Attributes:\nIn order to create a machine, the following are required field\n- **Machine ID**: A unique code to identifies the machine\n- **Description**: Description of the machine\n- **Active**: Identifies the active status of the machine. 0 - Inactive, 1 - Active\n",
         "operationId": "create-machines",
         "requestBody": {
           "content": {
@@ -2715,7 +2715,7 @@
           "Machine"
         ],
         "summary": "List Machines",
-        "description": "Use this method to retrieve the list of Machines from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Machines List. \nNote: This generation is read-only and changes to this Machine should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Machines List. \nNote: This generation is read-only and changes to this Machine should be made using the Update function.",
         "operationId": "list-machines",
         "responses": {
           "200": {
@@ -2751,7 +2751,7 @@
           "Machine"
         ],
         "summary": "Read Machines by  ID",
-        "description": "Use this method to retrieve a list of Machines by machine ID.\n\nThis method allows the Site admin to filter and search for specific Machines by their given unique Machine ID. \nNote: This generation is read-only and changes to this Machine should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Machines by their given unique Machine ID. \nNote: This generation is read-only and changes to this Machine should be made using the Update function.",
         "operationId": "read-machines-by-id",
         "parameters": [
           {
@@ -2885,7 +2885,7 @@
           "Customer Order"
         ],
         "summary": "Create Customers Orders",
-        "description": "Use this method to create a Customer Orders.\n\nThe Customer Order (CO) List contains the collection of all CO used throughout the inventory management and production cycle. For a CO to be available in the system record, the CO must be created and present in the CO List.\n\n### Customer Order Input Attributes:\nIn order to create a customer order, the following are required field\n- **CO Number**: A CO Number uniquely identifies a customer order\n- **CO Line**: Line Item\n- **CO Release**: Release or sub-line\n- **Warehouse**: Warehouse to ship from.\n- **Item**: Item that is ordered by customer \n- **Due Date**: Target shipping date\n- **Status**: Status of the CO\n- **Customer Code**: Customer of the order\n- **Qty Ordered**: Quantity of the item ordered \n- **Qty Released**: Quantity of the item to be order on this specified CO",
+        "description": "The Customer Order (CO) List contains the collection of all CO used throughout the inventory management and production cycle. For a CO to be available in the system record, the CO must be created and present in the CO List.\n\nThis method gives the Site admin the option to create a Customer Orders.\n\n### Customer Order Input Attributes:\nIn order to create a customer order, the following are required field\n- **CO Number**: A CO Number uniquely identifies a customer order\n- **CO Line**: Line Item\n- **CO Release**: Release or sub-line\n- **Warehouse**: Warehouse to ship from.\n- **Item**: Item that is ordered by customer \n- **Due Date**: Target shipping date\n- **Status**: Status of the CO\n- **Customer Code**: Customer of the order\n- **Qty Ordered**: Quantity of the item ordered \n- **Qty Released**: Quantity of the item to be order on this specified CO",
         "operationId": "create-customers-orders",
         "requestBody": {
           "content": {
@@ -2926,7 +2926,7 @@
           "GET"
         ],
         "summary": "List Customer Orders",
-        "description": "The method allow you to retrieve the list of Customer Orders in ICAPT.\n\nThis method allows the Site admin to generate the list of all items within the Customer Orders List. \nNote: This generation is read-only and changes to this Customer Order should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Customer Orders List. \nNote: This generation is read-only and changes to this Customer Order should be made using the Update function.",
         "operationId": "list-customer-orders",
         "responses": {
           "200": {
@@ -2976,7 +2976,7 @@
           "Customer Order"
         ],
         "summary": "Read Customer Orders by ID",
-        "description": "This method allows to retrieve Customer Orders by the CO number.\n\nThis method allows the Site admin to filter and search for specific Customer Orders by their given unique CO Number. \nNote: This generation is read-only and changes to this Customer Order should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Customer Orders by their given unique CO Number. \nNote: This generation is read-only and changes to this Customer Order should be made using the Update function.",
         "operationId": "read-customer-orders-by-id",
         "parameters": [
           {
@@ -3036,7 +3036,7 @@
           "Transfer Order"
         ],
         "summary": "Create Transfer Orders",
-        "description": "This method gives a Site admin the option to create a transfer order for a given Site.\n\nThe Transfer Order (TO) List contains the collection of all TO in use throughout the inventory management and production cycle. For a TO to be available in the system record, the TO must be created and present in the TO List.\n\n### Transfer Order Input Attributes:\nIn order to create a tranfer order, the following are required field\n- **TO number**: A TO Number uniquely identifies a transfer order\n- **From Warehouse**: Warehouse transfer order from\n- **TO Warehouse**: Warehouse transfer order to\n- **Status**: Status of the TO. Open - O, Completed - C",
+        "description": "The Transfer Order (TO) List contains the collection of all TO in use throughout the inventory management and production cycle. For a TO to be available in the system record, the TO must be created and present in the TO List.\n\nThis method allows the Site admin the option to create a Transfer Order.\n\n### Transfer Order Input Attributes:\nIn order to create a tranfer order, the following are required field\n- **TO number**: A TO Number uniquely identifies a transfer order\n- **From Warehouse**: Warehouse transfer order from\n- **TO Warehouse**: Warehouse transfer order to\n- **Status**: Status of the TO. Open - O, Completed - C",
         "operationId": "create-transfer-orders",
         "requestBody": {
           "content": {
@@ -3058,7 +3058,7 @@
           "Transfer Order"
         ],
         "summary": "List Transfer Orders",
-        "description": "This method allow to retrieve a list of transfer order.\n\nThis method allows the Site admin to generate the list of all items within the Transfer Orders List. \nNote: This generation is read-only and changes to this Transfer Order should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Transfer Orders List. \nNote: This generation is read-only and changes to this Transfer Order should be made using the Update function.",
         "operationId": "list-transfer-orders",
         "responses": {
           "200": {
@@ -3104,7 +3104,7 @@
           "Transfer Order"
         ],
         "summary": "Read Transfer Order by ID",
-        "description": "This method allow to retrieve a list of transfer order by transfer order ID.\n\nThis method allows the Site admin to filter and search for specific Transfer Order by their given unique ID. \nNote: This generation is read-only and changes to this Transfer Order should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Transfer Order by their given unique ID. \nNote: This generation is read-only and changes to this Transfer Order should be made using the Update function.",
         "operationId": "read-transfer-order-by-id",
         "parameters": [
           {
@@ -3265,7 +3265,7 @@
           "Job Order"
         ],
         "summary": "Create Job Orders",
-        "description": "Use this method to create Job Order in iCAPT.\n\nThe Job Order List contains the collection of all job orders used throughout the production cycle. For a job order to be available in the system record, the job order must be created and present in the Job Order List.\n\n### Job Order Input Attributes:\nIn order to create a new job order, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Customer Code**: Customer for this job order\n- **Item**: Item that is being produced from the order \n- **Job Date**: Job order creation date\n- **Start Date**: Date to begin production\n- **Qty Released**: The quantity required to be produce\n- **Status**: Status of the Job. Open (O), Released (R) or Completed (C) \n\n",
+        "description": "The Job Order List contains the collection of all job orders used throughout the production cycle. For a job order to be available in the system record, the job order must be created and present in the Job Order List.\n\nThis method gives the Site admin the option to create a Job Order.\n\n### Job Order Input Attributes:\nIn order to create a new job order, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Customer Code**: Customer for this job order\n- **Item**: Item that is being produced from the order \n- **Job Date**: Job order creation date\n- **Start Date**: Date to begin production\n- **Qty Released**: The quantity required to be produce\n- **Status**: Status of the Job. Open (O), Released (R) or Completed (C) \n\n",
         "operationId": "create-job-orders",
         "requestBody": {
           "content": {
@@ -3307,7 +3307,7 @@
           "Job Order"
         ],
         "summary": "List Job Orders",
-        "description": "This method will return the list of job orders from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Job Order List. \nNote: This generation is read-only and changes to this Job Order should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Job Order List. \nNote: This generation is read-only and changes to this Job Order should be made using the Update function.",
         "operationId": "list-job-orders",
         "responses": {
           "200": {
@@ -3354,7 +3354,7 @@
           "Job Order"
         ],
         "summary": "Read Job Order by ID",
-        "description": "This method allow to retrieve job order list from iCAPT by job order ID.\n\nThis method allows the Site admin to filter and search for specific Job Order by their given unique Job Order ID. \nNote: This generation is read-only and changes to this [category] should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Job Order by their given unique Job Order ID. \nNote: This generation is read-only and changes to this [category] should be made using the Update function.",
         "operationId": "read-job-order-by-id",
         "parameters": [
           {
@@ -3483,7 +3483,7 @@
             }
           }
         },
-        "description": "Update Job Order in iCAPT.\n\n**The following properties are read only:**\n\n- joborder_id\n- whse_num\n- item_num\n- description\n- uom\n- qty_complete\n- qty_scrapped\n- site_id\n\n**Not allow to update if:**\n- If job order status = closed\n\n**Not allow to update qty released if:**\n- If job order status <> open",
+        "description": "Update Job Order in iCAPT.\n\n**The following properties are read only:**\n\n- joborder_id\n- whse_num\n- item_num\n- description\n- uom\n- qty_complete\n- qty_scrapped\n- site_id\n\n**Not allowed to update if:**\n- If job order status = closed\n\n**Not allowed to update qty released if:**\n- If job order status <> open",
         "tags": [
           "Job Order"
         ],
@@ -3517,7 +3517,7 @@
           "Job Route"
         ],
         "summary": "Create Job Route",
-        "description": "Use this method to create a new job route in iCAPT.\n\nThe Job Route List contains the collection of all operations and work centers tied to a job order throughout the production cycle. For a Job Route to be available in the system record, the Job Route must be created and present in the Job Route List.\n\n### Job Route Input Attributes:\nIn order to create a new job route, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Operation**: Sequence number of the process\n- **Work Center**: The station/work center performing this process\n- **Status**: Active flag. 0 - Inactive, 1 - Active",
+        "description": "The Job Route List contains the collection of all operations and work centers tied to a job order throughout the production cycle. For a Job Route to be available in the system record, the Job Route must be created and present in the Job Route List.\n\nThis method gives the Site admin the option to create a Job Route.\n\n### Job Route Input Attributes:\nIn order to create a new job route, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Operation**: Sequence number of the process\n- **Work Center**: The station/work center performing this process\n- **Status**: Active flag. 0 - Inactive, 1 - Active",
         "operationId": "create-job-route",
         "requestBody": {
           "content": {
@@ -3554,7 +3554,7 @@
           "Job Route"
         ],
         "summary": "List Job Routes",
-        "description": "This method will return the list of job routes from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Job Route] List. \nNote: This generation is read-only and changes to this Job Route should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Job Route] List. \nNote: This generation is read-only and changes to this Job Route should be made using the Update function.",
         "operationId": "list-job-routes",
         "responses": {
           "200": {
@@ -3596,7 +3596,7 @@
           "Job Route"
         ],
         "summary": "Read Job Route by ID",
-        "description": "This method will return the list of job routes from iCAPT by job ID.\n\nThis method allows the Site admin to filter and search for specific Job Route by their given unique Job ID. \nNote: This generation is read-only and changes to this Job Route should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Job Route by their given unique Job ID. \nNote: This generation is read-only and changes to this Job Route should be made using the Update function.",
         "operationId": "read-job-route-by-id",
         "parameters": [
           {
@@ -3715,7 +3715,7 @@
             }
           }
         },
-        "description": "This method to update Job Route in iCAPT.\n\n**The following properties are read only:**\n\n- joborder_id\n- oper_num\n- qty_moved\n- qty_completed\n- qty_received  \n- qty_scrapped\n\n**Not allow to update if:**\n- If job order status = closed",
+        "description": "This method to update Job Route in iCAPT.\n\n**The following properties are read only:**\n\n- joborder_id\n- oper_num\n- qty_moved\n- qty_completed\n- qty_received  \n- qty_scrapped\n\n**Not allowed to update if:**\n- If job order status = closed",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3745,7 +3745,7 @@
           "Job Material"
         ],
         "summary": "Create Job Material",
-        "description": "This method allow user to create a new job material in iCAPT.\n\nThe Job Material List contains the collection of all materials required per job route of a job order applicable throughout the production cycle. For a material to be available in the system record, the materials must be created and present in the Job Material List.\n\n### Job Material Input Attributes:\nIn order to create a new job material, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Operation**: Sequence number of the process\n- **Sequence**: Sequence of material. Required to be unique\n- **Material**: Item required in production\n- **Qty per**: Quantity of material needed for a finished good\n- **Scrap Factor**: The expected loss factors",
+        "description": "The Job Material List contains the collection of all materials required per job route of a job order applicable throughout the production cycle. For a material to be available in the system record, the materials must be created and present in the Job Material List.\n\nThis method allows the Site admin the option to create a Job Material.\n\n### Job Material Input Attributes:\nIn order to create a new job material, the following are required field\n- **Job ID**: Unique ID to identifies the job order\n- **Warehouse**: Warehouse to receive in\n- **Operation**: Sequence number of the process\n- **Sequence**: Sequence of material. Required to be unique\n- **Material**: Item required in production\n- **Qty per**: Quantity of material needed for a finished good\n- **Scrap Factor**: The expected loss factors",
         "operationId": "create-job-material",
         "requestBody": {
           "content": {
@@ -3780,7 +3780,7 @@
           "Job Material"
         ],
         "summary": "List Job Materials",
-        "description": "This method will return the list of job materials from iCAPT.\n\nThis method allows the Site admin to generate the list of all items within the Job Material List. \nNote: This generation is read-only and changes to this Job Material should be made using the Update function.",
+        "description": "This method allows the Site admin to generate the list of all items within the Job Material List. \nNote: This generation is read-only and changes to this Job Material should be made using the Update function.",
         "operationId": "list-job-materials",
         "responses": {
           "200": {
@@ -3824,7 +3824,7 @@
           "Job Material"
         ],
         "summary": "Read Job Material by ID",
-        "description": "This method will return the list of job material from iCAPT by job ID.\n\nThis method allows the Site admin to filter and search for specific Job Material by their given unique Job ID. \nNote: This generation is read-only and changes to this Job Material should be made using the Update function.",
+        "description": "This method allows the Site admin to filter and search for specific Job Material by their given unique Job ID. \nNote: This generation is read-only and changes to this Job Material should be made using the Update function.",
         "operationId": "read-job-material-by-id",
         "parameters": [
           {
@@ -3947,7 +3947,7 @@
             }
           }
         },
-        "description": "Use this method to change aspects of an existing job material.\n\n**These entities are read only:**\n- id\n- job_num\n-oper_num\n-site_id\n-qty_issued\n\n**Not allow to update if:**\n- If job order status = closed",
+        "description": "Use this method to change aspects of an existing job material.\n\n**These entities are read only:**\n- id\n- job_num\n-oper_num\n-site_id\n-qty_issued\n\n**Not allowed to update if:**\n- If job order status = closed",
         "tags": [
           "Job Material"
         ]
@@ -3959,7 +3959,7 @@
           "Material Transaction"
         ],
         "summary": "Material Transaction",
-        "description": "This method will return the list of material transaction history from iCAPT.\n\nThe Material Transaction History provides the listing of all material movement throughout the manufacturing floor from inflow, during process and outflow. The Material Transaction History provides users with easy access to information regarding any and all materials through the use of filters. \n\nThis method allows the Site admin to generate the list of all items within the Material Transaction History. \nNote: This generation is read-only.",
+        "description": "The Material Transaction History provides the listing of all material movement throughout the manufacturing floor from inflow, during process and outflow. The Material Transaction History provides users with easy access to information regarding any and all materials through the use of filters. \n\nThis method allows the Site admin to generate the list of all items within the Material Transaction History. \nNote: This generation is read-only.",
         "operationId": "material-transaction",
         "responses": {
           "200": {
@@ -4008,7 +4008,7 @@
           "Job Transaction"
         ],
         "summary": "Job Transaction",
-        "description": "This method will return the list of job transaction history from iCAPT.\n\nThe Job Transaction History provides the listing of all jobs performed on the manufacturing floor by employees during the production process for any given item. The Job Transaction History provides easy access to information regarding any and all jobs performed through the use of filters.\n\nThis method allows the Site admin to generate the list of all items within the Job Transaction List. ",
+        "description": "The Job Transaction History provides the listing of all jobs performed on the manufacturing floor by employees during the production process for any given item. The Job Transaction History provides easy access to information regarding any and all jobs performed through the use of filters.\n\nThis method allows the Site admin to generate the list of all items within the Job Transaction List. ",
         "operationId": "job-transaction",
         "responses": {
           "200": {
@@ -4060,7 +4060,7 @@
           "Machine Transaction"
         ],
         "summary": "Machine Transaction",
-        "description": "This method will return the list of machine transaction history from iCAPT.\n\nThe Machine Transaction History provides the listing of all machine usage for Setup, Run time and Downtime throughout the manufacturing floor. The Machine Transaction History provides easy access to information regarding any and all machines through the use of filters.\n\nThis method allows the Site admin to generate the list of all items within the Machine Transaction History.\nNote: This generation is read-only.",
+        "description": "The Machine Transaction History provides the listing of all machine usage for Setup, Run time and Downtime throughout the manufacturing floor. The Machine Transaction History provides easy access to information regarding any and all machines through the use of filters.\n\nThis method allows the Site admin to generate the list of all items within the Machine Transaction History.\nNote: This generation is read-only.",
         "operationId": "machine-transaction",
         "responses": {
           "200": {
@@ -4139,7 +4139,7 @@
           "Transfer Order Line"
         ],
         "summary": "Delete a Transfer Order Line",
-        "description": "This method gives a site the option to delete one Transfer Order Line from the Transfer Order Lines list. \n\nThe Transfer Order (TO) Line contains the details in regard to an attached Transfer Order. The details of the Line provide information regarding what Item, Location and Quantity that would be involved during the TO. For a TO Line to be available in the system record, the TO Line must first be created from an attached TO in the TO List.\n\n## Exception\n**Transfer order line is unable to delete if:**\n  - Transfer Order Line status is Completed\n  - Qty Shipped , Qty Received or Qty Loss is not 0\n  - Material Transaction exists for this Transfer Order Line\n\nTransfer Order Line will be immediately removed. This action is not reversible.",
+        "description": "The Transfer Order (TO) Line contains the details in regard to an attached Transfer Order. The details of the Line provide information regarding what Item, Location and Quantity that would be involved during the TO. For a TO Line to be available in the system record, the TO Line must first be created from an attached TO in the TO List.\n\nThis method gives a site the option to delete one Transfer Order Line from the Transfer Order Lines list. \n\n## Exception\n**Transfer order line is unable to delete if:**\n  - Transfer Order Line status is Completed\n  - Qty Shipped , Qty Received or Qty Loss is not 0\n  - Material Transaction exists for this Transfer Order Line\n\nTransfer Order Line will be immediately removed. This action is not reversible.",
         "operationId": "delete-a-transfer-order-line",
         "parameters": [
           {
