@@ -1,4 +1,9 @@
-{
+{  
+  "x-stoplight": {
+    "docs": {
+      "showModels": false
+    }
+  },
   "openapi": "3.0.1",
   "info": {
     "title": "ICAPT",
@@ -8,6 +13,162 @@
   "servers": [
     {
       "url": "https://icapt-api.azure-api.net"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Customer",
+      "description": "Everything about your Customers",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Warehouse",
+      "description": "Everything about your Warehouses",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Location",
+      "description": "Everything about your Locations",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Item",
+      "description": "Everything about your Items",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Lot Location",
+      "description": "Everything about your Items",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Product Code",
+      "description": "Everything about your ProductCode",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Reason Code",
+      "description": "Everything about your ReasonCode",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Item Location",
+      "description": "Everything about your Item Location",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Task",
+      "description": "Everything about your Tasks",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Machine",
+      "description": "Everything about your Machines",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Transfer Order",
+      "description": "Everything about your TransferOrders",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Employee",
+      "description": "Everything about your Employees",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Customer Order",
+      "description": "Everything about your Customer Order",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Transfer Line",
+      "description": "Everything about your Transfer Line",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Purchase Order",
+      "description": "Everything about your PurchaseOrder",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "UOM",
+      "description": "Everything about your UOM",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Vendor",
+      "description": "Everything about your Vendor",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Work Center",
+      "description": "Everything about your JobRoute",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Job Order",
+      "description": "Everything about your JobOrder",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Job Material",
+      "description": "Everything about your JobMaterial",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Job Transaction",
+      "description": "Everything about your JobTransaction",
+      "externalDocs": {
+        "url": ""
+      }
+    },
+    {
+      "name": "Job Route",
+      "description": "Everything about your JobRoute",
+      "externalDocs": {
+        "url": ""
+      }
     }
   ],
   "paths": {
@@ -204,7 +365,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "null",
             "content": {
               "application/json": {
                 "schema": {
@@ -369,6 +530,16 @@
         ],
         "responses": {
           "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
+          },
+          "404": {
             "description": ""
           }
         }
@@ -744,7 +915,7 @@
             "description": "The Item ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -789,7 +960,7 @@
             "description": "The Item ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -933,10 +1104,10 @@
           {
             "name": "productcode_id",
             "in": "path",
-            "description": "The Machine ID",
+            "description": "The Product Code ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -986,7 +1157,12 @@
               }
             }
           },
-          "description": ""
+          "404": {
+            "description": ""
+          },
+          "422": {
+            "description": ""
+          }
         }
       }
     },
@@ -1129,7 +1305,7 @@
             "description": "The Reason Code ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1157,6 +1333,9 @@
                 }
               }
             }
+          },
+            "404": {
+              "description": ""
           }
         }
       },
@@ -1197,7 +1376,7 @@
             "description": "The Reason Code ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1331,7 +1510,7 @@
             "description": "The Work Center ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1359,6 +1538,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": ""
           }
         }
       },
@@ -1376,7 +1558,7 @@
             "description": "The Work Center ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1399,7 +1581,7 @@
             "description": "The Work Center ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1467,7 +1649,7 @@
             "description": "The Customer ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1495,6 +1677,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Customer not found"
           }
         }
       },
@@ -1535,7 +1720,7 @@
             "description": "The Customer ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1649,7 +1834,7 @@
             "description": "The UOM ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1677,6 +1862,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": ""
           }
         }
       },
@@ -1717,7 +1905,7 @@
             "description": "The UOM ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1850,7 +2038,7 @@
             "description": "The Task ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -1917,7 +2105,7 @@
             "description": "The Task ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -2078,6 +2266,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Vendor not found."
           }
         }
       },
@@ -2095,7 +2286,7 @@
             "description": "The Vendors ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -2257,7 +2448,7 @@
             "description": "The Item Location ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -2333,7 +2524,14 @@
         ],
         "responses": {
           "200": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemLocation"
+                }
+              }
+            }
           }
         },
         "description": "Use this method to update the item location.\n\n**The following properties are read only:**\n-id\n-whse_num\n-loc_num\n-item_num\n-site_id",
@@ -2417,6 +2615,37 @@
       }
     },
     "/lotlocs/{lotloc_id}": {
+      "get": {
+        "tags": [
+          "Lot Location"
+        ],
+        "summary": "Read Lot Locations by ID",
+        "description": "GET Lot Locations by ID",
+        "operationId": "read-lot-locations-by-id",
+        "parameters": [
+          {
+            "name": "lotloc_id",
+            "in": "path",
+            "description": "The Lot Location ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LotLocation"
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "tags": [
           "Lot Location"
@@ -2462,6 +2691,15 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateLotLocationRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": ""
@@ -2503,7 +2741,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                }
+              }
+            }
           }
         }
       },
@@ -2557,7 +2802,7 @@
             "description": "The Employee ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -2673,9 +2918,32 @@
             }
           }
         },
-        "tags": [
-          "Employee"
-        ]
+        "delete": {
+          "tags": [
+            "Employee"
+          ],
+          "summary": "Delete an Employee",
+          "description": "This method gives a site the option to delete one Employee from the Employees list.\n\nException:\n\n   - Employee exists as a Counter\n\nThis Employee will be immediately removed. This action is not reversible.",
+          "operationId": "delete-an-employee",
+          "parameters": [
+            {
+              "name": "employee_id",
+              "in": "path",
+              "description": "The Employee ID",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": ""
+            },
+            "404": {
+              "description": ""
+            }
+          }
       }
     },
     "/machines": {
@@ -2740,7 +3008,10 @@
                   }
                 }
               }
-            }
+            } 
+          },
+            "401": {
+              "description": "Unauthorized"
           }
         }
       }
@@ -2760,7 +3031,7 @@
             "description": "The Machine ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -2788,6 +3059,9 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Machine not Found"
           }
         }
       },
@@ -2916,7 +3190,14 @@
         },
         "responses": {
           "201": {
-            "description": ""
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerOrder"
+                }
+              }
+            }
           }
         }
       },
@@ -2985,7 +3266,7 @@
             "description": "The Customer Order Item ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -3028,8 +3309,52 @@
             }
           }
         }
+      },
+      "delete": {        
+        "tags": [        
+          "Customer Order"
+        ],
+        "summary": "Delete a Customer Order Item",
+        "description": "This method gives a site the option to delete one Customer Order Item from the Customer Order Items list. \n\nException:\n\n- Customer Order Item status is Completed\n- Qty Shipped or Qty Returned is not 0\n- Material Transaction exists for Customer Order Item\n\nCustomer Order Item will be immediately removed. This action is not reversible.",
+        "operationId": "delete-a-customer-order-item",
+        "parameters": [
+          {
+            "name": "customerorder_id",
+            "in": "path",
+            "description": "The Customer Order Item ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            } 
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          },
+          "404": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "summary": "",
+        "operationId": "post-customerorders-customerorder_id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateCustomerOrderRequest"
+                }
+              }
+            }
+          }
+        }
       }
-    },
+    }      
+  },
     "/transferorders": {
       "post": {
         "tags": [
@@ -3363,7 +3688,7 @@
             "description": "The Job Order ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -3605,7 +3930,7 @@
             "description": "The Job Route ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -3833,7 +4158,7 @@
             "description": "The Job Material ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
@@ -3909,7 +4234,7 @@
             "description": "The Job Material ID",
             "required": true,
             "schema": {
-              "type": ""
+              "type": "integer"
             }
           }
         ],
