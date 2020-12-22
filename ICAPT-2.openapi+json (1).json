@@ -1613,7 +1613,7 @@
               "examples": {
                 "example": {
                   "value": {
-                    "uom_num": "KG",
+                    "uom": "KG",
                     "uom_desc": "Kilogram",
                     "rounding": 2
                   }
@@ -1646,7 +1646,7 @@
                 "examples": {
                   "example": {
                     "value": {
-                      "uom_num": "KG",
+                      "uom": "KG",
                       "uom_desc": "Kilogram",
                       "rounding": 2,
                       "site_id": "DEMO",
@@ -1693,7 +1693,7 @@
                 "examples": {
                   "example": {
                     "value": {
-                      "uom_num": "KG",
+                      "uom": "KG",
                       "uom_desc": "Kilogram",
                       "rounding": 2,
                       "site_id": "DEMO",
@@ -1764,7 +1764,7 @@
                 "examples": {
                   "example": {
                     "value": {
-                      "uom_num": "KG",
+                      "uom": "KG",
                       "uom_desc": "Kilogram",
                       "rounding": 2,
                       "site_id": "DEMO",
@@ -4338,7 +4338,7 @@
         "type": "object",
         "example": {
           "id": 0,
-          "uom_num": "string",
+          "uom": "string",
           "uom_desc": "string",
           "rounding": "string",
           "site_id": "string",
@@ -4351,7 +4351,7 @@
             "type": "integer",
             "readOnly": true
           },
-          "uom_num": {
+          "uom": {
             "type": "string",
             "description": "The designated code given to the unit of measurement"
           },
@@ -4394,7 +4394,7 @@
         },
         "x-examples": {
           "example": {
-            "uom_num": "KG",
+            "uom": "KG",
             "uom_desc": "Kilogram",
             "rounding": 2,
             "site_id": "DEMO",
@@ -5313,12 +5313,12 @@
       },
       "CreateUOMRequest": {
         "required": [
-          "uom_num",
+          "uom",
           "rounding"
         ],
         "type": "object",
         "properties": {
-          "uom_num": {
+          "uom": {
             "type": "string"
           },
           "uom_desc": {
@@ -5353,7 +5353,7 @@
         "description": "Create UOM Input",
         "x-examples": {
           "example": {
-            "uom_num": "KG",
+            "uom": "KG",
             "uom_desc": "Kilogram",
             "rounding": 2
           }
